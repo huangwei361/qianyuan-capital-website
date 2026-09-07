@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>乾元黄金 · 每日金价看板 · 业务运营版</title>
+<style>
+  @page { size: A3 landscape; margin: 8mm; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: "Microsoft YaHei", "微软雅黑", "PingFang SC", sans-serif;
+    background: #06182A;
+    color: #E8EEF5;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .dashboard {
+    width: 100%;
+    background: linear-gradient(135deg, #06182A 0%, #0A2540 100%);
+    padding: 10mm 12mm;
+  }
+
+  /* ========== 顶部头部 ========== */
+  .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 5mm;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+    margin-bottom: 5mm;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 4mm;
+  }
+  .brand-logo {
+    width: 13mm; height: 13mm;
+    background: white;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+  }
+  .brand-logo img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+  .brand-text h1 {
+    font-size: 17pt;
+    color: #D4AF37;
+    letter-spacing: 2px;
+    margin-bottom: 0.8mm;
+  }
+  .brand-text .sub {
+    font-size: 8.5pt;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 1px;
+  }
+  .top-meta { text-align: right; }
+  .top-meta .date { font-size: 13pt; color: #D4AF37; font-weight: 700; margin-bottom: 0.5mm; }
+  .top-meta .clock { font-size: 24pt; color: white; font-weight: 700; font-family: 'Consolas', monospace; letter-spacing: 2px; }
+  .top-meta .update { font-size: 7.5pt; color: rgba(255,255,255,0.5); margin-top: 0.5mm; }
+
+  /* ========== 三大核心价格 ========== */
+  .core-prices {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 4mm;
+    margin-bottom: 5mm;
+  }
+  .price-card {
+    border-radius: 4mm;
+    padding: 5mm 6mm;
+    position: relative;
+    overflow: hidden;
+  }
+  .price-card.purchase {
+    background: linear-gradient(135deg, #B71C1C 0%, #D32F2F 100%);
+    border: 2px solid #FF5252;
+  }
+  .price-card.retail {
+    background: linear-gradient(135deg, #0A2540 0%, #1A3A5C 100%);
+    border: 2px solid #D4AF37;
+  }
+  .price-card.recycle {
+    background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 100%);
+    border: 2px solid #00E676;
+  }
+  .price-card::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 35mm; height: 35mm;
+    background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 70%);
+  }
+  .price-card .role-tag {
+    display: inline-block;
+    background: rgba(0,0,0,0.4);
+    color: white;
+    font-size: 8pt;
+    padding: 0.8mm 3mm;
+    border-radius: 2mm;
+    margin-bottom: 2mm;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  .price-card .label {
+    font-size: 10pt;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 1.5mm;
+    font-weight: 600;
+  }
+  .price-card .price {
+    font-size: 38pt;
+    font-weight: 800;
+    color: white;
+    font-family: 'Consolas', monospace;
+    letter-spacing: 1px;
+    margin-bottom: 1mm;
+    line-height: 1;
+  }
+  .price-card .unit {
+    font-size: 12pt;
+    color: rgba(255,255,255,0.7);
+    margin-left: 1mm;
+    font-weight: 400;
+  }
+  .price-card .change {
+    font-size: 9.5pt;
+    font-weight: 700;
+    color: white;
+  }
+  .price-card .meta-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2.5mm;
+    padding-top: 2mm;
+    border-top: 1px dashed rgba(255,255,255,0.2);
+    font-size: 7.5pt;
+    color: rgba(255,255,255,0.75);
+  }
+  .price-card .spread-hint {
+    margin-top: 2mm;
+    background: rgba(0,0,0,0.35);
+    border-radius: 2mm;
+    padding: 1.5mm 3mm;
+    font-size: 8pt;
+    color: white;
+  }
+  .price-card .spread-hint strong { color: #FFD54F; }
+
+  /* ========== 价差利润分析 ========== */
+  .profit-section {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.12) 0%, rgba(212, 175, 55, 0.04) 100%);
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    border-radius: 3mm;
+    padding: 4mm 5mm;
+    margin-bottom: 5mm;
+  }
+  .profit-title {
+    font-size: 11pt;
+    color: #D4AF37;
+    font-weight: 700;
+    margin-bottom: 3mm;
+    display: flex; align-items: center; gap: 2mm;
+  }
+  .profit-title::before {
+    content: '';
+    width: 3mm; height: 3mm;
+    background: #D4AF37;
+    border-radius: 50%;
+  }
+  .profit-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4mm;
+  }
+  .profit-item {
+    background: rgba(0,0,0,0.25);
+    border-radius: 2mm;
+    padding: 3mm 4mm;
+  }
+  .profit-item .pi-label {
+    font-size: 8pt;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 1mm;
+  }
+  .profit-item .pi-value {
+    font-size: 18pt;
+    font-weight: 800;
+    color: #D4AF37;
+    font-family: 'Consolas', monospace;
+    line-height: 1;
+  }
+  .profit-item .pi-value .pi-unit { font-size: 9pt; color: rgba(255,255,255,0.6); margin-left: 1mm; }
+  .profit-item .pi-detail {
+    font-size: 7.5pt;
+    color: rgba(255,255,255,0.55);
+    margin-top: 1.5mm;
+    line-height: 1.4;
+  }
+  .profit-item .pi-detail strong { color: white; }
+
+  /* ========== 主体三栏 ========== */
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr 1fr;
+    gap: 4mm;
+    margin-bottom: 4mm;
+  }
+  .col { display: flex; flex-direction: column; gap: 3mm; }
+
+  .panel {
+    background: rgba(15, 45, 77, 0.5);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: 2.5mm;
+    padding: 3.5mm 4mm;
+  }
+  .panel-title {
+    font-size: 10.5pt;
+    color: #D4AF37;
+    font-weight: 700;
+    margin-bottom: 2.5mm;
+    padding-bottom: 1.5mm;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    display: flex; align-items: center; gap: 2mm;
+  }
+  .panel-title::before {
+    content: '';
+    width: 2.5mm; height: 2.5mm;
+    background: #D4AF37;
+    border-radius: 50%;
+  }
+
+  /* 表格 */
+  table { width: 100%; border-collapse: collapse; font-size: 8.5pt; }
+  table th {
+    text-align: left; color: rgba(255,255,255,0.55);
+    font-weight: 400; padding: 1.2mm 0; font-size: 7.5pt;
+  }
+  table td {
+    padding: 1.5mm 0; color: white;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  table td.num { font-family: 'Consolas', monospace; text-align: right; font-weight: 600; }
+  table td.chg { text-align: right; font-family: 'Consolas', monospace; font-weight: 700; }
+  .chg-up { color: #00E676; }
+  .chg-down { color: #FF5252; }
+  .chg-flat { color: #90A4AE; }
+
+  /* 高亮行 */
+  tr.highlight td { background: rgba(212, 175, 55, 0.1); }
+  tr.highlight td:first-child { color: #D4AF37; font-weight: 700; }
+
+  /* 业务建议 */
+  .biz-tip {
+    background: linear-gradient(135deg, rgba(0, 230, 118, 0.1) 0%, rgba(0, 230, 118, 0.04) 100%);
+    border-left: 3px solid #00E676;
+    border-radius: 1.5mm;
+    padding: 2.5mm 3mm;
+    margin-bottom: 1.5mm;
+  }
+  .biz-tip.warn { background: rgba(255, 82, 82, 0.1); border-color: #FF5252; }
+  .biz-tip.neutral { background: rgba(255, 213, 79, 0.1); border-color: #FFD54F; }
+  .biz-tip .tip-title { font-size: 9pt; font-weight: 700; color: white; margin-bottom: 1mm; }
+  .biz-tip .tip-body { font-size: 8pt; color: rgba(255,255,255,0.85); line-height: 1.5; }
+  .biz-tip .tip-body strong { color: #FFD54F; }
+
+  /* 库存建议 */
+  .inventory-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.8mm 0;
+    border-bottom: 1px dashed rgba(255,255,255,0.08);
+    font-size: 8.5pt;
+  }
+  .inventory-row:last-child { border-bottom: none; }
+  .inventory-row .inv-label { color: rgba(255,255,255,0.7); }
+  .inventory-row .inv-value { font-weight: 700; }
+  .inv-up { color: #00E676; }
+  .inv-down { color: #FF5252; }
+  .inv-hold { color: #FFD54F; }
+
+  /* 资讯 */
+  .news-item {
+    padding: 1.8mm 0;
+    border-bottom: 1px dashed rgba(255,255,255,0.08);
+    font-size: 8pt;
+  }
+  .news-item:last-child { border-bottom: none; }
+  .news-item .time {
+    color: #D4AF37; font-weight: 700; margin-right: 1.5mm;
+    font-family: 'Consolas', monospace; font-size: 7.5pt;
+  }
+  .news-item .tag {
+    display: inline-block; padding: 0.3mm 1.5mm; border-radius: 1mm;
+    font-size: 6.5pt; margin-right: 1.5mm; font-weight: 700;
+  }
+  .tag-pos { background: rgba(0, 230, 118, 0.2); color: #00E676; }
+  .tag-neg { background: rgba(255, 82, 82, 0.2); color: #FF5252; }
+  .tag-neu { background: rgba(144, 164, 174, 0.2); color: #90A4AE; }
+  .news-item .text { color: rgba(255,255,255,0.85); line-height: 1.5; }
+
+  /* 风险 */
+  .risk-box {
+    background: rgba(255, 82, 82, 0.1);
+    border: 1px solid rgba(255, 82, 82, 0.3);
+    border-radius: 2mm;
+    padding: 2.5mm 3mm;
+    font-size: 7.5pt;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.6;
+  }
+  .risk-box strong { color: #FF5252; }
+
+  .source { font-size: 6.5pt; color: rgba(255,255,255,0.4); margin-top: 1.5mm; text-align: right; }
+
+  /* 底部 */
+  .bottom-bar {
+    margin-top: 3mm;
+    padding-top: 3mm;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 5mm;
+    font-size: 7.5pt;
+    color: rgba(255,255,255,0.5);
+  }
+
+  /* 进度条 */
+  .progress {
+    height: 3.5mm; background: rgba(0,0,0,0.3);
+    border-radius: 1mm; overflow: hidden; margin: 1.5mm 0;
+  }
+  .progress-bar { height: 100%; background: linear-gradient(90deg, #D4AF37, #FFD54F); border-radius: 1mm; }
+
+  /* 价差对比表 */
+  .spread-table th { color: #D4AF37; }
+  .spread-table .pos { color: #00E676; font-weight: 700; }
+  .spread-table .neg { color: #FF5252; font-weight: 700; }
+</style>
+</head>
+<body>
+
+<div class="dashboard">
+
+  <!-- ========== 顶部 ========== -->
+  <div class="top-bar">
+    <div class="brand">
+      <div class="brand-logo"><img src="art/logo_qy_gold.png" alt="乾元黄金"/></div>
+      <div class="brand-text">
+        <h1>乾元黄金 · 每日金价看板（业务运营版）</h1>
+        <div class="sub">QIAN YUAN GOLD · DAILY BUSINESS DASHBOARD</div>
+      </div>
+    </div>
+    <div class="top-meta">
+      <div class="date" id="date">2026年09月04日 · 周五</div>
+      <div class="clock" id="clock">10:28:52</div>
+      <div class="update">数据更新于 10:00 · 上海黄金交易所 / 品牌终端实时报价</div>
+    </div>
+  </div>
+
+  <!-- ========== 三大核心价格（真实数据 2026-09-04） ========== -->
+  <div class="core-prices">
+
+    <!-- 进货参考价（红色）-->
+    <div class="price-card purchase">
+      <span class="role-tag">📥 进货参考</span>
+      <div class="label">今日金料采购参考价（元/克）</div>
+      <div class="price">970.<span class="unit">50</span></div>
+      <div class="change">▲ +13.00 (+1.36%) 较昨日</div>
+      <div class="meta-row">
+        <span>Au99.99 968.50</span>
+        <span>Au(T+D) 968.71</span>
+        <span>10:00</span>
+      </div>
+      <div class="spread-hint">
+        💡 SGE 大盘价 · 整批可议 <strong>1.5-2.5 元/克</strong> 折让
+      </div>
+    </div>
+
+    <!-- 零售价（金色）-->
+    <div class="price-card retail">
+      <span class="role-tag">💰 零售挂牌</span>
+      <div class="label">今日零售金价（元/克 · 足金999）</div>
+      <div class="price">1,329.<span class="unit">00</span></div>
+      <div class="change">▲ +6.00 (+0.45%) 较昨日</div>
+      <div class="meta-row">
+        <span>金条 960.00</span>
+        <span>工艺金 1,360</span>
+        <span>工费 20-30/克</span>
+      </div>
+      <div class="spread-hint">
+        💡 跟周大福 <strong>1,329</strong> 持平 · 不打价格战
+      </div>
+    </div>
+
+    <!-- 回收价（绿色）-->
+    <div class="price-card recycle">
+      <span class="role-tag">♻ 旧金回收</span>
+      <div class="label">今日旧金回收价（元/克 · 足金）</div>
+      <div class="price">957.<span class="unit">00</span></div>
+      <div class="change">▲ +9.00 (+0.95%) 较昨日</div>
+      <div class="meta-row">
+        <span>足金 957</span>
+        <span>22K 875</span>
+        <span>18K 695</span>
+        <span>9.85折</span>
+      </div>
+      <div class="spread-hint">
+        💡 比主流回收 924 <strong>+33</strong> · 引流+复购利器
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== 价差利润分析 ========== -->
+  <div class="profit-section">
+    <div class="profit-title">价差利润分析（元/克）</div>
+    <div class="profit-grid">
+      <div class="profit-item">
+        <div class="pi-label">零售 − 回收（黄金买卖价差）</div>
+        <div class="pi-value">372<span class="pi-unit">元/克</span></div>
+        <div class="pi-detail">
+          零售 1,329 − 回收 957 = <strong>372</strong><br>
+          价差率 <strong>28.0%</strong>（行业 25-30% 正常区间）
+        </div>
+      </div>
+      <div class="profit-item">
+        <div class="pi-label">零售 − 进货（实物销售毛利）</div>
+        <div class="pi-value">358.50<span class="pi-unit">元/克</span></div>
+        <div class="pi-detail">
+          零售 1,329 − 进货 970.50 = <strong>358.50</strong><br>
+          含工费毛利率 <strong>27.0%</strong>，扣工费净利约 <strong>25%</strong>
+        </div>
+      </div>
+      <div class="profit-item">
+        <div class="pi-label">回收 − 进货（即时转手毛利）</div>
+        <div class="pi-value">−13.50<span class="pi-unit">元/克</span></div>
+        <div class="pi-detail">
+          回收 957 − 进货 970.50 = <strong>−13.50</strong><br>
+          ⚠ <strong>看似亏损</strong>，但 <strong>60% 客户会现场再购</strong>，综合为正
+        </div>
+      </div>
+      <div class="profit-item">
+        <div class="pi-label">今日金价较 30 日均</div>
+        <div class="pi-value">+2.4<span class="pi-unit">%</span></div>
+        <div class="pi-detail">
+          30日均价 947.78 · 当前 970.50<br>
+          趋势：<strong style="color:#00E676;">强势上行</strong> · 补货 <strong>适度谨慎</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== 主体三栏 ========== -->
+  <div class="main-grid">
+
+    <!-- ===== 左栏：实时参考价 + 银行积存金 ===== -->
+    <div class="col">
+
+      <div class="panel">
+        <div class="panel-title">实时参考价（2026-09-04 10:00）</div>
+        <table>
+          <thead>
+            <tr><th>品种</th><th style="text-align:right;">现价</th><th style="text-align:right;">涨跌</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>上海金 Au99.99</td><td class="num">968.50</td><td class="chg chg-up">+11.30</td></tr>
+            <tr><td>上海金 Au(T+D)</td><td class="num">968.71</td><td class="chg chg-up">+11.61</td></tr>
+            <tr><td>沪金主连（期货）</td><td class="num">971.38</td><td class="chg chg-up">+13.00</td></tr>
+            <tr><td>伦敦金（折人民币）</td><td class="num">967.34</td><td class="chg chg-up">+1.43</td></tr>
+            <tr><td>纽约金 COMEX</td><td class="num">974.20</td><td class="chg chg-down">-2.65</td></tr>
+            <tr><td>白银 Ag(T+D) 元/kg</td><td class="num">16,280</td><td class="chg chg-up">+262</td></tr>
+            <tr><td>美元人民币汇率</td><td class="num">6.7185</td><td class="chg chg-up">-0.0042</td></tr>
+          </tbody>
+        </table>
+        <div class="source">上海黄金交易所 · COMEX · 10:00 行情</div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">银行积存金（元/克）</div>
+        <table>
+          <thead>
+            <tr><th>银行</th><th style="text-align:right;">买入</th><th style="text-align:right;">卖出</th><th style="text-align:right;">差</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>工商银行</td><td class="num">965.20</td><td class="num">975.80</td><td class="num">10.60</td></tr>
+            <tr><td>建设银行</td><td class="num">964.80</td><td class="num">976.20</td><td class="num">11.40</td></tr>
+            <tr><td>中国银行</td><td class="num">965.50</td><td class="num">975.50</td><td class="num">10.00</td></tr>
+            <tr><td>农业银行</td><td class="num">964.50</td><td class="num">976.50</td><td class="num">12.00</td></tr>
+            <tr><td>招商银行</td><td class="num">965.80</td><td class="num">975.20</td><td class="num">9.40</td></tr>
+            <tr><td>平安银行</td><td class="num">964.20</td><td class="num">976.80</td><td class="num">12.60</td></tr>
+          </tbody>
+        </table>
+        <div class="source">参考报价 · 实际以银行APP为准</div>
+      </div>
+
+    </div>
+
+    <!-- ===== 中栏：品牌零售对比 + 我们的报价 ===== -->
+    <div class="col">
+
+      <div class="panel">
+        <div class="panel-title">品牌零售金价对比（元/克 · 足金999 · 今日挂牌）</div>
+        <table>
+          <thead>
+            <tr><th>品牌</th><th style="text-align:right;">挂牌</th><th style="text-align:right;">金条</th><th style="text-align:right;">工费/克</th><th style="text-align:right;">vs 我们</th></tr>
+          </thead>
+          <tbody>
+            <tr class="highlight"><td>★ 乾元黄金（我们）</td><td class="num">1,329</td><td class="num">960</td><td class="num">20</td><td class="num">基准</td></tr>
+            <tr><td>周大福</td><td class="num">1,329</td><td class="num">968</td><td class="num">30</td><td class="num chg-flat">±0</td></tr>
+            <tr><td>六福珠宝</td><td class="num">1,329</td><td class="num">965</td><td class="num">30</td><td class="num chg-flat">±0</td></tr>
+            <tr><td>周生生</td><td class="num">1,327</td><td class="num">967</td><td class="num">30</td><td class="num chg-up">-2</td></tr>
+            <tr><td>潮宏基</td><td class="num">1,329</td><td class="num">965</td><td class="num">30</td><td class="num chg-flat">±0</td></tr>
+            <tr><td>谢瑞麟</td><td class="num">1,327</td><td class="num">964</td><td class="num">30</td><td class="num chg-up">-2</td></tr>
+            <tr><td>老凤祥</td><td class="num">1,330</td><td class="num">966</td><td class="num">25</td><td class="num chg-down">+1</td></tr>
+            <tr><td>老庙黄金</td><td class="num">1,322</td><td class="num">963</td><td class="num">28</td><td class="num chg-up">-7</td></tr>
+            <tr><td>菜百首饰</td><td class="num">1,315</td><td class="num">960</td><td class="num">22</td><td class="num chg-up">-14</td></tr>
+            <tr><td>中国黄金</td><td class="num">1,299</td><td class="num">952</td><td class="num">20</td><td class="num chg-up">-30</td></tr>
+          </tbody>
+        </table>
+        <div class="source">终端挂牌价 · 含税含工费 · 2026-09-04 上午</div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">乾元黄金 · 我们的今日报价</div>
+        <table>
+          <thead>
+            <tr><th>品类</th><th style="text-align:right;">售价</th><th style="text-align:right;">回收</th><th style="text-align:right;">毛利率</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>足金 999 首饰</td><td class="num">1,329.00</td><td class="num">957.00</td><td class="num chg-up">28.0%</td></tr>
+            <tr><td>足金 9999（一口价）</td><td class="num">1,360.00</td><td class="num">959.00</td><td class="num chg-up">29.5%</td></tr>
+            <tr><td>足金金条（投资）</td><td class="num">960.00</td><td class="num">965.00</td><td class="num chg-up">-0.5%</td></tr>
+            <tr><td>工艺金/古法金</td><td class="num">1,360.00</td><td class="num">955.00</td><td class="num chg-up">29.8%</td></tr>
+            <tr><td>22K 金</td><td class="num">1,265.00</td><td class="num">875.00</td><td class="num chg-up">30.8%</td></tr>
+            <tr><td>18K 金</td><td class="num">1,025.00</td><td class="num">695.00</td><td class="num chg-up">32.2%</td></tr>
+            <tr><td>铂金 Pt950</td><td class="num">620.00</td><td class="num">380.00</td><td class="num chg-up">38.7%</td></tr>
+          </tbody>
+        </table>
+        <div class="source">今日挂牌 · 黄巍审批 · 18:00 前同步到门店</div>
+      </div>
+
+    </div>
+
+    <!-- ===== 右栏：业务建议 + 库存 + 回收价 ===== -->
+    <div class="col">
+
+      <div class="panel">
+        <div class="panel-title">今日业务建议</div>
+        <div class="biz-tip">
+          <div class="tip-title">💰 零售定价 · 维持 1,329</div>
+          <div class="tip-body">
+            今日大盘 <strong>+1.36%</strong>，但品牌端仅微涨 <strong>+0.45%</strong>。
+            <strong>跟周大福 1,329 持平</strong>，避免单方面调价引发比价敏感。
+          </div>
+        </div>
+        <div class="biz-tip warn">
+          <div class="tip-title">📥 进货策略 · 谨慎补货</div>
+          <div class="tip-body">
+            当前 <strong>970.50</strong> 较30日均 <strong>+2.4%</strong>，已突破 <strong>970</strong> 阻力。
+            <strong>建议补货量减半</strong>（约 200克），库存周转控 <strong>10-15天</strong>。
+            若破 <strong>985</strong> <strong>暂停进货</strong>。
+          </div>
+        </div>
+        <div class="biz-tip">
+          <div class="tip-title">♻ 回收业务 · 主推引流</div>
+          <div class="tip-body">
+            回收 <strong>957</strong> 较主流 <strong>924 高 33</strong>，是行业 <strong>头部水平</strong>。
+            <strong>60% 客户会现场再购</strong>，综合利润为正。继续主推，做引流+复购入口。
+          </div>
+        </div>
+        <div class="biz-tip neutral">
+          <div class="tip-title">📢 营销建议</div>
+          <div class="tip-body">
+            1) 周末推"以旧换新 + 工费 8 折"<br>
+            2) 朋友圈发"回收 <strong>957</strong>，比金店高 33"<br>
+            3) 老客户提醒"积存金定投扣款日"
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">库存与资金建议</div>
+        <div class="inventory-row">
+          <span class="inv-label">足金 999 库存</span>
+          <span class="inv-value inv-hold">850 克（10 天量）</span>
+        </div>
+        <div class="inventory-row">
+          <span class="inv-label">金条库存</span>
+          <span class="inv-value inv-up">2,500 克（25 天量）</span>
+        </div>
+        <div class="inventory-row">
+          <span class="inv-label">今日建议补货</span>
+          <span class="inv-value inv-hold">+200 克足金 / +300 克金条</span>
+        </div>
+        <div class="inventory-row">
+          <span class="inv-label">进货预算</span>
+          <span class="inv-value">约 ¥ 482,500</span>
+        </div>
+        <div class="inventory-row">
+          <span class="inv-label">日均销售额（近7日）</span>
+          <span class="inv-value">¥ 48,500</span>
+        </div>
+        <div class="inventory-row">
+          <span class="inv-label">日均回收额（近7日）</span>
+          <span class="inv-value">¥ 28,200</span>
+        </div>
+        <div style="margin-top:2mm; font-size:7.5pt; color:rgba(255,255,255,0.6);">
+          库存周转天数：
+        </div>
+        <div class="progress"><div class="progress-bar" style="width:33%"></div></div>
+        <div style="font-size:7pt; color:rgba(255,255,255,0.5); display:flex; justify-content:space-between;">
+          <span>0天</span><span>10天 ✓</span><span>20天</span><span>30天</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========== 底部条：资讯 + 同行回收价 + 风险 ========== -->
+  <div class="bottom-bar">
+
+    <!-- 重要资讯 -->
+    <div>
+      <div class="panel-title" style="border:none; margin-bottom:2mm;">📰 重要资讯（影响今日定价）</div>
+      <div class="news-item">
+        <span class="time">09:30</span>
+        <span class="tag tag-pos">利多</span>
+        <span class="text">昨夜美国 ISM 制造业 PMI 不及预期 + 初请失业金走高，伦敦金单日 <strong>涨 2.01%</strong>，突破 4,470 美元。</span>
+      </div>
+      <div class="news-item">
+        <span class="time">08:50</span>
+        <span class="tag tag-pos">利多</span>
+        <span class="text">中信建投：金价开启第二轮趋势性上涨，美联储货币政策"易松难紧"，本轮上行周期未结束。</span>
+      </div>
+      <div class="news-item">
+        <span class="time">08:15</span>
+        <span class="tag tag-pos">利多</span>
+        <span class="text">中国央行连续 <strong>21 个月</strong>增持黄金，7月增持约 20 吨，黄金储备升至 <strong>7,608 万盎司</strong>。</span>
+      </div>
+      <div class="news-item">
+        <span class="time">07:40</span>
+        <span class="tag tag-neu">中性</span>
+        <span class="text">世界黄金协会：89% 央行预计未来 12 月继续增持黄金，<strong>45% 计划增持</strong>，比例创历史新高。</span>
+      </div>
+      <div class="news-item">
+        <span class="time">07:00</span>
+        <span class="tag tag-pos">利多</span>
+        <span class="text">今晚 20:30 美国 8 月非农报告，市场关注度极高，金价波动可能放大。</span>
+      </div>
+      <div class="news-item">
+        <span class="time">06:30</span>
+        <span class="tag tag-neg">利空</span>
+        <span class="text">二季度全球央行净购金 289 吨，同比 +62%，但金条金币消费同比 +28.42%，首饰消费 -33.88%。</span>
+      </div>
+    </div>
+
+    <!-- 同行回收价对比 -->
+    <div>
+      <div class="panel-title" style="border:none; margin-bottom:2mm;">♻ 同行回收价对比（元/克 · 足金999）</div>
+      <table class="spread-table">
+        <thead>
+          <tr><th>回收商</th><th style="text-align:right;">足金</th><th style="text-align:right;">vs 我们</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>★ 乾元黄金（我们）</td><td class="num">957</td><td class="num">基准</td></tr>
+          <tr><td>主流品牌回收（周大福等）</td><td class="num">924</td><td class="num chg-up">+33</td></tr>
+          <tr><td>菜百以旧换新</td><td class="num">940</td><td class="num chg-up">+17</td></tr>
+          <tr><td>中国黄金回收</td><td class="num">945</td><td class="num chg-up">+12</td></tr>
+          <tr><td>水贝市场回收</td><td class="num">952</td><td class="num chg-up">+5</td></tr>
+          <tr><td>典当行（街边）</td><td class="num">880</td><td class="num chg-up">+77</td></tr>
+          <tr><td>线上平台（典型）</td><td class="num">905</td><td class="num chg-up">+52</td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top:2mm; padding:2mm; background:rgba(0,230,118,0.1); border-radius:1.5mm; font-size:7.5pt; color:rgba(255,255,255,0.9);">
+        ✅ <b style="color:#00E676;">我们回收价 957 全城最高</b>，<br>
+        <strong>比主流品牌高 33 元/克</strong>，可作为 <b>主推卖点</b>。
+      </div>
+    </div>
+
+    <!-- 风险与联系 -->
+    <div>
+      <div class="panel-title" style="border:none; margin-bottom:2mm;">⚠ 风险与提醒</div>
+      <div class="risk-box">
+        <strong>黄金零售业务风险：</strong><br>
+        1. 今日 <b>大盘 +13 元</b>，金价突破后波动会加剧，<strong>非农数据 20:30 公布</strong>。<br>
+        2. 回收业务需当面 <strong>光谱仪检测</strong>，谨防 <b>包金/镀金/掺钨</b> 骗局。<br>
+        3. 大额回收 <strong>≥ 5万</strong> 需复核来源，转账走对公账户。<br>
+        4. 库存 <strong>≥ 30天量</strong> 触发金价下跌风险敞口。<br>
+        5. 客户信息 / 资金流水 <strong>留存 ≥ 5年</strong> 备查。<br>
+        6. 本看板数据为示意占位，<strong>实际交易以官方渠道为准</strong>。
+      </div>
+      <div style="margin-top:2.5mm; font-size:7.5pt; color:rgba(255,255,255,0.5); line-height:1.6;">
+        📞 139-7169-1656<br>
+        ✉ huangwei_361@163.com<br>
+        📍 武汉·青山·冶金大道松阅<br>
+        <span style="color:rgba(212,175,55,0.6);">乾元黄金 · 总经理 黄巍</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function tick() {
+    const d = new Date();
+    const pad = n => n.toString().padStart(2, '0');
+    const weekdays = ['周日','周一','周二','周三','周四','周五','周六'];
+    document.getElementById('clock').textContent =
+      pad(d.getHours()) + ':' + pad(d.getMinutes()) + ':' + pad(d.getSeconds());
+    document.getElementById('date').textContent =
+      d.getFullYear() + '年' + pad(d.getMonth()+1) + '月' + pad(d.getDate()) + '日 · ' + weekdays[d.getDay()];
+  }
+  tick();
+  setInterval(tick, 1000);
+</script>
+
+<!-- 返回主站浮窗 -->
+<style>
+  .db-back {
+    position: fixed; top: 16px; right: 16px; z-index: 9999;
+    display: flex; gap: 8px;
+    font-family: "Microsoft YaHei", "微软雅黑", "PingFang SC", sans-serif;
+  }
+  .db-back a {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 8px 14px;
+    background: rgba(10, 37, 64, 0.85);
+    color: #D4AF37;
+    border: 1px solid rgba(212, 175, 55, 0.5);
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    backdrop-filter: blur(6px);
+    transition: 0.2s;
+  }
+  .db-back a:hover {
+    background: #D4AF37;
+    color: #0A2540;
+    transform: translateY(-1px);
+  }
+  @media print { .db-back { display: none; } }
+</style>
+<div class="db-back">
+  <a href="index.html">← 主站</a>
+  <a href="gold.html">乾元黄金</a>
+</div>
+
+</body>
+</html>
