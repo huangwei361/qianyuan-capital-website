@@ -21,7 +21,7 @@ SUBS = [
             ("", "🔍 战略投资", "新业务孵化投资 / 战略并购 / 股权管理。"),
         ],
         "stages": [
-            ("🌱 5-6 年 筹备期", "账户体系设计 + 制度建立"),
+            ("🌱 5-6 年 建设期", "账户体系设计 + 制度建立"),
             ("🌿 7-8 年 试运营", "服务 2-3 家子公司"),
             ("🌳 8 年后 全面运营", "服务全部 9 家子公司"),
         ],
@@ -43,7 +43,7 @@ SUBS = [
             ("", "🛡️ 风控体系", "光谱仪检测 / 大额复核 / 库存风险敞口管理。"),
         ],
         "stages": [
-            ("🟢 5 年内 试水", "个人 5-10 万副业实操"),
+            ("🟢 5 年内 试水", "个人 5-10 万小资金实操"),
             ("🌿 5-6 年 工作室", "线下工作室 + 零售试点"),
             ("🌳 6-7 年 连锁", "2-3 家门店 + 加盟"),
         ],
@@ -54,7 +54,7 @@ SUBS = [
         "color": "#4FC3F7",
         "name": "乾元出海",
         "tagline": "AI 外贸 / Dropshipping 跨境 / 全球贸易",
-        "hero_sub": "不备货、不压资金，<br><strong>AI 工具栈 + 1 平台打透</strong>，<br>5 年内主攻副业方向。",
+        "hero_sub": "不备货、不压资金，<br><strong>AI 工具栈 + 1 平台打透</strong>，<br>5 年内主攻业务方向。",
         "stats": [("$1000", "月预算起步"), ("1 平台", "打透策略"), ("AI", "工具栈")],
         "about_text": "乾元出海是集团旗下的<strong>跨境电商事业部</strong>，<br>采用<strong>Dropshipping（无库存代发）</strong>模式，<br>用 AI 工具栈降低运营成本。",
         "sections": [
@@ -87,7 +87,7 @@ SUBS = [
             ("", "🛡️ 风控原则", "单笔不超过总资产 10%，<br>行业分散 + 时间分散 + 地域分散。"),
         ],
         "stages": [
-            ("🌱 5-6 年 筹备", "5 年清债 + 现金储备"),
+            ("🌱 5-6 年 起步", "5 年清债 + 现金储备"),
             ("🌿 7 年 试投", "小资金开始财务投资"),
             ("🌳 8 年后 战略", "对外股权 + 不动产 + 多元资产"),
         ],
@@ -143,8 +143,8 @@ TEMPLATE = '''<!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{name} · 乾元系（筹备）</title>
-  <meta name="description" content="乾元资本集团旗下 {name}（筹备）· {tagline}">
+  <title>{name} · 乾元系</title>
+  <meta name="description" content="乾元资本集团旗下 {name} · {tagline}">
   <link rel="stylesheet" href="_sub.css">
   <style>
     :root {{
@@ -174,7 +174,7 @@ TEMPLATE = '''<!DOCTYPE html>
 
 <header class="hero">
   <div class="container">
-    <div class="hero-tag">乾元资本集团（筹备）旗下 · {name}</div>
+    <div class="hero-tag">乾元资本集团旗下 · {name}</div>
     <h1>
       <span class="hl">{name}</span>
       <span class="sm">{tagline}</span>
@@ -221,10 +221,10 @@ TEMPLATE = '''<!DOCTYPE html>
     <div class="sibling-grid" style="margin-top: 16px;">
       <a href="index.html" class="sibling-link"><div class="sl-tag">集团总部</div><div class="sl-name">乾元资本</div></a>
       <a href="qifu.html" class="sibling-link"><div class="sl-tag">内部服务</div><div class="sl-name">乾元企服</div></a>
-      <a href="gold.html" class="sibling-link"><div class="sl-tag">🟢 副业</div><div class="sl-name">乾元黄金</div></a>
-      <a href="global.html" class="sibling-link"><div class="sl-tag">🟢 副业</div><div class="sl-name">乾元出海</div></a>
+      <a href="gold.html" class="sibling-link"><div class="sl-tag">🟢 业务</div><div class="sl-name">乾元黄金</div></a>
+      <a href="global.html" class="sibling-link"><div class="sl-tag">🟢 业务</div><div class="sl-name">乾元出海</div></a>
       <div class="sibling-link sibling-link-quant">
-        <div class="sl-tag">🟡 副业</div>
+        <div class="sl-tag">🟡 业务</div>
         <div class="sl-name">乾元量化</div>
         <div class="sl-subs">
           <a href="quant.html">📊 总览</a>
@@ -241,9 +241,9 @@ TEMPLATE = '''<!DOCTYPE html>
 
 <footer class="footer">
   <div class="container">
-    <p><strong style="color: var(--brand);">{name}（筹备）</strong> · 乾元资本集团旗下</p>
+    <p><strong style="color: var(--brand);">{name}</strong> · 乾元资本集团旗下</p>
     <p><a href="index.html">← 乾元资本集团主站</a> · <a href="global.html">乾元出海</a></p>
-    <p>© 2026 乾元资本（筹备）· 本网站为个人博客性质，不构成投资建议或商业承诺</p>
+    <p>© 2026 乾元资本 · 本网站为个人博客性质，不构成投资建议或商业承诺</p>
   </div>
 </footer>
 
