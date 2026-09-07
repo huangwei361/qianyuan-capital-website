@@ -636,6 +636,55 @@ section { padding: 80px 0; }
 .subsite-card-featured .sc-name { color: var(--gold-light); }
 .subsite-card-featured .sc-tag { background: rgba(255, 213, 79, 0.18); color: var(--gold-light); }
 
+/* 全球精选商城卡（蓝色高亮，对应出海品牌色 #4FC3F7） */
+.subsite-card-shop {
+  background: linear-gradient(135deg, rgba(79, 195, 247, 0.10) 0%, rgba(79, 195, 247, 0.02) 100%);
+  border: 1.5px solid rgba(79, 195, 247, 0.4);
+}
+.subsite-card-shop .sc-num {
+  background: rgba(79, 195, 247, 0.2);
+  color: #4FC3F7;
+  font-size: 18px;
+}
+.subsite-card-shop .sc-name { color: #81D4FA; }
+.subsite-card-shop .sc-tag { background: rgba(79, 195, 247, 0.18); color: #81D4FA; }
+.subsite-card-shop:hover {
+  border-color: #4FC3F7;
+  box-shadow: 0 8px 24px rgba(79, 195, 247, 0.25);
+}
+
+/* 出海双入口卡（介绍 + 商城） */
+.subsite-card-with-shop {
+  padding: 0;
+  overflow: hidden;
+}
+.subsite-card-with-shop .sc-main {
+  display: flex;
+  flex-direction: column;
+  padding: 18px 18px 12px;
+  text-decoration: none;
+  color: inherit;
+  flex: 1;
+}
+.subsite-card-with-shop .sc-main:hover { background: rgba(15, 45, 77, 0.5); }
+.subsite-card-with-shop .sc-sub {
+  display: block;
+  text-align: center;
+  padding: 10px 14px;
+  background: linear-gradient(135deg, rgba(79, 195, 247, 0.18) 0%, rgba(129, 212, 250, 0.10) 100%);
+  border-top: 1px solid rgba(79, 195, 247, 0.3);
+  color: #4FC3F7;
+  font-size: 12.5px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.2s;
+}
+.subsite-card-with-shop .sc-sub:hover {
+  background: linear-gradient(135deg, rgba(79, 195, 247, 0.32) 0%, rgba(129, 212, 250, 0.20) 100%);
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
 /* 量化双事业部卡（备用，保留兼容） */
 .subsite-card-quant {
   display: flex;
