@@ -289,6 +289,117 @@ section { padding: 60px 0; }
 .footer a { color: var(--text-dim); }
 .footer a:hover { color: var(--brand); }
 
+/* === Hero CTA 按钮组 === */
+.hero-cta {
+  display: flex;
+  gap: 14px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.btn {
+  display: inline-block;
+  padding: 13px 26px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 8px;
+  letter-spacing: 0.5px;
+  transition: 0.2s;
+  border: 1.5px solid transparent;
+}
+.btn-shop {
+  background: linear-gradient(135deg, #4FC3F7 0%, #29B6F6 100%);
+  color: #0A2540;
+  font-weight: 800;
+  border: 1.5px solid #81D4FA;
+  box-shadow: 0 4px 16px rgba(79, 195, 247, 0.35);
+}
+.btn-shop:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(79, 195, 247, 0.55);
+  background: linear-gradient(135deg, #81D4FA 0%, #4FC3F7 100%);
+}
+.btn-ghost {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.85);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+}
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.5);
+  color: #fff;
+}
+
+/* === 商城跳转 callout（业务定位区下方） === */
+.shop-callout {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin: 32px auto 0;
+  padding: 24px 28px;
+  background: linear-gradient(135deg, rgba(79, 195, 247, 0.14) 0%, rgba(129, 212, 250, 0.05) 100%);
+  border: 1.5px solid rgba(79, 195, 247, 0.4);
+  border-radius: 14px;
+  text-decoration: none;
+  color: inherit;
+  transition: 0.25s;
+  max-width: 920px;
+}
+.shop-callout:hover {
+  background: linear-gradient(135deg, rgba(79, 195, 247, 0.24) 0%, rgba(129, 212, 250, 0.12) 100%);
+  border-color: #4FC3F7;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(79, 195, 247, 0.25);
+}
+.shop-callout-icon {
+  font-size: 48px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+.shop-callout-body { flex: 1; min-width: 0; }
+.shop-callout-tag {
+  display: inline-block;
+  font-size: 11px;
+  color: #4FC3F7;
+  background: rgba(79, 195, 247, 0.18);
+  border: 1px solid rgba(79, 195, 247, 0.4);
+  padding: 3px 10px;
+  border-radius: 10px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+.shop-callout-body h3 {
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 6px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+.shop-callout-body p {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.65;
+  margin: 0;
+}
+.shop-callout-arrow {
+  font-size: 14px;
+  font-weight: 800;
+  color: #4FC3F7;
+  padding: 12px 22px;
+  border: 1.5px solid #4FC3F7;
+  border-radius: 24px;
+  white-space: nowrap;
+  transition: 0.25s;
+  flex-shrink: 0;
+}
+.shop-callout:hover .shop-callout-arrow {
+  background: #4FC3F7;
+  color: #0A2540;
+  letter-spacing: 1px;
+}
+
 /* === 响应式 === */
 @media (max-width: 900px) {
   .nav-menu { display: none; }
