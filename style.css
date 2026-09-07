@@ -636,6 +636,106 @@ section { padding: 80px 0; }
 .subsite-card-featured .sc-name { color: var(--gold-light); }
 .subsite-card-featured .sc-tag { background: rgba(255, 213, 79, 0.18); color: var(--gold-light); }
 
+/* 导航栏商城链接（蓝色高亮） */
+.nav-menu a.nav-shop {
+  color: #4FC3F7 !important;
+  font-weight: 700;
+  background: rgba(79, 195, 247, 0.1);
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(79, 195, 247, 0.35);
+  transition: 0.2s;
+}
+.nav-menu a.nav-shop:hover {
+  background: rgba(79, 195, 247, 0.25);
+  border-color: #4FC3F7;
+  letter-spacing: 0;
+}
+
+/* Hero 商城按钮（蓝色高亮） */
+.btn.btn-shop {
+  background: linear-gradient(135deg, #4FC3F7 0%, #29B6F6 100%);
+  color: #0A2540;
+  font-weight: 800;
+  border: 1.5px solid #81D4FA;
+  box-shadow: 0 4px 16px rgba(79, 195, 247, 0.35);
+}
+.btn.btn-shop:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(79, 195, 247, 0.55);
+  background: linear-gradient(135deg, #81D4FA 0%, #4FC3F7 100%);
+}
+
+/* Hero 下方商城横幅（全宽高亮） */
+.shop-banner {
+  display: block;
+  background: linear-gradient(135deg, rgba(79, 195, 247, 0.18) 0%, rgba(129, 212, 250, 0.08) 50%, rgba(79, 195, 247, 0.18) 100%);
+  border-top: 1.5px solid rgba(79, 195, 247, 0.5);
+  border-bottom: 1.5px solid rgba(79, 195, 247, 0.5);
+  padding: 32px 0;
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.shop-banner:hover {
+  background: linear-gradient(135deg, rgba(79, 195, 247, 0.28) 0%, rgba(129, 212, 250, 0.15) 50%, rgba(79, 195, 247, 0.28) 100%);
+  border-color: #4FC3F7;
+}
+.shop-banner:hover .shop-banner-arrow {
+  letter-spacing: 2px;
+  color: #fff;
+}
+.shop-banner-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.shop-banner-text { flex: 1; min-width: 280px; }
+.shop-banner-tag {
+  display: inline-block;
+  font-size: 12px;
+  color: #4FC3F7;
+  background: rgba(79, 195, 247, 0.18);
+  border: 1px solid rgba(79, 195, 247, 0.4);
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+.shop-banner-text h3 {
+  font-size: 26px;
+  color: #fff;
+  margin-bottom: 8px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+.shop-banner-text p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.6;
+  margin: 0;
+}
+.shop-banner-arrow {
+  font-size: 18px;
+  font-weight: 800;
+  color: #4FC3F7;
+  padding: 14px 28px;
+  border: 2px solid #4FC3F7;
+  border-radius: 32px;
+  background: rgba(10, 37, 64, 0.4);
+  white-space: nowrap;
+  transition: 0.3s;
+}
+.shop-banner:hover .shop-banner-arrow {
+  background: #4FC3F7;
+  color: #0A2540;
+}
+
 /* 全球精选商城卡（蓝色高亮，对应出海品牌色 #4FC3F7） */
 .subsite-card-shop {
   background: linear-gradient(135deg, rgba(79, 195, 247, 0.10) 0%, rgba(79, 195, 247, 0.02) 100%);
