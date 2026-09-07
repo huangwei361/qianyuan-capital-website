@@ -4,26 +4,6 @@ import os
 # 子站配置：(目录, 品牌字, 品牌色, 名称, 副标题, hero描述, 业务定位, 内容, 5-8年规划)
 SUBS = [
     {
-        "dir": "housheng",
-        "char": "厚",
-        "color": "#FFD54F",
-        "name": "厚生 HOUSHENG",
-        "tagline": "集团主体业务 · 大健康品牌",
-        "hero_sub": '集团旗下<strong style="color:#FFD54F;">主体业务品牌</strong>，<br>以"厚待众生"为 sologan，<br>5-8 年后期主业方向。',
-        "stats": [("30年", "长期赛道"), ("3 大", "业务方向"), ("60+ 人口", "老龄化趋势")],
-        "about_text": "厚生 HOUSHENG 是乾元资本集团<strong>主体业务品牌</strong>，定位<strong>大健康</strong>。\n        「厚生」二字取自《尚书》「厚生以养民」，意为<strong>丰厚民生、健康中国</strong>。",
-        "sections": [
-            ("🌿", "养生内容", "中医养生 / 食疗 / 季节性调养。<br>公众号 + 视频号矩阵，长期沉淀 IP。"),
-            ("🛒", "健康选品", "产地直采的养生食材 / 茶饮 / 滋补品。<br>小红书种草 + 私域转化，<strong>信任驱动</strong>。"),
-            ("🏥", "健康服务", "中医理疗 / 营养咨询 / 健康管理。<br>退休后考虑线下工作室或加盟模式。"),
-        ],
-        "stages": [
-            ("🌱 5-6 年 试水期", "公众号 / 视频号 / 小红书内容矩阵"),
-            ("🌿 6-7 年 选品期", "产地直采 + 私域电商"),
-            ("🌳 7-8 年 服务期", "中医理疗 + 健康管理 + 线下店"),
-        ],
-    },
-    {
         "dir": "qifu",
         "char": "服",
         "color": "#D4AF37",
@@ -240,7 +220,6 @@ TEMPLATE = '''<!DOCTYPE html>
     <div class="section-tag">乾 元 系 其 他 子 公 司</div>
     <div class="sibling-grid" style="margin-top: 16px;">
       <a href="index.html" class="sibling-link"><div class="sl-tag">集团总部</div><div class="sl-name">乾元资本</div></a>
-      <a href="housheng.html" class="sibling-link"><div class="sl-tag">🌟 主体</div><div class="sl-name">厚生 HOUSHENG</div></a>
       <a href="qifu.html" class="sibling-link"><div class="sl-tag">内部服务</div><div class="sl-name">乾元企服</div></a>
       <a href="gold.html" class="sibling-link"><div class="sl-tag">🟢 副业</div><div class="sl-name">乾元黄金</div></a>
       <a href="global.html" class="sibling-link"><div class="sl-tag">🟢 副业</div><div class="sl-name">乾元出海</div></a>
@@ -248,6 +227,7 @@ TEMPLATE = '''<!DOCTYPE html>
         <div class="sl-tag">🟡 副业</div>
         <div class="sl-name">乾元量化</div>
         <div class="sl-subs">
+          <a href="quant.html">📊 总览</a>
           <a href="quant-trading.html">📈 交易</a>
           <a href="quant-rd.html">🔬 研发</a>
         </div>
@@ -262,7 +242,7 @@ TEMPLATE = '''<!DOCTYPE html>
 <footer class="footer">
   <div class="container">
     <p><strong style="color: var(--brand);">{name}（筹备）</strong> · 乾元资本集团旗下</p>
-    <p><a href="index.html">← 乾元资本集团主站</a> · <a href="housheng.html">厚生 HOUSHENG</a></p>
+    <p><a href="index.html">← 乾元资本集团主站</a> · <a href="global.html">乾元出海</a></p>
     <p>© 2026 乾元资本（筹备）· 本网站为个人博客性质，不构成投资建议或商业承诺</p>
   </div>
 </footer>
