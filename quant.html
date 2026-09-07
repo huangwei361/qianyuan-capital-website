@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>乾元量化 · 总览（筹备）</title>
+  <meta name="description" content="乾元资本集团旗下乾元量化（筹备）· 1 家公司 2 个事业部：交易事业部（电脑+手机头部软件执行）+ 研发事业部（自研因子+双轨输出）">
+  <link rel="stylesheet" href="_sub.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23D4AF37'/><text x='50' y='62' font-size='40' text-anchor='middle' fill='%230A2540' font-family='serif' font-weight='800'>量</text></svg>">
+  <style>
+    /* 量化双事业部大卡 */
+    .quant-decks { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
+    .quant-deck {
+      display: block;
+      background: linear-gradient(135deg, rgba(15, 45, 77, 0.5) 0%, rgba(10, 37, 64, 0.3) 100%);
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 32px 28px;
+      color: var(--text);
+      text-decoration: none;
+      transition: all 0.2s ease;
+      position: relative;
+      min-height: 280px;
+    }
+    .quant-deck:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(212, 175, 55, 0.2);
+    }
+    .quant-deck-trading { border-color: rgba(212, 175, 55, 0.5); }
+    .quant-deck-trading:hover { border-color: #D4AF37; background: linear-gradient(135deg, rgba(212, 175, 55, 0.12) 0%, rgba(212, 175, 55, 0.04) 100%); }
+    .quant-deck-rd { border-color: rgba(79, 195, 247, 0.5); }
+    .quant-deck-rd:hover { border-color: #4FC3F7; background: linear-gradient(135deg, rgba(79, 195, 247, 0.12) 0%, rgba(79, 195, 247, 0.04) 100%); }
+
+    .deck-icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+      display: inline-block;
+    }
+    .deck-title {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+    }
+    .quant-deck-trading .deck-title { color: #D4AF37; }
+    .quant-deck-rd .deck-title { color: #4FC3F7; }
+
+    .deck-sub {
+      font-size: 14px;
+      color: var(--text-dim);
+      margin-bottom: 18px;
+      letter-spacing: 1px;
+    }
+    .deck-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 20px 0;
+    }
+    .deck-bullets li {
+      font-size: 13.5px;
+      color: var(--text);
+      line-height: 1.8;
+      padding-left: 18px;
+      position: relative;
+    }
+    .deck-bullets li::before {
+      content: '·';
+      position: absolute;
+      left: 4px;
+      color: var(--gold);
+      font-weight: 800;
+      font-size: 18px;
+    }
+    .deck-go {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 700;
+      margin-top: 8px;
+      padding: 10px 16px;
+      border-radius: 8px;
+      transition: 0.2s;
+    }
+    .quant-deck-trading .deck-go { background: rgba(212, 175, 55, 0.18); color: #FFD54F; }
+    .quant-deck-rd .deck-go { background: rgba(79, 195, 247, 0.18); color: #4FC3F7; }
+    .quant-deck:hover .deck-go { gap: 10px; }
+
+    @media (max-width: 900px) {
+      .quant-decks { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <div class="brand-mark">量</div>
+      <span>乾元量化 · 总览</span>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="#about">关于量化</a></li>
+      <li><a href="#decks">2 个事业部</a></li>
+      <li><a href="#plan">5-8 年规划</a></li>
+      <li><a href="index.html" class="back-link">← 乾元资本主站</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div class="hero-tag">乾元资本集团（筹备）旗下 · 乾元量化</div>
+    <h1>
+      <span class="hl">乾 元 量 化</span>
+      <span class="sm">1 家公司 · 2 个事业部 · 小资金 5-10 万试水</span>
+    </h1>
+    <p class="hero-sub">
+      乾元量化是集团旗下的<strong>量化业务</strong>，1 家公司下设<strong>交易事业部</strong> + <strong>研发事业部</strong>。<br>
+      交易用头部软件执行（电脑+手机多平台实盘），研发自研新因子（新方法·内用+外卖）。<br>
+      <span style="font-size:14px;color:rgba(255,255,255,0.5);">5 年内不正式开公司，先小资金试水模型，验证后扩规模。</span>
+    </p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">1+2</div><div class="lbl">1 公司 2 事业部</div></div>
+      <div class="hero-stat"><div class="num">5-10<span style="font-size:18px;">万</span></div><div class="lbl">试水本金</div></div>
+      <div class="hero-stat"><div class="num">5-8<span style="font-size:18px;">年</span></div><div class="lbl">规划周期</div></div>
+      <div class="hero-stat"><div class="num">2<span style="font-size:18px;">方向</span></div><div class="lbl">执行 + 研发</div></div>
+    </div>
+  </div>
+</header>
+
+<section class="about" id="about" style="background: var(--navy-deep);">
+  <div class="container">
+    <div class="section-tag">关 于 乾 元 量 化</div>
+    <h2 class="section-title">1 家公司 · 2 个事业部</h2>
+    <p class="section-sub">
+      乾元量化是<strong>集团第 5 家筹备公司</strong>（按主站架构图编号）。<br>
+      业务核心是<strong>用 AI + 量化软件</strong>做股票/ETF/可转债的<strong>系统化交易</strong>，覆盖<strong>电脑 + 手机</strong>全终端。<br>
+      <br>
+      5-8 年规划期内<strong>不正式工商注册</strong>，先以个人名义 + 5-10 万小资金试水，跑通模型后再考虑扩规模。
+    </p>
+  </div>
+</section>
+
+<section class="content" id="decks">
+  <div class="container">
+    <div class="section-tag">2 个 事 业 部</div>
+    <h2 class="section-title">选择进入对应事业部</h2>
+    <p class="section-sub">交易事业部负责执行 / 研发事业部负责策略和因子，互相独立又互相支撑。</p>
+
+    <div class="quant-decks">
+      <a href="quant-trading.html" class="quant-deck quant-deck-trading">
+        <div class="deck-icon">📈</div>
+        <div class="deck-title">交易事业部</div>
+        <div class="deck-sub">TRADING DIVISION</div>
+        <ul class="deck-bullets">
+          <li>电脑端：掘金 / 米筐 / 聚宽 / QMT / PTrade 5 大平台</li>
+          <li>手机端：同花顺 / 东方财富 / 雪球 3 端跟单</li>
+          <li>策略类型：趋势 / 套利 / 多因子 / ETF轮动 / 网格</li>
+          <li>实盘业绩公开追踪，月度复盘</li>
+          <li>跟单 / 订阅 / 合作 3 种合作方式</li>
+        </ul>
+        <span class="deck-go">进入交易事业部 →</span>
+      </a>
+
+      <a href="quant-rd.html" class="quant-deck quant-deck-rd">
+        <div class="deck-icon">🔬</div>
+        <div class="deck-title">研发事业部</div>
+        <div class="deck-sub">R&amp;D DIVISION</div>
+        <ul class="deck-bullets">
+          <li>4 步因子开发法：假设 → 验证 → 落地 → 监控</li>
+          <li>6 大类自研因子：动量 / 质量 / 价值 / 情绪 / 资金流 / 另类</li>
+          <li>6 大技术栈：Python / Pandas / NumPy / TA-Lib / sklearn / PyTorch</li>
+          <li>6 大产品形态：因子库 / 策略包 / 报告 / 课程 / 咨询 / 培训</li>
+          <li>双轨输出：内部用（服务交易事业部）+ 外部卖（公众号 / 圈子）</li>
+        </ul>
+        <span class="deck-go">进入研发事业部 →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="plan" id="plan" style="background: var(--navy-deep);">
+  <div class="container">
+    <div class="section-tag">5-8 年 规 划</div>
+    <h2 class="section-title">三阶段推进</h2>
+    <div class="card-grid cols-3" style="margin-top: 24px;">
+      <div class="stage-card">
+        <div class="stage">🟡 5 年内 试水</div>
+        <h4>个人 5-10 万副业实操</h4>
+        <p>用 1-2 个平台 + 1-2 个策略跑通最小可行模型。研发事业部出因子 → 交易事业部执行验证。</p>
+      </div>
+      <div class="stage-card">
+        <div class="stage">🌿 5-6 年 试运营</div>
+        <h4>小规模订阅 + 跟单</h4>
+        <p>业绩公开化 → 公众号/朋友圈积累种子用户。研发因子库对外开放，2-3 个早期客户。</p>
+      </div>
+      <div class="stage-card">
+        <div class="stage">🌳 7-8 年 规模化</div>
+        <h4>工商注册 + 团队化</h4>
+        <p>退休或找到合规合伙人后，正式成立公司。研发 2-3 人 + 交易 1-2 人，月管理规模 1000 万+。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 兄弟部门 -->
+<section class="sibling">
+  <div class="container">
+    <div class="section-tag">乾 元 系 其 他 子 公 司</div>
+    <div class="sibling-grid" style="margin-top: 16px;">
+      <a href="index.html" class="sibling-link"><div class="sl-tag">集团总部</div><div class="sl-name">乾元资本</div></a>
+      <a href="housheng.html" class="sibling-link"><div class="sl-tag">🌟 主体</div><div class="sl-name">厚生 HOUSHENG</div></a>
+      <a href="qifu.html" class="sibling-link"><div class="sl-tag">内部服务</div><div class="sl-name">乾元企服</div></a>
+      <a href="gold.html" class="sibling-link"><div class="sl-tag">🟢 副业</div><div class="sl-name">乾元黄金</div></a>
+      <a href="global.html" class="sibling-link"><div class="sl-tag">🟢 副业</div><div class="sl-name">乾元出海</div></a>
+      <a href="invest.html" class="sibling-link"><div class="sl-tag">🟡 后期</div><div class="sl-name">乾元投资</div></a>
+      <a href="rental.html" class="sibling-link"><div class="sl-tag">⚪ 自营</div><div class="sl-name">乾元租赁</div></a>
+      <a href="asset.html" class="sibling-link"><div class="sl-tag">⚪ 学习</div><div class="sl-name">乾元资产处理</div></a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <p><strong style="color: var(--brand);">乾元量化（筹备）</strong> · 乾元资本集团旗下</p>
+    <p><a href="index.html">← 乾元资本集团主站</a> · <a href="quant-trading.html">📈 交易事业部</a> · <a href="quant-rd.html">🔬 研发事业部</a></p>
+    <p>© 2026 乾元资本（筹备）· 本网站为个人博客性质，不构成投资建议或商业承诺</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+# 临时预览截图（开发用，不要入库）
+preview-*.png
+preview-*.jpg
+screenshot.png
+
+# 临时截图脚本
+_capture.py
+_capture.ps1
+_cap.ps1
+
+# Python 临时文件
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
