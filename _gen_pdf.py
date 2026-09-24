@@ -2,7 +2,7 @@
 import asyncio, os
 from pyppeteer import launch
 
-OUT = r'C:\Users\64549\.minimax\金融财富公司成立\invest-brochure-v7.pdf'
+OUT = r'C:\Users\64549\.minimax\金融财富公司成立\invest-brochure-v8.pdf'
 
 async def main():
     browser = await launch(

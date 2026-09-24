@@ -517,26 +517,52 @@
 
     /* =================== Page 9: 邀请 + CTA ==================== */
     .b-page11 { padding: 0; display: flex; flex-direction: column; background: linear-gradient(135deg, #06182A 0%, #0A2540 100%); color: #fff; }
-    .b-page11-top { padding: 14mm 20mm 8mm; flex: 1; }
-    .b-page11-tag { font-size: 9pt; color: #FFD54F; letter-spacing: 4px; margin-bottom: 6mm; }
-    .b-page11-title { font-size: 32pt; font-weight: 900; color: #fff; letter-spacing: 2px; line-height: 1.2; margin-bottom: 6mm; }
+    .b-page11-top { padding: 12mm 20mm 8mm; }
+    .b-page11-tag { font-size: 9pt; color: #FFD54F; letter-spacing: 4px; margin-bottom: 4mm; }
+    .b-page11-title { font-size: 30pt; font-weight: 900; color: #fff; letter-spacing: 2px; line-height: 1.2; margin-bottom: 4mm; }
     .b-page11-title .accent { color: #FFD54F; }
-    .b-page11-sub { font-size: 13pt; color: rgba(255,255,255,0.8); line-height: 1.7; letter-spacing: 1px; margin-bottom: 8mm; }
-    .b-people { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4mm; margin-bottom: 8mm; }
-    .b-person { padding: 4mm 4mm; background: rgba(255,213,79,0.08); border: 0.5pt solid rgba(255,213,79,0.3); border-radius: 3mm; }
-    .b-person-icon { font-size: 22pt; margin-bottom: 2mm; }
+    .b-page11-sub { font-size: 12pt; color: rgba(255,255,255,0.8); line-height: 1.7; letter-spacing: 1px; margin-bottom: 7mm; }
+    .b-page11-divider { height: 0.5pt; background: linear-gradient(90deg, transparent 0%, rgba(255,213,79,0.4) 50%, transparent 100%); margin: 0 0 6mm; }
+    .b-page11-section-title { font-size: 11pt; color: #FFD54F; letter-spacing: 3px; margin-bottom: 4mm; text-align: center; }
+    .b-people { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4mm; margin-bottom: 6mm; }
+    .b-person { padding: 5mm 4mm; background: rgba(255,213,79,0.08); border: 0.5pt solid rgba(255,213,79,0.3); border-radius: 3mm; }
+    .b-person-icon { font-size: 24pt; margin-bottom: 2mm; }
     .b-person-title { font-size: 11pt; font-weight: 800; color: #FFD54F; letter-spacing: 1px; margin-bottom: 1.5mm; }
-    .b-person-desc { font-size: 8.5pt; color: rgba(255,255,255,0.7); line-height: 1.5; }
-    .b-cta-box { padding: 7mm 7mm; background: linear-gradient(135deg, #FFD54F 0%, #FFC107 100%); color: #06182A; border-radius: 4mm; text-align: center; margin-bottom: 6mm; }
-    .b-cta-box h3 { font-size: 17pt; font-weight: 900; letter-spacing: 2px; margin-bottom: 4mm; }
-    .b-cta-box p { font-size: 10.5pt; color: #1a1a1a; line-height: 1.7; }
+    .b-person-desc { font-size: 8.5pt; color: rgba(255,255,255,0.75); line-height: 1.5; }
+    .b-cta-box { padding: 6mm 7mm; background: linear-gradient(135deg, #FFD54F 0%, #FFC107 100%); color: #06182A; border-radius: 4mm; text-align: center; margin-bottom: 5mm; }
+    .b-cta-box h3 { font-size: 16pt; font-weight: 900; letter-spacing: 2px; margin-bottom: 3mm; }
+    .b-cta-box p { font-size: 10pt; color: #1a1a1a; line-height: 1.7; }
     .b-cta-box strong { font-weight: 800; }
+    .b-flow-row { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 3mm; margin-bottom: 6mm; }
+    .b-flow-step {
+      padding: 4mm 3mm;
+      background: rgba(255,255,255,0.04);
+      border: 0.5pt solid rgba(255,213,79,0.2);
+      border-radius: 3mm;
+      text-align: center;
+      position: relative;
+    }
+    .b-flow-step .num {
+      font-size: 18pt; font-weight: 900;
+      color: #FFD54F; line-height: 1;
+      margin-bottom: 1mm;
+      font-family: "Georgia", serif;
+    }
+    .b-flow-step .name {
+      font-size: 10pt; font-weight: 800;
+      color: #fff; letter-spacing: 1px;
+      margin-bottom: 1.5mm;
+    }
+    .b-flow-step .desc {
+      font-size: 8pt; color: rgba(255,255,255,0.65);
+      line-height: 1.45;
+    }
     .b-contact-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4mm; }
-    .b-contact-cell { padding: 4mm 3mm; background: rgba(255,255,255,0.06); border: 0.5pt solid rgba(255,255,255,0.15); border-radius: 3mm; text-align: center; }
-    .b-contact-cell-icon { font-size: 16pt; margin-bottom: 1mm; }
+    .b-contact-cell { padding: 5mm 3mm; background: rgba(255,255,255,0.06); border: 0.5pt solid rgba(255,255,255,0.15); border-radius: 3mm; text-align: center; }
+    .b-contact-cell-icon { font-size: 18pt; margin-bottom: 1.5mm; }
     .b-contact-cell-title { font-size: 8pt; font-weight: 800; color: #FFD54F; letter-spacing: 2px; margin-bottom: 1mm; }
-    .b-contact-cell-value { font-size: 9pt; color: rgba(255,255,255,0.8); line-height: 1.4; font-weight: 700; }
-    .b-page11-foot { padding: 5mm 20mm; background: rgba(0,0,0,0.3); font-size: 7.5pt; color: rgba(255,255,255,0.4); letter-spacing: 1px; border-top: 0.5pt solid rgba(255,213,79,0.2); }
+    .b-contact-cell-value { font-size: 9.5pt; color: rgba(255,255,255,0.85); line-height: 1.4; font-weight: 700; }
+    .b-page11-foot { padding: 4mm 20mm; background: rgba(0,0,0,0.3); font-size: 7.5pt; color: rgba(255,255,255,0.4); letter-spacing: 1px; border-top: 0.5pt solid rgba(255,213,79,0.2); }
     .b-page11-foot .disclaimer { font-size: 7.5pt; color: rgba(255,255,255,0.4); line-height: 1.5; }
   </style>
 </head>
@@ -1262,30 +1288,31 @@
 </div>
 
 <!-- ========== Page 11: 邀请 + CTA ========== -->
-<div class="b-page b-page9">
-  <div class="b-page9-top">
-    <div class="b-page9-tag">INVITATION · 邀请</div>
-    <div class="b-page9-title">如果你也是<br><span class="accent">这样的人</span></div>
-    <div class="b-page9-sub">
+<div class="b-page b-page11">
+  <div class="b-page11-top">
+    <div class="b-page11-tag">INVITATION · 邀请</div>
+    <div class="b-page11-title">如果你也是<br><span class="accent">这样的人</span></div>
+    <div class="b-page11-sub">
       我们在寻找 <strong>3 类同路人</strong>——愿意用 5-8 年慢慢变厚的人。<br>
       不是客户，是<strong>共建者</strong>。
     </div>
 
+    <div class="b-page11-section-title">— 我们在寻找 —</div>
     <div class="b-people">
       <div class="b-person">
         <div class="b-person-icon">💼</div>
         <div class="b-person-title">长期投资者</div>
-        <div class="b-person-desc">3-5 年视角看回报，相信复利而非暴利</div>
+        <div class="b-person-desc">3-5 年视角看回报<br>相信复利而非暴利</div>
       </div>
       <div class="b-person">
         <div class="b-person-icon">🤝</div>
         <div class="b-person-title">项目共建者</div>
-        <div class="b-person-desc">有好项目但缺资金 / 信用 / 长期伙伴</div>
+        <div class="b-person-desc">有好项目但缺资金 / 信用<br>需要长期伙伴</div>
       </div>
       <div class="b-person">
         <div class="b-person-icon">📚</div>
         <div class="b-person-title">知识伙伴</div>
-        <div class="b-person-desc">懂融资 / 投资 / 不动产某一领域</div>
+        <div class="b-person-desc">懂融资 / 投资 / 不动产<br>某一领域</div>
       </div>
     </div>
 
@@ -1297,6 +1324,32 @@
       </p>
     </div>
 
+    <div class="b-page11-divider"></div>
+    <div class="b-page11-section-title">— 合作 4 步 走 —</div>
+    <div class="b-flow-row">
+      <div class="b-flow-step">
+        <div class="num">01</div>
+        <div class="name">🤝 初次沟通</div>
+        <div class="desc">30 分钟<br>了解需求 + 风险偏好</div>
+      </div>
+      <div class="b-flow-step">
+        <div class="num">02</div>
+        <div class="name">📋 诊断方案</div>
+        <div class="desc">2-3 天<br>信用 / 资产 / 收入评估</div>
+      </div>
+      <div class="b-flow-step">
+        <div class="num">03</div>
+        <div class="name">💰 试水期</div>
+        <div class="desc">3-6 个月<br>1-2 个小循环验证</div>
+      </div>
+      <div class="b-flow-step">
+        <div class="num">04</div>
+        <div class="name">💎 长期共建</div>
+        <div class="desc">5-8 年<br>一起慢慢变厚</div>
+      </div>
+    </div>
+
+    <div class="b-page11-section-title">— 联 系 方 式 —</div>
     <div class="b-contact-row">
       <div class="b-contact-cell">
         <div class="b-contact-cell-icon">✉</div>
@@ -1318,8 +1371,8 @@
 
   <div class="b-page11-foot">
     <div class="disclaimer">
-      ⚠ 本网站为个人博客性质，<strong>不构成投资建议或商业承诺</strong>。<br>
-      所有内容仅供学习参考。乾元资本（筹备）· 5 年内不开公司 · 央企合规优先。<br>
+      ⚠ 本网站为个人博客性质，<strong>不构成投资建议或商业承诺</strong>。
+      所有内容仅供学习参考。乾元资本（筹备）· 5 年内不开公司 · 央企合规优先。
       <span style="font-size:7pt;">© 2026 乾元资本 · v1.0 · 2026-09</span>
     </div>
   </div>

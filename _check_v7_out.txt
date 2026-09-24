@@ -1,0 +1,13 @@
+﻿python : Traceback (most recent call last):
+所在位置 行:1 字符: 154
++ ... rs\64549\.minimax\金融财富公司成立\website"; python _check_v7.py 2>&1 | Out-F ...
++                                          ~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "C:\Users\64549\.minimax\���ڲƸ���˾����\website\_check_v7.py", line 5, in <module>
+    with pdfplumber.open(r'C:\Users\64549\.minimax\���ڲƸ���˾����\invest-brochure-v7.pdf') as pdf:
+  File "C:\Users\64549\AppData\Local\Programs\Python\Python310\lib\site-packages\pdfplumber\pdf.py", line 98, in open
+    stream = open(path_or_fp, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\64549\\.minimax\\���ڲƸ���˾����\\invest-brochure-v7.
+pdf'
