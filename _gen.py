@@ -309,9 +309,11 @@ TEMPLATE = '''<!DOCTYPE html>
         <div class="sl-tag">🟡 业务集群</div>
         <div class="sl-name">乾元投融资规划和管理</div>
         <div class="sl-subs">
-          <a href="invest.html">📈 投融资主业</a>
+          <a href="invest.html">📈 主业</a>
           <a href="qifu.html">💼 企服</a>
           <a href="asset.html">⚖️ 资产处理</a>
+          <a href="invest-plan.html">📋 方案</a>
+          <a href="invest-brochure.html">📰 宣传册</a>
         </div>
       </div>
       <a href="rental.html" class="sibling-link"><div class="sl-tag">⚪ 自营</div><div class="sl-name">乾元租赁</div></a>
