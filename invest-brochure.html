@@ -110,14 +110,14 @@
     .b-page4-foot strong { color: #B8860B; }
 
     /* =================== Page 5: 我们的信条（重设计）==================== */
-    .b-page5 { padding: 0; display: flex; flex-direction: column; background: #fff; }
-    .b-page5-head { text-align: center; padding: 10mm 20mm 5mm; background: linear-gradient(180deg, #FFFBEA 0%, #fff 100%); border-bottom: 0.5pt solid #FFD54F; }
-    .b-page5-tag { font-size: 9pt; color: #B8860B; letter-spacing: 4px; margin-bottom: 2mm; }
-    .b-page5-title { font-size: 26pt; font-weight: 900; color: #06182A; letter-spacing: 1px; margin-bottom: 2mm; }
-    .b-page5-sub { font-size: 11pt; color: #666; }
+    .b-page5a { padding: 0; display: flex; flex-direction: column; background: #fff; min-height: 100vh; }
+    .b-page5a-head { text-align: center; padding: 14mm 20mm 8mm; background: linear-gradient(180deg, #FFFBEA 0%, #fff 100%); border-bottom: 0.5pt solid #FFD54F; }
+    .b-page5a-tag { font-size: 9pt; color: #B8860B; letter-spacing: 4px; margin-bottom: 2mm; }
+    .b-page5a-title { font-size: 28pt; font-weight: 900; color: #06182A; letter-spacing: 1px; margin-bottom: 2mm; }
+    .b-page5a-sub { font-size: 11pt; color: #666; }
 
-    /* 3 个相信：上半页 */
-    .b-page5-believe { padding: 6mm 20mm 5mm; background: #FFFBEA; }
+    /* 3 个相信：整页米黄底 */
+    .b-page5a-believe { flex: 1; padding: 8mm 20mm 10mm; background: #FFFBEA; }
     .b-believe-head {
       display: flex; align-items: center; gap: 3mm;
       margin-bottom: 4mm;
@@ -234,7 +234,72 @@
     }
     .b-reject-text strong { color: #FFD54F; font-weight: 700; }
 
-    .b-page5-foot {
+    .b-page5a-foot {
+      padding: 5mm 20mm;
+      background: #06182A;
+      color: rgba(255,255,255,0.5);
+      font-size: 8pt; letter-spacing: 1px;
+      display: flex; justify-content: space-between;
+      border-top: 0.5pt solid rgba(255,213,79,0.2);
+    }
+    .b-page5a-foot strong { color: #FFD54F; }
+
+    /* P5 信条卡片扩展样式 */
+    .b-belief-text-detail { font-size: 8.5pt; color: #555; line-height: 1.55; margin-top: 2mm; }
+    .b-belief-text-detail .quote { display: block; font-style: italic; color: #B8860B; margin-top: 2mm; font-size: 8pt; }
+
+    /* =================== Page 5b: 4 个拒绝（独立页）==================== */
+    .b-page5b { padding: 0; display: flex; flex-direction: column; background: #06182A; color: #fff; }
+    .b-page5b-head {
+      padding: 14mm 20mm 8mm;
+      text-align: center;
+      background: linear-gradient(180deg, #06182A 0%, #0A2540 100%);
+      border-bottom: 0.5pt solid rgba(255,213,79,0.3);
+    }
+    .b-page5b-head .tag { font-size: 9pt; color: #FFD54F; letter-spacing: 4px; margin-bottom: 2mm; }
+    .b-page5b-head h2 { font-size: 30pt; font-weight: 900; color: #fff; letter-spacing: 1px; margin-bottom: 3mm; }
+    .b-page5b-head h2 .accent { color: #FFD54F; }
+    .b-page5b-head .sub { font-size: 12pt; color: rgba(255,255,255,0.7); letter-spacing: 1px; }
+    .b-page5b-body { flex: 1; padding: 6mm 20mm 6mm; }
+    .b-page5b-intro {
+      padding: 4mm 6mm;
+      background: rgba(255,213,79,0.08);
+      border-left: 4pt solid #FFD54F;
+      border-radius: 2mm;
+      margin-bottom: 6mm;
+      font-size: 12pt; font-weight: 600;
+      color: #fff; line-height: 1.6;
+      letter-spacing: 1px;
+    }
+    .b-page5b-intro .accent { color: #FFD54F; font-weight: 700; }
+    .b-reject-grid-2x2 { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; }
+    .b-reject-card {
+      padding: 6mm 5mm;
+      background: rgba(255,255,255,0.04);
+      border: 0.5pt solid rgba(255,213,79,0.3);
+      border-radius: 3mm;
+      display: flex; align-items: flex-start; gap: 3mm;
+    }
+    .b-reject-num {
+      font-size: 26pt; font-weight: 900;
+      color: #FFD54F; line-height: 1;
+      font-family: "Georgia", serif;
+      flex-shrink: 0;
+      width: 14mm;
+    }
+    .b-reject-body { flex: 1; }
+    .b-reject-title {
+      font-size: 14pt; font-weight: 800;
+      color: #fff; letter-spacing: 1px;
+      margin-bottom: 2mm;
+    }
+    .b-reject-text {
+      font-size: 9pt; color: rgba(255,255,255,0.75);
+      line-height: 1.6;
+    }
+    .b-reject-text strong { color: #FFD54F; font-weight: 700; }
+    .b-reject-text .note { display: block; margin-top: 2mm; color: rgba(255,213,79,0.65); font-size: 8pt; }
+    .b-page5b-foot {
       padding: 4mm 20mm;
       background: rgba(0,0,0,0.4);
       color: rgba(255,255,255,0.5);
@@ -242,13 +307,9 @@
       display: flex; justify-content: space-between;
       border-top: 0.5pt solid rgba(255,213,79,0.2);
     }
-    .b-page5-foot strong { color: #FFD54F; }
+    .b-page5b-foot strong { color: #FFD54F; }
 
-    /* P5 信条卡片扩展样式 */
-    .b-belief-text-detail { font-size: 8.5pt; color: #555; line-height: 1.55; margin-top: 2mm; }
-    .b-belief-text-detail .quote { display: block; font-style: italic; color: #B8860B; margin-top: 2mm; font-size: 8pt; }
-
-    /* =================== Page 6: 我们的承诺（新）==================== */
+    /* =================== Page 7: 我们的承诺（新）==================== */
     .b-page6 { padding: 0; display: flex; flex-direction: column; background: #fff; }
     .b-page6-head { text-align: center; padding: 10mm 20mm 5mm; background: linear-gradient(180deg, #06182A 0%, #0A2540 100%); color: #fff; }
     .b-page6-head .tag { font-size: 9pt; color: #FFD54F; letter-spacing: 4px; margin-bottom: 2mm; }
@@ -320,7 +381,7 @@
     }
     .b-page6-foot strong { color: #FFD54F; }
 
-    /* =================== Page 7: 我们的客户（新）==================== */
+    /* =================== Page 8: 我们的客户（新）==================== */
     .b-page7 { padding: 0; display: flex; flex-direction: column; background: linear-gradient(180deg, #FFFBEA 0%, #fff 30%); }
     .b-page7-head { text-align: center; padding: 10mm 20mm 4mm; }
     .b-page7-head .tag { font-size: 9pt; color: #B8860B; letter-spacing: 4px; margin-bottom: 2mm; }
@@ -399,11 +460,11 @@
     .b-page7-foot strong { color: #06182A; }
 
     /* =================== Page 6: 3 个真实案例 ==================== */
-    .b-page6 { padding: 0; display: flex; flex-direction: column; }
-    .b-page6-head { padding: 12mm 20mm 5mm; text-align: center; }
-    .b-page6-tag { font-size: 9pt; color: #B8860B; letter-spacing: 4px; margin-bottom: 2mm; }
-    .b-page6-title { font-size: 26pt; font-weight: 900; color: #06182A; letter-spacing: 1px; margin-bottom: 2mm; }
-    .b-page6-sub { font-size: 11pt; color: #666; }
+    .b-page8 { padding: 0; display: flex; flex-direction: column; }
+    .b-page8-head { padding: 12mm 20mm 5mm; text-align: center; }
+    .b-page8-tag { font-size: 9pt; color: #B8860B; letter-spacing: 4px; margin-bottom: 2mm; }
+    .b-page8-title { font-size: 26pt; font-weight: 900; color: #06182A; letter-spacing: 1px; margin-bottom: 2mm; }
+    .b-page8-sub { font-size: 11pt; color: #666; }
     .b-case-row { flex: 1; padding: 4mm 20mm 14mm; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 5mm; }
     .b-case { background: #fff; border: 1pt solid #E5E8EE; border-radius: 4mm; padding: 6mm 5mm; display: flex; flex-direction: column; position: relative; overflow: hidden; }
     .b-case::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3mm; background: linear-gradient(90deg, #FFD54F 0%, #FFC107 100%); }
@@ -414,15 +475,15 @@
     .b-case-story { font-size: 9.5pt; line-height: 1.7; color: #555; }
     .b-case-story p { margin-bottom: 2mm; }
     .b-case-story strong { color: #06182A; font-weight: 700; }
-    .b-page6-foot { padding: 5mm 20mm; background: #06182A; color: rgba(255,255,255,0.5); font-size: 8pt; letter-spacing: 1px; display: flex; justify-content: space-between; }
-    .b-page6-foot strong { color: #FFD54F; }
+    .b-page8-foot { padding: 5mm 20mm; background: #06182A; color: rgba(255,255,255,0.5); font-size: 8pt; letter-spacing: 1px; display: flex; justify-content: space-between; }
+    .b-page8-foot strong { color: #FFD54F; }
 
     /* =================== Page 7: 我们的 3 大擅长 ==================== */
-    .b-page7 { padding: 0; display: flex; flex-direction: column; background: #06182A; color: #fff; }
-    .b-page7-head { padding: 12mm 20mm 4mm; text-align: center; }
-    .b-page7-tag { font-size: 9pt; color: #FFD54F; letter-spacing: 4px; margin-bottom: 2mm; }
-    .b-page7-title { font-size: 26pt; font-weight: 900; color: #fff; letter-spacing: 1px; margin-bottom: 2mm; }
-    .b-page7-sub { font-size: 11pt; color: rgba(255,255,255,0.6); }
+    .b-page9 { padding: 0; display: flex; flex-direction: column; background: #06182A; color: #fff; }
+    .b-page9-head { padding: 12mm 20mm 4mm; text-align: center; }
+    .b-page9-tag { font-size: 9pt; color: #FFD54F; letter-spacing: 4px; margin-bottom: 2mm; }
+    .b-page9-title { font-size: 26pt; font-weight: 900; color: #fff; letter-spacing: 1px; margin-bottom: 2mm; }
+    .b-page9-sub { font-size: 11pt; color: rgba(255,255,255,0.6); }
     .b-skill-row { flex: 1; padding: 4mm 20mm 8mm; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4mm; }
     .b-skill { padding: 6mm 5mm; background: rgba(255,255,255,0.04); border: 0.5pt solid rgba(255,213,79,0.25); border-radius: 4mm; color: #fff; }
     .b-skill-num { font-size: 32pt; font-weight: 900; color: #FFD54F; line-height: 1; margin-bottom: 2mm; font-family: "Georgia", serif; }
@@ -430,15 +491,15 @@
     .b-skill-en { font-size: 8pt; color: rgba(255,255,255,0.4); letter-spacing: 2px; margin-bottom: 3mm; }
     .b-skill-desc { font-size: 9.5pt; color: rgba(255,255,255,0.8); line-height: 1.7; }
     .b-skill-desc strong { color: #FFD54F; }
-    .b-page7-foot { padding: 5mm 20mm; background: rgba(0,0,0,0.3); color: rgba(255,255,255,0.5); font-size: 8pt; letter-spacing: 1px; display: flex; justify-content: space-between; border-top: 0.5pt solid rgba(255,213,79,0.2); }
-    .b-page7-foot strong { color: #FFD54F; }
+    .b-page9-foot { padding: 5mm 20mm; background: rgba(0,0,0,0.3); color: rgba(255,255,255,0.5); font-size: 8pt; letter-spacing: 1px; display: flex; justify-content: space-between; border-top: 0.5pt solid rgba(255,213,79,0.2); }
+    .b-page9-foot strong { color: #FFD54F; }
 
     /* =================== Page 8: 乾元生态（新）==================== */
-    .b-page8 { background: #fff; }
-    .b-page8-head { text-align: center; padding-bottom: 5mm; margin-bottom: 6mm; border-bottom: 0.5pt solid #E5E8EE; }
-    .b-page8-tag { font-size: 9pt; color: #B8860B; letter-spacing: 4px; margin-bottom: 2mm; }
-    .b-page8-title { font-size: 26pt; font-weight: 900; color: #06182A; letter-spacing: 1px; margin-bottom: 2mm; }
-    .b-page8-sub { font-size: 11pt; color: #666; }
+    .b-page10 { background: #fff; }
+    .b-page10-head { text-align: center; padding-bottom: 5mm; margin-bottom: 6mm; border-bottom: 0.5pt solid #E5E8EE; }
+    .b-page10-tag { font-size: 9pt; color: #B8860B; letter-spacing: 4px; margin-bottom: 2mm; }
+    .b-page10-title { font-size: 26pt; font-weight: 900; color: #06182A; letter-spacing: 1px; margin-bottom: 2mm; }
+    .b-page10-sub { font-size: 11pt; color: #666; }
     .b-eco-quote { padding: 4mm 6mm; background: #FFFBEA; border-left: 4pt solid #FFD54F; border-radius: 2mm; font-size: 12pt; font-weight: 600; color: #06182A; line-height: 1.6; margin-bottom: 5mm; }
     .b-eco-row { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; margin-bottom: 5mm; }
     .b-eco-card { padding: 5mm 5mm; background: #fff; border: 1pt solid #E5E8EE; border-radius: 3mm; display: flex; gap: 3mm; }
@@ -451,16 +512,16 @@
     .b-eco-summary { padding: 5mm 6mm; background: linear-gradient(135deg, #FFFBEA 0%, #FFF8DC 100%); border: 1pt solid #FFD54F; border-radius: 3mm; text-align: center; }
     .b-eco-summary-title { font-size: 11pt; color: #B8860B; letter-spacing: 2px; margin-bottom: 2mm; }
     .b-eco-summary-text { font-size: 13pt; font-weight: 700; color: #06182A; line-height: 1.5; letter-spacing: 0.5px; }
-    .b-page8-foot { position: absolute; bottom: 8mm; left: 20mm; right: 20mm; display: flex; justify-content: space-between; font-size: 8pt; color: #999; letter-spacing: 1px; }
-    .b-page8-foot strong { color: #B8860B; }
+    .b-page10-foot { position: absolute; bottom: 8mm; left: 20mm; right: 20mm; display: flex; justify-content: space-between; font-size: 8pt; color: #999; letter-spacing: 1px; }
+    .b-page10-foot strong { color: #B8860B; }
 
     /* =================== Page 9: 邀请 + CTA ==================== */
-    .b-page9 { padding: 0; display: flex; flex-direction: column; background: linear-gradient(135deg, #06182A 0%, #0A2540 100%); color: #fff; }
-    .b-page9-top { padding: 14mm 20mm 8mm; flex: 1; }
-    .b-page9-tag { font-size: 9pt; color: #FFD54F; letter-spacing: 4px; margin-bottom: 6mm; }
-    .b-page9-title { font-size: 32pt; font-weight: 900; color: #fff; letter-spacing: 2px; line-height: 1.2; margin-bottom: 6mm; }
-    .b-page9-title .accent { color: #FFD54F; }
-    .b-page9-sub { font-size: 13pt; color: rgba(255,255,255,0.8); line-height: 1.7; letter-spacing: 1px; margin-bottom: 8mm; }
+    .b-page11 { padding: 0; display: flex; flex-direction: column; background: linear-gradient(135deg, #06182A 0%, #0A2540 100%); color: #fff; }
+    .b-page11-top { padding: 14mm 20mm 8mm; flex: 1; }
+    .b-page11-tag { font-size: 9pt; color: #FFD54F; letter-spacing: 4px; margin-bottom: 6mm; }
+    .b-page11-title { font-size: 32pt; font-weight: 900; color: #fff; letter-spacing: 2px; line-height: 1.2; margin-bottom: 6mm; }
+    .b-page11-title .accent { color: #FFD54F; }
+    .b-page11-sub { font-size: 13pt; color: rgba(255,255,255,0.8); line-height: 1.7; letter-spacing: 1px; margin-bottom: 8mm; }
     .b-people { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4mm; margin-bottom: 8mm; }
     .b-person { padding: 4mm 4mm; background: rgba(255,213,79,0.08); border: 0.5pt solid rgba(255,213,79,0.3); border-radius: 3mm; }
     .b-person-icon { font-size: 22pt; margin-bottom: 2mm; }
@@ -475,8 +536,8 @@
     .b-contact-cell-icon { font-size: 16pt; margin-bottom: 1mm; }
     .b-contact-cell-title { font-size: 8pt; font-weight: 800; color: #FFD54F; letter-spacing: 2px; margin-bottom: 1mm; }
     .b-contact-cell-value { font-size: 9pt; color: rgba(255,255,255,0.8); line-height: 1.4; font-weight: 700; }
-    .b-page9-foot { padding: 5mm 20mm; background: rgba(0,0,0,0.3); font-size: 7.5pt; color: rgba(255,255,255,0.4); letter-spacing: 1px; border-top: 0.5pt solid rgba(255,213,79,0.2); }
-    .b-page9-foot .disclaimer { font-size: 7.5pt; color: rgba(255,255,255,0.4); line-height: 1.5; }
+    .b-page11-foot { padding: 5mm 20mm; background: rgba(0,0,0,0.3); font-size: 7.5pt; color: rgba(255,255,255,0.4); letter-spacing: 1px; border-top: 0.5pt solid rgba(255,213,79,0.2); }
+    .b-page11-foot .disclaimer { font-size: 7.5pt; color: rgba(255,255,255,0.4); line-height: 1.5; }
   </style>
 </head>
 <body>
@@ -582,7 +643,7 @@
   </div>
   <div class="b-page2-foot">
     <span><strong>乾元投融资规划和管理</strong> · 品牌宣传册 v1.0</span>
-    <span>P. 02 / 11</span>
+    <span>P. 02 / 12</span>
   </div>
 </div>
 
@@ -695,20 +756,19 @@
 
   <div class="b-page4-foot">
     <span><strong>乾元投融资规划和管理</strong> · 品牌宣传册 v1.0</span>
-    <span>P. 04 / 11</span>
+    <span>P. 04 / 12</span>
   </div>
 </div>
 
-<!-- ========== Page 5: 我们的信条（详细版）========== -->
-<div class="b-page b-page5">
-  <div class="b-page5-head">
-    <div class="b-page5-tag">PHILOSOPHY · 我们的信条</div>
-    <div class="b-page5-title">3 个相信 · 4 个拒绝 · 详细版</div>
-    <div class="b-page5-sub">不是方法论，是判断标准</div>
+<!-- ========== Page 5a: 我们的信条-3相信（整页米黄） ========== -->
+<div class="b-page b-page5a">
+  <div class="b-page5a-head">
+    <div class="b-page5a-tag">PHILOSOPHY · 我们的信条（上）</div>
+    <div class="b-page5a-title">3 个我们<span class="accent">相信</span>的事</div>
+    <div class="b-page5a-sub">不是方法论，是判断标准 · 下页是 4 个我们拒绝的事</div>
   </div>
 
-  <!-- 上半：3 个相信（米黄底） -->
-  <div class="b-page5-believe">
+  <div class="b-page5a-believe">
     <div class="b-believe-head">
       <div class="b-believe-head-mark">✓</div>
       <div class="b-believe-head-title">我们相信的 3 件事</div>
@@ -760,22 +820,25 @@
     </div>
   </div>
 
-  <!-- 中间过渡语 -->
-  <div class="b-reject-intro">
-    <div class="b-reject-intro-text">
+  <div class="b-page5a-foot">
+    <span><strong>乾元投融资规划和管理</strong> · 品牌宣传册 v1.0</span>
+    <span>P. 05 / 12</span>
+  </div>
+</div>
+
+<!-- ========== Page 5b: 我们的信条-4拒绝（独立深蓝页） ========== -->
+<div class="b-page b-page5b">
+  <div class="b-page5b-head">
+    <div class="tag">PHILOSOPHY · 我们的信条（下）</div>
+    <h2>4 个我们<span class="accent">拒绝</span>的事</h2>
+    <div class="sub">不是挑剔，是对长期复利的尊重</div>
+  </div>
+  <div class="b-page5b-body">
+    <div class="b-page5b-intro">
       所以我们 <span class="accent">拒绝</span> 4 类项目 ——<br>
       不是挑剔，是<strong>对长期复利的尊重</strong>
     </div>
-  </div>
-
-  <!-- 下半：4 个拒绝（深蓝底） -->
-  <div class="b-page5-reject">
-    <div class="b-reject-head">
-      <div class="b-reject-head-mark">✕</div>
-      <div class="b-reject-head-title">我们拒绝的 4 件事</div>
-      <div class="b-reject-head-en">WHAT WE REFUSE</div>
-    </div>
-    <div class="b-reject-grid">
+    <div class="b-reject-grid-2x2">
       <div class="b-reject-card">
         <div class="b-reject-num">01</div>
         <div class="b-reject-body">
@@ -783,7 +846,7 @@
           <div class="b-reject-text">
             <strong>保本是幻觉</strong>。<br>
             真正稳的资产靠<strong>分散 + 长期 + 信用</strong>，不靠承诺。<br>
-            <span style="color:rgba(255,213,79,0.7);font-size:8pt;">→ 见多了"保本"陷阱，2018 年 P2P / 2020 年银行理财亏损都是例子</span>
+            <span class="note">→ 2018 年 P2P / 2020 年银行理财亏损都是例子</span>
           </div>
         </div>
       </div>
@@ -794,7 +857,7 @@
           <div class="b-reject-text">
             <strong>一年翻倍是赌博</strong>。<br>
             真正赚的是<strong>慢慢变厚</strong>，不是<strong>一年暴富</strong>。<br>
-            <span style="color:rgba(255,213,79,0.7);font-size:8pt;">→ 巴菲特年化 20%，50 年复利 → 8000 倍。赌翻倍的人第 3 年就没了</span>
+            <span class="note">→ 巴菲特年化 20%，50 年复利 → 8000 倍。赌翻倍的人第 3 年就没了</span>
           </div>
         </div>
       </div>
@@ -805,7 +868,7 @@
           <div class="b-reject-text">
             <strong>闷声的项目不可持续</strong>。<br>
             <strong>业绩公开</strong>才是真业绩。<br>
-            <span style="color:rgba(255,213,79,0.7);font-size:8pt;">→ 我们承诺：所有业绩月度公开、季度复盘，所有合作方都能看到</span>
+            <span class="note">→ 我们承诺：所有业绩月度公开、季度复盘，所有合作方都能看到</span>
           </div>
         </div>
       </div>
@@ -816,20 +879,19 @@
           <div class="b-reject-text">
             <strong>短期暴利必有陷阱</strong>。<br>
             我们要的是<strong>5-8 年慢钱</strong>，不是 3 个月快钱。<br>
-            <span style="color:rgba(255,213,79,0.7);font-size:8pt;">→ 历史上所有"短期暴利"产品 5 年后都归零，没有例外</span>
+            <span class="note">→ 历史上所有"短期暴利"产品 5 年后都归零，没有例外</span>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-  <div class="b-page5-foot">
+  <div class="b-page5b-foot">
     <span><strong>乾元投融资规划和管理</strong> · 品牌宣传册 v1.0</span>
-    <span>P. 05 / 11</span>
+    <span>P. 06 / 12</span>
   </div>
 </div>
 
-<!-- ========== Page 6: 我们的承诺（新）========== -->
+<!-- ========== Page 6: 我们的承诺 ========== -->
 <div class="b-page b-page6">
   <div class="b-page6-head">
     <div class="tag">PROMISE · 我们的承诺</div>
@@ -932,7 +994,7 @@
   </div>
   <div class="b-page6-foot">
     <span><strong>乾元投融资规划和管理</strong> · 品牌宣传册 v1.0</span>
-    <span>P. 06 / 11</span>
+    <span>P. 06 / 12</span>
   </div>
 </div>
 
@@ -1030,12 +1092,12 @@
   </div>
 </div>
 
-<!-- ========== Page 6: 3 个真实案例 ========== -->
-<div class="b-page b-page6">
-  <div class="b-page6-head">
-    <div class="b-page6-tag">CASES · 真实案例</div>
-    <div class="b-page6-title">3 个飞轮转起来的故事</div>
-    <div class="b-page6-sub">不是数据，是故事</div>
+<!-- ========== Page 8: 3 个真实案例 ========== -->
+<div class="b-page b-page8">
+  <div class="b-page8-head">
+    <div class="b-page8-tag">CASES · 真实案例</div>
+    <div class="b-page8-title">3 个飞轮转起来的故事</div>
+    <div class="b-page8-sub">不是数据，是故事</div>
   </div>
   <div class="b-case-row">
     <div class="b-case">
@@ -1077,13 +1139,13 @@
       </div>
     </div>
   </div>
-  <div class="b-page6-foot">
+  <div class="b-page8-foot">
     <span><strong>乾元投融资规划和管理</strong> · 品牌宣传册 v1.0</span>
-    <span>P. 08 / 11</span>
+    <span>P. 08 / 12</span>
   </div>
 </div>
 
-<!-- ========== Page 7: 我们擅长的 3 件事 ========== -->
+<!-- ========== Page 9: 我们擅长的 3 件事 ========== -->
 <div class="b-page b-page7">
   <div class="b-page7-head">
     <div class="b-page7-tag">WHAT WE DO · 我们擅长的</div>
@@ -1119,13 +1181,13 @@
       </div>
     </div>
   </div>
-  <div class="b-page7-foot">
+  <div class="b-page9-foot">
     <span><strong>乾元投融资规划和管理</strong> · 品牌宣传册 v1.0</span>
-    <span>P. 09 / 11</span>
+    <span>P. 09 / 12</span>
   </div>
 </div>
 
-<!-- ========== Page 8: 乾元生态 ========== -->
+<!-- ========== Page 10: 乾元生态 ========== -->
 <div class="b-page b-page8">
   <div class="b-page8-head">
     <div class="b-page8-tag">ECOSYSTEM · 乾元生态</div>
@@ -1193,13 +1255,13 @@
     </div>
   </div>
 
-  <div class="b-page8-foot">
+  <div class="b-page10-foot">
     <span><strong>乾元投融资规划和管理</strong> · 品牌宣传册 v1.0</span>
-    <span>P. 10 / 11</span>
+    <span>P. 10 / 12</span>
   </div>
 </div>
 
-<!-- ========== Page 9: 邀请 + CTA ========== -->
+<!-- ========== Page 11: 邀请 + CTA ========== -->
 <div class="b-page b-page9">
   <div class="b-page9-top">
     <div class="b-page9-tag">INVITATION · 邀请</div>
@@ -1254,7 +1316,7 @@
     </div>
   </div>
 
-  <div class="b-page9-foot">
+  <div class="b-page11-foot">
     <div class="disclaimer">
       ⚠ 本网站为个人博客性质，<strong>不构成投资建议或商业承诺</strong>。<br>
       所有内容仅供学习参考。乾元资本（筹备）· 5 年内不开公司 · 央企合规优先。<br>
