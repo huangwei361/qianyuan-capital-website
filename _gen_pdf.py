@@ -1,9 +1,8 @@
-"""用 pyppeteer 真实渲染 invest-brochure.html → PDF"""
-import asyncio
+"""pyppeteer 渲染 → PDF (v3 输出到新文件名)"""
+import asyncio, os
 from pyppeteer import launch
-import os
 
-OUT = r'C:\Users\64549\.minimax\金融财富公司成立\invest-brochure.pdf'
+OUT = r'C:\Users\64549\.minimax\金融财富公司成立\invest-brochure-v2.pdf'
 
 async def main():
     browser = await launch(
@@ -12,21 +11,18 @@ async def main():
         executablePath=r'C:\Program Files\Google\Chrome\Application\chrome.exe'
     )
     page = await browser.newPage()
-    await page.setViewport({'width': 1600, 'height': 1200})
+    await page.setViewport({'width': 1200, 'height': 1600})
 
-    # 加载本地 HTML（用 file:// 避免网络问题）
     src = r'C:\Users\64549\.minimax\金融财富公司成立\website\invest-brochure.html'
     await page.goto(f'file:///{src}', {'waitUntil': 'networkidle0', 'timeout': 30000})
-    # 给 JS/CSS 时间渲染
     await asyncio.sleep(3)
 
-    # 用 page.pdf() 生成（更可靠）
     await page.pdf({
         'path': OUT,
         'format': 'A4',
-        'landscape': True,
+        'landscape': False,
         'printBackground': True,
-        'margin': {'top': '10mm', 'bottom': '10mm', 'left': '10mm', 'right': '10mm'}
+        'margin': {'top': '16mm', 'bottom': '16mm', 'left': '16mm', 'right': '16mm'}
     })
     await browser.close()
     print(f'OK: {OUT}')

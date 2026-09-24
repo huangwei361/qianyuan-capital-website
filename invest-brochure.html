@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>乾元投融资规划和管理 · 宣传册</title>
+  <title>乾元投融资规划和管理 · 品牌故事册</title>
   <link rel="stylesheet" href="_sub.css">
   <style>
     :root {
@@ -14,9 +14,9 @@
   </style>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='#FFD54F'/><text x='50' y='62' font-size='40' text-anchor='middle' fill='%230A2540' font-family='serif' font-weight='800'>融</text></svg>">
 
-  <!-- 打印样式：A4 横版，10mm 边距 -->
+  <!-- 打印样式：A4 直版 -->
   <style>
-    @page { size: A4 landscape; margin: 10mm; }
+    @page { size: A4 portrait; margin: 16mm; }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -28,28 +28,24 @@
       print-color-adjust: exact;
     }
 
-    .brochure {
-      width: 100%;
-      background: #fff;
-      padding: 0;
-    }
+    .brochure { width: 100%; background: #fff; }
 
-    /* ===== Page 1: 封面 ===== */
     .b-page {
       width: 100%;
       min-height: 100vh;
-      padding: 16mm 18mm;
+      padding: 18mm;
       page-break-after: always;
       position: relative;
       overflow: hidden;
     }
     .b-page:last-child { page-break-after: auto; }
 
-    /* 强制中文显示 + 字体回退 */
-    body, .b-page, .b-card, .b-loop-box, .b-stat, .b-contact-cell {
+    /* 强制中文显示 */
+    body, .b-page, .b-card, .b-quote, .b-section {
       font-family: "Microsoft YaHei", "微软雅黑", "SimSun", "PingFang SC", "Helvetica Neue", sans-serif !important;
     }
 
+    /* ===== Page 1: 封面 ===== */
     .b-cover {
       background: linear-gradient(135deg, #0A2540 0%, #06182A 60%, #0A2540 100%);
       color: #fff;
@@ -91,7 +87,7 @@
       border-radius: 2mm;
     }
 
-    .b-cover-center { text-align: center; margin: 12mm 0; }
+    .b-cover-center { text-align: center; margin: 16mm 0; }
     .b-cover-tag {
       font-size: 9pt;
       color: #FFD54F;
@@ -103,19 +99,26 @@
       margin-bottom: 8mm;
     }
     .b-cover-title {
-      font-size: 36pt;
+      font-size: 32pt;
       font-weight: 900;
       color: #fff;
-      letter-spacing: 4px;
-      line-height: 1.2;
-      margin-bottom: 6mm;
+      letter-spacing: 3px;
+      line-height: 1.3;
+      margin-bottom: 8mm;
     }
     .b-cover-title .accent { color: #FFD54F; }
     .b-cover-sub {
-      font-size: 13pt;
-      color: rgba(255,255,255,0.75);
-      letter-spacing: 1.5px;
-      line-height: 1.7;
+      font-size: 14pt;
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 2px;
+      line-height: 1.8;
+    }
+    .b-cover-hook {
+      font-size: 11pt;
+      color: rgba(255,255,255,0.5);
+      font-style: italic;
+      margin-top: 6mm;
+      letter-spacing: 1px;
     }
 
     .b-cover-bottom {
@@ -141,15 +144,15 @@
     }
 
     /* ===== 内页通用 ===== */
-    .b-inner { background: #fff; color: #222; padding: 18mm; }
+    .b-inner { background: #fff; color: #222; padding: 18mm 18mm 24mm; }
 
     .b-page-tag {
       display: inline-block;
       font-size: 8pt;
-      color: #FFD54F;
+      color: #B8860B;
       letter-spacing: 3px;
       padding: 1.5mm 3mm;
-      border: 0.5pt solid #FFD54F;
+      border: 0.5pt solid #B8860B;
       border-radius: 2mm;
       margin-bottom: 4mm;
     }
@@ -163,287 +166,223 @@
     }
 
     .b-page-sub {
-      font-size: 10pt;
+      font-size: 11pt;
       color: #555;
-      line-height: 1.7;
+      line-height: 1.8;
       margin-bottom: 6mm;
     }
     .b-page-sub strong { color: #B8860B; }
 
-    .b-section-tag {
-      font-size: 10pt;
-      font-weight: 800;
-      color: #B8860B;
+    /* 大引言 */
+    .b-quote {
+      padding: 8mm 6mm;
+      margin: 6mm 0;
+      background: linear-gradient(135deg, #FFFBEA 0%, #FFF8DC 100%);
+      border-left: 3pt solid #B8860B;
+      border-radius: 1mm;
+      font-size: 13pt;
+      font-weight: 600;
+      color: #0A2540;
+      line-height: 1.7;
+      letter-spacing: 0.5px;
+    }
+    .b-quote .from {
+      display: block;
+      margin-top: 3mm;
+      font-size: 9pt;
+      color: #888;
+      font-weight: 400;
       letter-spacing: 1px;
-      margin: 4mm 0 2mm;
-      padding-left: 3mm;
-      border-left: 2pt solid #FFD54F;
     }
 
-    /* 2 列网格 */
-    .b-grid-2 {
+    /* 故事卡片 */
+    .b-story {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4mm;
-      margin-bottom: 4mm;
+      grid-template-columns: 1fr 2fr;
+      gap: 6mm;
+      margin-bottom: 5mm;
+      padding: 5mm;
+      background: #F8F9FB;
+      border-radius: 2mm;
     }
-    .b-grid-3 {
+    .b-story-side {
+      text-align: center;
+      padding: 4mm 2mm;
+      background: linear-gradient(135deg, #0A2540 0%, #06182A 100%);
+      color: #fff;
+      border-radius: 1mm;
+    }
+    .b-story-side .num {
+      font-size: 32pt;
+      font-weight: 900;
+      color: #FFD54F;
+      line-height: 1;
+      margin-bottom: 2mm;
+    }
+    .b-story-side .label {
+      font-size: 8pt;
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 1px;
+    }
+    .b-story-body {
+      padding: 2mm 0;
+    }
+    .b-story-title {
+      font-size: 12pt;
+      font-weight: 700;
+      color: #0A2540;
+      margin-bottom: 3mm;
+      letter-spacing: 1px;
+    }
+    .b-story-text {
+      font-size: 10pt;
+      color: #555;
+      line-height: 1.7;
+    }
+    .b-story-text strong { color: #B8860B; }
+
+    /* 3 大哲学 */
+    .b-philosophy {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      gap: 3mm;
+      gap: 4mm;
+      margin-top: 5mm;
     }
-    .b-grid-4 {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      gap: 3mm;
-    }
-
-    .b-card {
-      padding: 4mm 4mm;
-      background: #F8F9FB;
-      border: 0.5pt solid #E5E8EE;
+    .b-pillar {
+      padding: 5mm 4mm;
+      background: #fff;
+      border: 1pt solid #E5E8EE;
       border-radius: 2mm;
+      text-align: center;
     }
-    .b-card.accent { border-color: #FFD54F; background: #FFFBEA; }
-    .b-card-title {
-      font-size: 11pt;
+    .b-pillar .icon {
+      font-size: 28pt;
+      margin-bottom: 3mm;
+    }
+    .b-pillar .title {
+      font-size: 13pt;
       font-weight: 800;
       color: #0A2540;
-      margin-bottom: 2mm;
-    }
-    .b-card-en {
-      font-size: 7pt;
-      color: #999;
       letter-spacing: 1px;
       margin-bottom: 2mm;
     }
-    .b-card-desc {
-      font-size: 8.5pt;
-      color: #555;
-      line-height: 1.5;
+    .b-pillar .en {
+      font-size: 8pt;
+      color: #B8860B;
+      letter-spacing: 2px;
+      margin-bottom: 3mm;
     }
-    .b-card-list {
-      list-style: none;
-      padding: 0; margin: 1.5mm 0 0;
-    }
-    .b-card-list li {
-      font-size: 8.5pt;
+    .b-pillar .desc {
+      font-size: 9.5pt;
       color: #555;
       line-height: 1.6;
-      padding-left: 3mm;
-      position: relative;
-    }
-    .b-card-list li::before {
-      content: '·';
-      position: absolute;
-      left: 1mm;
-      color: #B8860B;
-      font-weight: 800;
     }
 
-    /* 数字块 */
-    .b-stat-row {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 3mm;
-      margin: 4mm 0;
-    }
-    .b-stat {
-      padding: 4mm 2mm;
-      background: linear-gradient(135deg, #FFFBEA 0%, #FFF8DC 100%);
-      border: 0.5pt solid #FFD54F;
-      border-radius: 2mm;
-      text-align: center;
-    }
-    .b-stat-num {
-      font-size: 22pt;
-      font-weight: 900;
-      color: #B8860B;
-      line-height: 1;
-      margin-bottom: 1mm;
-    }
-    .b-stat-lbl {
-      font-size: 8pt;
-      color: #666;
-      letter-spacing: 1px;
-    }
-
-    /* 飞轮图 */
-    .b-loop {
-      margin: 4mm 0;
-      padding: 5mm 4mm;
-      background: linear-gradient(135deg, #FFF8DC 0%, #FFFBEA 100%);
-      border: 1pt solid #FFD54F;
-      border-radius: 3mm;
-      text-align: center;
-    }
-    .b-loop-title {
-      font-size: 14pt;
-      font-weight: 900;
-      color: #0A2540;
-      letter-spacing: 2px;
-      margin-bottom: 2mm;
-    }
-    .b-loop-title .accent { color: #B8860B; }
-    .b-loop-sub {
-      font-size: 8pt;
-      color: #666;
-      margin-bottom: 4mm;
-    }
-    .b-loop-flow {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      gap: 3mm;
-      align-items: center;
-    }
-    .b-loop-box {
-      padding: 3mm 3mm;
-      background: #fff;
-      border: 0.5pt solid #E5E8EE;
-      border-radius: 2mm;
-      text-align: left;
-    }
-    .b-loop-box.r { border-color: rgba(79, 195, 247, 0.5); }
-    .b-loop-box.t { border-color: rgba(212, 175, 55, 0.5); }
-    .b-loop-label {
-      font-size: 8pt;
-      font-weight: 800;
-      letter-spacing: 1px;
-      margin-bottom: 1.5mm;
-    }
-    .b-loop-box.r .b-loop-label { color: #0277BD; }
-    .b-loop-box.t .b-loop-label { color: #B8860B; }
-    .b-loop-list {
-      list-style: none;
-      padding: 0; margin: 0;
-    }
-    .b-loop-list li {
-      font-size: 8pt;
-      color: #555;
-      line-height: 1.5;
-      padding-left: 2mm;
-      position: relative;
-    }
-    .b-loop-list li::before {
-      content: '·';
-      position: absolute;
-      left: 0;
-      color: #B8860B;
-      font-weight: 800;
-    }
-    .b-loop-center {
-      display: flex;
-      flex-direction: column;
-      gap: 1mm;
-      align-items: center;
-    }
-    .b-loop-pill {
-      padding: 1.5mm 3mm;
-      background: linear-gradient(135deg, #FFD54F, #FFC107);
-      color: #0A2540;
-      font-size: 9pt;
-      font-weight: 800;
-      border-radius: 4mm;
-      letter-spacing: 1px;
-      white-space: nowrap;
-    }
-    .b-loop-pill.down { background: linear-gradient(135deg, #4FC3F7, #81D4FA); }
-    .b-loop-arrow {
-      font-size: 14pt;
-      color: #B8860B;
-      line-height: 1;
-    }
-    .b-loop-arrow.up { color: #4FC3F7; }
-
-    /* 公式 */
-    .b-formula {
+    /* 信条 */
+    .b-belief {
       margin-top: 4mm;
       padding: 4mm 5mm;
       background: #FFFBEA;
-      border: 1pt solid #FFD54F;
-      border-radius: 3mm;
-      text-align: center;
+      border-left: 3pt solid #FFD54F;
+      border-radius: 1mm;
+      font-size: 11pt;
+      line-height: 1.7;
+      color: #333;
     }
-    .b-formula-line {
-      font-size: 16pt;
-      font-weight: 900;
-      color: #0A2540;
-      letter-spacing: 1px;
-    }
-    .b-formula-line .num { color: #B8860B; }
-    .b-formula-line .op { color: #B8860B; padding: 0 2mm; }
-    .b-formula-line .eq { color: #999; padding: 0 1mm; }
-    .b-formula-note {
-      font-size: 8pt;
-      color: #666;
-      margin-top: 2mm;
+    .b-belief strong {
+      color: #B8860B;
+      font-weight: 700;
+      display: block;
+      margin-bottom: 2mm;
+      font-size: 12pt;
     }
 
-    /* 风险表 */
-    .b-risk-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 8.5pt;
-      margin-top: 3mm;
+    /* 故事页面：长文叙事 */
+    .b-prose {
+      font-size: 11pt;
+      line-height: 1.85;
+      color: #333;
+      margin-bottom: 4mm;
+      text-align: justify;
     }
-    .b-risk-table th, .b-risk-table td {
-      padding: 2.5mm 3mm;
-      text-align: left;
-      border-bottom: 0.5pt solid #E5E8EE;
-    }
-    .b-risk-table th {
-      background: #FFFBEA;
-      color: #B8860B;
-      font-weight: 800;
-      font-size: 8pt;
-      letter-spacing: 1px;
-    }
-    .b-risk-table td:first-child {
-      font-weight: 800;
-      color: #B8860B;
-      width: 25%;
-    }
+    .b-prose strong { color: #B8860B; font-weight: 700; }
+    .b-prose .hl { background: linear-gradient(transparent 60%, #FFFBEA 60%); padding: 0 1mm; }
 
-    /* 联系区 */
-    .b-contact {
+    /* 时间线 */
+    .b-timeline {
       margin-top: 6mm;
-      padding: 6mm 8mm;
-      background: linear-gradient(135deg, #FFFBEA 0%, #FFF8DC 100%);
-      border: 1pt solid #FFD54F;
+    }
+    .b-tl-item {
+      display: grid;
+      grid-template-columns: 30mm 1fr;
+      gap: 4mm;
+      padding: 4mm 0;
+      border-bottom: 0.5pt dashed #E5E8EE;
+    }
+    .b-tl-item:last-child { border-bottom: none; }
+    .b-tl-year {
+      font-size: 14pt;
+      font-weight: 800;
+      color: #B8860B;
+      letter-spacing: 1px;
+    }
+    .b-tl-content {
+      font-size: 10pt;
+      color: #555;
+      line-height: 1.65;
+    }
+    .b-tl-content strong {
+      color: #0A2540;
+      font-weight: 700;
+      display: block;
+      margin-bottom: 1mm;
+      font-size: 11pt;
+    }
+
+    /* CTA 区 */
+    .b-cta {
+      margin-top: 8mm;
+      padding: 6mm;
+      background: linear-gradient(135deg, #0A2540 0%, #06182A 100%);
+      color: #fff;
       border-radius: 3mm;
       text-align: center;
     }
-    .b-contact h3 {
+    .b-cta h3 {
       font-size: 16pt;
-      font-weight: 900;
-      color: #0A2540;
+      font-weight: 800;
+      color: #FFD54F;
       margin-bottom: 3mm;
       letter-spacing: 2px;
     }
-    .b-contact-row {
+    .b-cta p {
+      font-size: 10pt;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.7;
+      margin-bottom: 4mm;
+    }
+    .b-cta-row {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      gap: 4mm;
-      margin-top: 4mm;
+      gap: 3mm;
     }
-    .b-contact-cell {
+    .b-cta-cell {
       padding: 3mm;
-      background: #fff;
-      border: 0.5pt solid #E5E8EE;
+      background: rgba(255,255,255,0.08);
+      border: 0.5pt solid rgba(255,255,255,0.15);
       border-radius: 2mm;
-      text-align: center;
     }
-    .b-contact-cell-icon { font-size: 16pt; margin-bottom: 1mm; }
-    .b-contact-cell-title {
+    .b-cta-cell-icon { font-size: 16pt; margin-bottom: 1mm; }
+    .b-cta-cell-title {
       font-size: 9pt;
       font-weight: 800;
-      color: #B8860B;
+      color: #FFD54F;
       letter-spacing: 1px;
       margin-bottom: 1mm;
     }
-    .b-contact-cell-value {
-      font-size: 8pt;
-      color: #555;
+    .b-cta-cell-value {
+      font-size: 8.5pt;
+      color: rgba(255,255,255,0.8);
       line-height: 1.4;
     }
 
@@ -476,17 +415,20 @@
         乾元资本集团 · 集团级业务集群
       </div>
     </div>
-    <div class="b-cover-version">v1.0 · 2026-09</div>
+    <div class="b-cover-version">品牌故事 · v1.0</div>
   </div>
 
   <div class="b-cover-center">
-    <div class="b-cover-tag">BUSINESS BROCHURE</div>
+    <div class="b-cover-tag">STORY BOOK</div>
     <div class="b-cover-title">
-      <span class="accent">乾元投融资</span><br>规划和管理<br>宣传册
+      一份关于<br><span class="accent">找钱与用钱</span>的<br>思考
     </div>
     <div class="b-cover-sub">
-      投融资主业 · 乾元企服 · 乾元资产处理<br>
-      <strong style="color:#FFD54F;">找钱 + 用钱 + 循环 · 自我增强的飞轮</strong>
+      融资 + 投资 + 循环 · 自我增强的飞轮<br>
+      不是方法论 · <strong style="color:#FFD54F;">是相信长期复利的人</strong>
+    </div>
+    <div class="b-cover-hook">
+      —— 写给愿意用 5-8 年慢慢变厚的同路人
     </div>
   </div>
 
@@ -502,370 +444,291 @@
   </div>
 </div>
 
-<!-- ============== Page 2: 业务定位 + 融资方法论 ============== -->
+<!-- ============== Page 2: 为什么做这件事（origin story） ============== -->
 <div class="b-page b-inner">
-  <div class="b-page-tag">BUSINESS POSITIONING</div>
-  <h2 class="b-page-title">业务定位 · 集团级业务集群</h2>
-  <p class="b-page-sub">
-    <strong>乾元投融资规划和管理</strong>是乾元资本集团旗下的<strong>集团级业务集群</strong>，下设 <strong>3 大业务</strong>：<br>
-    ① 投融资主业（找钱 + 用钱 + 循环） · ② 乾元企服（内部资金中心 / 8 大职能） · ③ 乾元资产处理（不良资产价值重塑）
+  <div class="b-page-tag">ORIGIN · 起源</div>
+  <h2 class="b-page-title">为什么是"投融资"</h2>
+
+  <div class="b-quote">
+    融资不是"求人借钱"，投资不是"碰运气"。<br>
+    它们是<span class="hl">同一件事的两面</span>——<br>
+    都是<strong style="color:#B8860B;">把信用变成资产，把资产变成信用</strong>的过程。
+    <span class="from">—— 写在乾元投融资规划和管理诞生之前</span>
+  </div>
+
+  <p class="b-prose">
+    5 年前的某个失眠夜晚，忽然冒出一句话：<strong>"这一辈子，到底想做成什么？"</strong>
+    答案慢慢凝聚成一个结构——<strong>乾元资本</strong>（集团母体）→ <strong>7 家乾元系子公司</strong>，覆盖金融、出海、不动产等长期方向。
   </p>
 
-  <div class="b-stat-row">
-    <div class="b-stat"><div class="b-stat-num">3</div><div class="b-stat-lbl">下挂业务</div></div>
-    <div class="b-stat"><div class="b-stat-num">5-8<span style="font-size:11pt">年</span></div><div class="b-stat-lbl">规划周期</div></div>
-    <div class="b-stat"><div class="b-stat-num">3000<span style="font-size:11pt">万+</span></div><div class="b-stat-lbl">融资规模门槛</div></div>
-    <div class="b-stat"><div class="b-stat-num">12<span style="font-size:11pt">倍</span></div><div class="b-stat-lbl">信贷杠杆</div></div>
-  </div>
+  <p class="b-prose">
+    其中最特殊的一家公司，叫"<strong>乾元投融资规划和管理</strong>"。
+    它不是<strong>只投不运营</strong>的财务投资者，也不是<strong>只找钱</strong>的融资中介——
+    它是<strong>把融资和投资打通成一件事</strong>的业务集群。
+  </p>
 
-  <div class="b-section-tag">① 融 资 3 要 素</div>
-  <div class="b-grid-3">
-    <div class="b-card accent">
-      <div class="b-card-title">信 用</div>
-      <div class="b-card-en">CREDIT</div>
-      <ul class="b-card-list">
-        <li>征信报告（无逾期）</li>
-        <li>社保 / 公积金连续缴纳</li>
-        <li>信贷记录 + 经营流水</li>
-      </ul>
-    </div>
-    <div class="b-card accent">
-      <div class="b-card-title">身 份</div>
-      <div class="b-card-en">IDENTITY</div>
-      <ul class="b-card-list">
-        <li>学历（大专以上加分）</li>
-        <li>户籍 / 房车 / 单位</li>
-        <li>经营年限（&gt; 2 年）</li>
-      </ul>
-    </div>
-    <div class="b-card accent">
-      <div class="b-card-title">筹 码</div>
-      <div class="b-card-en">CHIPS</div>
-      <ul class="b-card-list">
-        <li>营收流水（100 万+）</li>
-        <li>名下资产 + 抵押物</li>
-        <li>评估价 / 成交价差</li>
-      </ul>
-    </div>
-  </div>
+  <p class="b-prose">
+    我们相信：<strong class="hl">融到的钱 + 投得好 = 业绩 = 信用 = 下一轮融得更多</strong>。
+    这个飞轮一旦转起来，<strong>时间越长，轮子越厚</strong>。
+  </p>
 
-  <div class="b-section-tag">② 3 大融资策略</div>
-  <div class="b-grid-3">
-    <div class="b-card">
-      <div class="b-card-title">🛡️ 背书型</div>
-      <div class="b-card-desc">用别人资产给自己背书，借他人信用+资产作担保，适合早期无资产的创业者</div>
-    </div>
-    <div class="b-card">
-      <div class="b-card-title">💰 套现型</div>
-      <div class="b-card-desc">评估价 2000 万的房子抵押 7-8 成 = 套出 1400-1600 万，下行期买不良资产</div>
-    </div>
-    <div class="b-card">
-      <div class="b-card-title">📈 杠杆型</div>
-      <div class="b-card-desc">上浮 12% + 30 年接力贷，最小首付买最大的房，长期看涨的资产</div>
-    </div>
-  </div>
+  <p class="b-prose">
+    所以我们不做"一次性买卖"。我们做<strong>5-8 年的长期主义</strong>。
+    5 年内不开公司、不正式工商注册——先把模型跑通，把飞轮转动起来。
+  </p>
 
   <div class="b-footer">
-    <span><strong>乾元投融资规划和管理</strong> · 宣传册 v1.0</span>
+    <span><strong>乾元投融资规划和管理</strong> · 品牌故事册 v1.0</span>
     <span>P. 02 / 06</span>
   </div>
 </div>
 
-<!-- ============== Page 3: 商业飞轮 ============== -->
+<!-- ============== Page 3: 3 大哲学（信条） ============== -->
 <div class="b-page b-inner">
-  <div class="b-page-tag">BUSINESS FLYWHEEL</div>
-  <h2 class="b-page-title">商业飞轮 · 自我增强</h2>
+  <div class="b-page-tag">PHILOSOPHY · 哲学</div>
+  <h2 class="b-page-title">我们相信的 3 件事</h2>
   <p class="b-page-sub">
-    乾元投融资不是"先融资再投资"的两段式，而是<strong>投融资一体化的飞轮</strong>。<br>
-    <strong style="color:#B8860B;">融到的钱 → 投出去产生业绩 → 业绩建立信用 → 信用反哺下一轮融资</strong>，每一轮都比上一轮更厚。
+    不是方法论，是信条。<br>
+    每一件事，都被反复验证过；每一件事，都决定了我们和谁合作、和谁不合作。
   </p>
 
-  <div class="b-loop">
-    <div class="b-loop-title">融 · 投 · 绩 · 信 · <span class="accent">再融</span></div>
-    <div class="b-loop-sub">融资 + 投资 + 业绩 + 信用 四要素循环</div>
-
-    <div class="b-loop-flow">
-      <div class="b-loop-box r">
-        <div class="b-loop-label">💰 融 资</div>
-        <ul class="b-loop-list">
-          <li>股权融资</li>
-          <li>债权融资</li>
-          <li>信用融资</li>
-          <li>联合众筹</li>
-        </ul>
+  <div class="b-philosophy">
+    <div class="b-pillar">
+      <div class="icon">🌀</div>
+      <div class="title">飞 轮</div>
+      <div class="en">THE FLYWHEEL</div>
+      <div class="desc">
+        融资 + 投资 + 业绩 + 信用<br>
+        <strong>每一轮比上一轮更厚</strong><br>
+        时间越长 · 复利越大
       </div>
+    </div>
 
-      <div class="b-loop-center">
-        <div class="b-loop-pill">🔥 资金池</div>
-        <div class="b-loop-arrow">↓</div>
-        <div class="b-loop-pill down">⚔ 双 轮</div>
-        <div class="b-loop-arrow up">↑</div>
-        <div class="b-loop-pill">🚀 自转</div>
+    <div class="b-pillar">
+      <div class="icon">⏳</div>
+      <div class="title">长 期</div>
+      <div class="en">LONG-TERM</div>
+      <div class="desc">
+        5-8 年起步 · 30 年视角<br>
+        <strong>拒绝短期暴利诱惑</strong><br>
+        慢就是快 · 厚积薄发
       </div>
+    </div>
 
-      <div class="b-loop-box t">
-        <div class="b-loop-label">📈 投 资</div>
-        <ul class="b-loop-list">
-          <li>战略投资</li>
-          <li>财务投资</li>
-          <li>不动产</li>
-          <li>海外配置</li>
-        </ul>
+    <div class="b-pillar">
+      <div class="icon">🤝</div>
+      <div class="title">共 生</div>
+      <div class="en">CO-SHARING</div>
+      <div class="desc">
+        我们不是平台 · 是共建者<br>
+        <strong>每一方都得到真实回报</strong><br>
+        业绩 = 信用 = 长期合作
       </div>
     </div>
   </div>
 
-  <div class="b-grid-3">
-    <div class="b-card">
-      <div class="b-card-title">📊 业绩积累</div>
-      <div class="b-card-desc">投资产生真实业绩，形成可对外展示的回报</div>
-    </div>
-    <div class="b-card accent">
-      <div class="b-card-title">🛡️ 信用反哺</div>
-      <div class="b-card-desc">业绩 → 信用升级 → 下一轮融资更易、更大、更便宜</div>
-    </div>
-    <div class="b-card">
-      <div class="b-card-title">🔁 飞轮放大</div>
-      <div class="b-card-desc">每一轮循环都比上一轮融得多、投得准</div>
-    </div>
+  <div class="b-belief">
+    <strong>① 飞轮之上，没有捷径</strong>
+    我们拒绝<strong>"承诺保本 / 一年翻倍 / 稳赚不赔"</strong>的项目。<br>
+    那些不是投资，是赌博。赌博赢得了一时，飞轮转不起来。
   </div>
 
-  <div class="b-formula">
-    <div class="b-formula-line">
-      <span class="num">30 万</span><span class="op">资产</span><span class="eq">+</span><span class="num">12 倍杠杆</span><span class="eq">=</span><span class="num">360 万</span><span class="op">融资</span>
-    </div>
-    <div class="b-formula-note">信贷扩张公式：30 万净资产 + 12 倍杠杆 = 360 万可融资规模</div>
+  <div class="b-belief">
+    <strong>② 长期复利，时间的朋友</strong>
+    我们愿意花 5 年时间学习、花 7 年时间跑通小循环、花 8 年时间让飞轮自转。<br>
+    <strong>慢就是快。</strong>这句话，我们不是说说而已。
+  </div>
+
+  <div class="b-belief">
+    <strong>③ 客户也是共建者，不是被服务者</strong>
+    我们把<strong>每一个客户都当作合作伙伴</strong>，共同承担风险、共享业绩。<br>
+    业绩公开、信用互认、合作长期——这是我们的合作哲学。
   </div>
 
   <div class="b-footer">
-    <span><strong>乾元投融资规划和管理</strong> · 宣传册 v1.0</span>
+    <span><strong>乾元投融资规划和管理</strong> · 品牌故事册 v1.0</span>
     <span>P. 03 / 06</span>
   </div>
 </div>
 
-<!-- ============== Page 4: 投资组合 + 4 大融资类型 ============== -->
+<!-- ============== Page 4: 案例故事（不是流程，是故事） ============== -->
 <div class="b-page b-inner">
-  <div class="b-page-tag">INVESTMENT & FINANCING</div>
-  <h2 class="b-page-title">投资组合 · 4 大方向</h2>
+  <div class="b-page-tag">STORIES · 故事</div>
+  <h2 class="b-page-title">3 个关于"飞轮转起来"的故事</h2>
+
   <p class="b-page-sub">
-    融到的钱如何"用好"是关键。乾元投融资的投资组合覆盖 <strong>战略 / 财务 / 不动产 / 海外</strong> 4 大方向，<br>
-    通过<strong>分散配置</strong>降低单一资产风险，实现长期复利。
+    不是数据，是故事。<br>
+    我们不讲"融了多少钱"、"投了多少项目"——这些数字随时可以讲。<br>
+    我们讲<strong>飞轮是怎么转起来的</strong>。
   </p>
 
-  <div class="b-grid-4">
-    <div class="b-card">
-      <div class="b-card-title">📈 战略投资</div>
-      <ul class="b-card-list">
-        <li>外部潜力企业股权</li>
-        <li>不参与日常运营</li>
-        <li>中长期 3-10 倍</li>
-        <li><strong>风险：🟡 中高</strong></li>
-      </ul>
+  <div class="b-story">
+    <div class="b-story-side">
+      <div class="num">¥80</div>
+      <div class="label">万 → 100 万<br>的飞轮</div>
     </div>
-    <div class="b-card">
-      <div class="b-card-title">💼 财务投资</div>
-      <ul class="b-card-list">
-        <li>公开市场多资产</li>
-        <li>股票 / 债券 / REITs</li>
-        <li>年化 8-15%</li>
-        <li><strong>风险：🟢 中低</strong></li>
-      </ul>
-    </div>
-    <div class="b-card">
-      <div class="b-card-title">🏢 不动产</div>
-      <ul class="b-card-list">
-        <li>商业地产 / 写字楼</li>
-        <li>物流仓储</li>
-        <li>年化 5-10% + 增值</li>
-        <li><strong>风险：🟢 中低</strong></li>
-      </ul>
-    </div>
-    <div class="b-card">
-      <div class="b-card-title">🌐 海外配置</div>
-      <ul class="b-card-list">
-        <li>QDII / 美股 / 港股</li>
-        <li>海外房产</li>
-        <li>分散单一市场</li>
-        <li><strong>风险：🟡 中</strong></li>
-      </ul>
+    <div class="b-story-body">
+      <div class="b-story-title">🚜 一个传统行业老板的融资起步</div>
+      <div class="b-story-text">
+        老王做了 8 年建材生意，名下有套<strong>按揭中的商铺</strong>。<br><br>
+        第一步：<strong>用商铺评估价做了 80 万经营贷</strong>。这一步，他学会了"用资产找钱"。<br><br>
+        第二步：用这 80 万+ 自己的 30 万，拿下一块被法院拍卖的<strong>工业用地</strong>（评估 200 万，成交 110 万）。<br><br>
+        第三步：用工业用地做抵押，<strong>再融 100 万</strong>，继续投下一个项目。<br><br>
+        <strong>这就是飞轮的第一圈</strong>：资产 → 融资 → 投资 → 信用。
+      </div>
     </div>
   </div>
 
-  <div class="b-section-tag">③ 4 大融资类型</div>
-  <div class="b-grid-4">
-    <div class="b-card accent">
-      <div class="b-card-title">🏦 银行类</div>
-      <ul class="b-card-list">
-        <li>营收贷（100 万流水可贷 100 万）</li>
-        <li>信用贷（身份证 + 公积金）</li>
-        <li>抵押贷（评估价 7-8 成）</li>
-        <li>按揭（首套 30%）</li>
-      </ul>
+  <div class="b-story">
+    <div class="b-story-side">
+      <div class="num">+12</div>
+      <div class="label">倍<br>信贷扩张</div>
     </div>
-    <div class="b-card accent">
-      <div class="b-card-title">🏛️ 政策类</div>
-      <ul class="b-card-list">
-        <li>创业基金（最高 50 万 / 3 月）</li>
-        <li>科创委（最高 300 万 / 9 月）</li>
-        <li>土地抵押</li>
-        <li>接力贷（30 年低息）</li>
-      </ul>
+    <div class="b-story-body">
+      <div class="b-story-title">📊 一个 90 后程序员的信用经营</div>
+      <div class="b-story-text">
+        小李 28 岁，月薪 1.5 万，名下无房无车。<br><br>
+        第一步：他在<strong>某股份制银行开了 5 万额度的信用卡</strong>，按时还款，养了 2 年征信。<br><br>
+        第二步：<strong>用公积金 + 社保，申请了 30 万信用贷</strong>。<br><br>
+        第三步：<strong>用这 30 万做首付，买了第一套房</strong>（评估价 200 万，按揭 170 万）。<br><br>
+        第四步：<strong>30 万净资产 + 12 倍杠杆 = 360 万可融资规模</strong>。<br><br>
+        <strong>他没有原始资产，但他有信用。</strong>信用，是可以<strong>经营</strong>的资产。
+      </div>
     </div>
-    <div class="b-card accent">
-      <div class="b-card-title">⚡ 特殊类</div>
-      <ul class="b-card-list">
-        <li>当铺 / 物业贷（1 万月息）</li>
-        <li>连锁贷（品牌背书）</li>
-        <li>股权质押</li>
-        <li>保单 / 理财质押</li>
-      </ul>
+  </div>
+
+  <div class="b-story">
+    <div class="b-story-side">
+      <div class="num">∞</div>
+      <div class="label">自我增强</div>
     </div>
-    <div class="b-card accent">
-      <div class="b-card-title">🤝 民间类</div>
-      <ul class="b-card-list">
-        <li>小额信贷（3 万内）</li>
-        <li>亲友拆借</li>
-        <li>联合众筹 / 项目跟投</li>
-        <li>股权出让融资</li>
-      </ul>
+    <div class="b-story-body">
+      <div class="b-story-title">🚀 一个集团公司的飞轮自转</div>
+      <div class="b-story-text">
+        张总经营一家<strong>营收 5000 万/年的科技公司</strong>，有完整经营记录。<br><br>
+        第一年：<strong>营收贷 200 万</strong> + 信用贷 50 万 = 250 万启动资金<br><br>
+        第二年：用这 250 万投资了一个<strong>早期项目股权</strong>，项目方给到<strong>业绩对赌</strong>。<br><br>
+        第三年：<strong>项目成功退出，回报 600 万</strong>。业绩公开。<br><br>
+        第四年：基于这 600 万的<strong>业绩背书</strong>，他融到了 1000 万——比第一年多了 4 倍。<br><br>
+        <strong>飞轮转起来了</strong>：业绩越好 → 信用越好 → 融得越多 → 投得越大 → 业绩越好。
+      </div>
     </div>
   </div>
 
   <div class="b-footer">
-    <span><strong>乾元投融资规划和管理</strong> · 宣传册 v1.0</span>
+    <span><strong>乾元投融资规划和管理</strong> · 品牌故事册 v1.0</span>
     <span>P. 04 / 06</span>
   </div>
 </div>
 
-<!-- ============== Page 5: 5-8 年路线 + 风险 ============== -->
+<!-- ============== Page 5: 我们想要什么样的人（愿景与价值观） ============== -->
 <div class="b-page b-inner">
-  <div class="b-page-tag">ROADMAP & RISK</div>
-  <h2 class="b-page-title">5-8 年路线图 + 风险控制</h2>
+  <div class="b-page-tag">VISION · 愿景</div>
+  <h2 class="b-page-title">我们想成为什么样的人？</h2>
 
-  <div class="b-grid-3">
-    <div class="b-card">
-      <div class="b-card-title">🌱 信用积累（5-6 年）</div>
-      <ul class="b-card-list">
-        <li>5 年清债 + 建立个人信用</li>
-        <li>养流水 + 小额试投</li>
-        <li><strong>目标：融资 10-30 万</strong></li>
-      </ul>
+  <p class="b-prose">
+    乾元投融资规划和管理不是一家"金融机构"——我们是一群<strong>愿意慢慢变厚的人</strong>。<br><br>
+    我们寻找的不是"客户"，是<strong class="hl">愿意用 5-8 年共建飞轮的同路人</strong>。
+  </p>
+
+  <div class="b-timeline">
+    <div class="b-tl-item">
+      <div class="b-tl-year">第 1-2 年</div>
+      <div class="b-tl-content">
+        <strong>学习期 · 慢就是快</strong>
+        学习融资方法论、跑通小循环。<br>
+        我们不要<strong>"快点赚钱"</strong>的伙伴。我们找<strong>"愿意一起学习"</strong>的人。
+      </div>
     </div>
-    <div class="b-card">
-      <div class="b-card-title">🌿 跑通小循环（7 年）</div>
-      <ul class="b-card-list">
-        <li>完成 1-2 轮"融资→投资→业绩"</li>
-        <li>业绩公开化 + 早期客户</li>
-        <li><strong>目标：融资 50-100 万</strong></li>
-      </ul>
+
+    <div class="b-tl-item">
+      <div class="b-tl-year">第 3-5 年</div>
+      <div class="b-tl-content">
+        <strong>试运营期 · 业绩公开</strong>
+        业绩公开化，公众号 / 朋友圈积累种子用户。<br>
+        拒绝<strong>"闷声发大财"</strong>。我们相信<strong>"业绩是最好广告"</strong>。
+      </div>
     </div>
-    <div class="b-card accent">
-      <div class="b-card-title">🌳 飞轮放大（8 年后）</div>
-      <ul class="b-card-list">
-        <li>扩大融资规模 + 多元组合</li>
-        <li>飞轮自转 + 团队化</li>
-        <li><strong>目标：融资 300 万+</strong></li>
-      </ul>
+
+    <div class="b-tl-item">
+      <div class="b-tl-year">第 6-8 年</div>
+      <div class="b-tl-content">
+        <strong>飞轮自转期 · 共建公司</strong>
+        退休或找到合规合伙人后，正式成立公司。<br>
+        我们不要<strong>"靠我一个人赚"</strong>，我们要<strong>"团队一起赚"</strong>。
+      </div>
+    </div>
+
+    <div class="b-tl-item">
+      <div class="b-tl-year">8 年后</div>
+      <div class="b-tl-content">
+        <strong>长期复利期 · 30 年视角</strong>
+        飞轮已经稳定自转，复利开始显现。<br>
+        <strong>慢就是快，厚就是大。</strong>
+      </div>
     </div>
   </div>
 
-  <div class="b-section-tag">⚠️ 5 大风险控制</div>
-  <table class="b-risk-table">
-    <thead>
-      <tr><th>风险类型</th><th>具体表现</th><th>应对策略</th></tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>政策风险</td>
-        <td>金融政策变动 / 利率上行 / 信贷收紧</td>
-        <td>只做合规业务，杠杆率控制在 50% 以下</td>
-      </tr>
-      <tr>
-        <td>市场风险</td>
-        <td>股市 / 楼市 / 商品下行 / 黑天鹅</td>
-        <td>多资产分散 + 时间分散 + 地域分散</td>
-      </tr>
-      <tr>
-        <td>信用风险</td>
-        <td>债务违约 / 抵押物贬值 / 担保链断裂</td>
-        <td><strong>单笔不超过总资产 10%</strong>，严控抵押率</td>
-      </tr>
-      <tr>
-        <td>流动性风险</td>
-        <td>资产无法快速变现 / 资金链紧张</td>
-        <td>保留 20% 以上现金等价物</td>
-      </tr>
-      <tr>
-        <td>合规风险</td>
-        <td>5 年内不正式开公司</td>
-        <td><strong>5 年内仅以个人名义操作</strong>，退休或合规合伙人后再落地</td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="b-belief" style="margin-top:6mm;">
+    <strong>我们想成为什么样的人？</strong>
+    <strong class="hl" style="font-size:13pt;color:#0A2540;">"用 30 年时间，把自己磨成有重量的人。"</strong><br>
+    <span style="color:#888;">——这是乾元资本的 slogan，也是我们的承诺。</span>
+  </div>
 
   <div class="b-footer">
-    <span><strong>乾元投融资规划和管理</strong> · 宣传册 v1.0</span>
+    <span><strong>乾元投融资规划和管理</strong> · 品牌故事册 v1.0</span>
     <span>P. 05 / 06</span>
   </div>
 </div>
 
-<!-- ============== Page 6: 联系 + 合作 ============== -->
+<!-- ============== Page 6: 合作邀请（CTA） ============== -->
 <div class="b-page b-inner">
-  <div class="b-page-tag">CONTACT</div>
-  <h2 class="b-page-title">开启合作</h2>
+  <div class="b-page-tag">INVITATION · 邀请</div>
+  <h2 class="b-page-title">如果你也是这样的人</h2>
 
-  <p class="b-page-sub">
-    5-8 年规划期内，仅以个人名义接受 <strong>项目跟投 + 顾问咨询</strong> 类合作。<br>
-    <strong>不接受大额资金托管</strong>，<strong>不承诺保本收益</strong>，<strong>不构成任何投资建议</strong>。
+  <p class="b-page-sub" style="font-size:12pt;">
+    我们在寻找 <strong>3 类同路人</strong>——<br>
+    <strong>① 长期投资者</strong>：用 3-5 年视角看回报，相信复利<br>
+    <strong>② 项目共建者</strong>：有好项目但缺资金/信用，缺长期合作伙伴<br>
+    <strong>③ 知识伙伴</strong>：懂融资 / 投资 / 不良资产某一领域，愿意交换认知
   </p>
 
-  <div class="b-contact">
-    <h3>🤝 联 系 咨 询</h3>
-    <div class="b-contact-row">
-      <div class="b-contact-cell">
-        <div class="b-contact-cell-icon">✉</div>
-        <div class="b-contact-cell-title">邮 箱</div>
-        <div class="b-contact-cell-value">qygc@163.com</div>
+  <div class="b-cta">
+    <h3>🤝 开 启 对 话</h3>
+    <p>
+      5-8 年规划期内，仅以个人名义接受 <strong>项目跟投 + 顾问咨询</strong> 类合作。<br>
+      <strong>5 年内不开公司，不承诺保本收益</strong>——但<strong>承诺真实业绩公开 + 长期复利</strong>。
+    </p>
+    <div class="b-cta-row">
+      <div class="b-cta-cell">
+        <div class="b-cta-cell-icon">✉</div>
+        <div class="b-cta-cell-title">邮 箱</div>
+        <div class="b-cta-cell-value">qygc@163.com</div>
       </div>
-      <div class="b-contact-cell">
-        <div class="b-contact-cell-icon">💬</div>
-        <div class="b-contact-cell-title">WhatsApp</div>
-        <div class="b-contact-cell-value">139-7169-1656</div>
+      <div class="b-cta-cell">
+        <div class="b-cta-cell-icon">💬</div>
+        <div class="b-cta-cell-title">WhatsApp</div>
+        <div class="b-cta-cell-value">139-7169-1656</div>
       </div>
-      <div class="b-contact-cell">
-        <div class="b-contact-cell-icon">📞</div>
-        <div class="b-contact-cell-title">电 话</div>
-        <div class="b-contact-cell-value">139-7169-1656</div>
+      <div class="b-cta-cell">
+        <div class="b-cta-cell-icon">📞</div>
+        <div class="b-cta-cell-title">电 话</div>
+        <div class="b-cta-cell-value">139-7169-1656</div>
       </div>
     </div>
-    <p style="margin-top:4mm;font-size:8pt;color:#888;">
-      正式合作前请先沟通：合作模式 / 出资规模 / 项目类型 / 风险偏好
+    <p style="margin-top:5mm;font-size:8pt;color:rgba(255,255,255,0.5);">
+      首次联系请说明：<strong>你是哪一类同路人 + 你想聊什么</strong>
     </p>
   </div>
 
-  <div class="b-grid-3" style="margin-top:6mm;">
-    <div class="b-card">
-      <div class="b-card-title">① 联合投资</div>
-      <div class="b-card-desc">项目跟投 / 联合众筹 / 战略合作<br>按出资比例分享收益</div>
-    </div>
-    <div class="b-card">
-      <div class="b-card-title">② 顾问咨询</div>
-      <div class="b-card-desc">融资方案 / 投资组合 / 风险评估<br>咨询费 + 业绩分成</div>
-    </div>
-    <div class="b-card">
-      <div class="b-card-title">③ 共建合作</div>
-      <div class="b-card-desc">共建投资载体 / 共同发起基金<br>5-8 年后期寻找合规合伙人</div>
-    </div>
-  </div>
-
-  <div style="margin-top:8mm;padding:3mm 4mm;background:#FFFBEA;border-left:2pt solid #FFD54F;font-size:8pt;color:#666;line-height:1.6;">
+  <div style="margin-top:8mm;padding:4mm 5mm;background:#FFFBEA;border-left:2pt solid #FFD54F;font-size:9pt;color:#666;line-height:1.6;">
     <strong style="color:#B8860B;">⚠ 重要声明</strong>：本网站为个人博客性质，<strong>不构成投资建议或商业承诺</strong>。<br>
-    所有内容仅供学习参考，实际投资需自行评估风险并咨询专业意见。<br>
-    <span style="font-size:7pt;color:#999;">© 2026 乾元资本（筹备）· 5 年内不开公司 · 央企合规优先</span>
+    所有内容仅供学习参考。乾元资本（筹备）· 5 年内不开公司 · 央企合规优先。<br>
+    <span style="font-size:7pt;color:#999;">© 2026 乾元资本 · 文档版本 v1.0 · 更新日期 2026-09-24</span>
   </div>
 
   <div class="b-footer">
-    <span><strong>乾元投融资规划和管理</strong> · 宣传册 v1.0</span>
+    <span><strong>乾元投融资规划和管理</strong> · 品牌故事册 v1.0</span>
     <span>P. 06 / 06</span>
   </div>
 </div>
