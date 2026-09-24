@@ -12,9 +12,7 @@
 
   <style>
     @page { size: A4 portrait; margin: 0; }
-
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     body {
       font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑", "Hiragino Sans GB", sans-serif;
       background: #fff;
@@ -22,13 +20,11 @@
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
     }
-
     .brochure { width: 100%; background: #fff; }
-
     .b-page {
       width: 100%;
       min-height: 100vh;
-      padding: 20mm;
+      padding: 18mm 20mm;
       page-break-after: always;
       position: relative;
       overflow: hidden;
@@ -36,569 +32,183 @@
     .b-page:last-child { page-break-after: auto; }
 
     /* =================== Page 1: 大封面 =================== */
-    .b-cover {
-      background: linear-gradient(135deg, #06182A 0%, #0A2540 60%, #06182A 100%);
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 0;
-    }
-
-    /* 顶部装饰条 */
-    .b-cover-bar {
-      height: 4mm;
-      background: linear-gradient(90deg, #FFD54F 0%, #FFC107 50%, #FFD54F 100%);
-    }
-
-    .b-cover-body {
-      flex: 1;
-      padding: 18mm 20mm;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .b-cover-brand {
-      display: flex;
-      align-items: center;
-      gap: 4mm;
-      margin-bottom: 24mm;
-    }
-    .b-cover-mark {
-      width: 18mm; height: 18mm;
-      background: linear-gradient(135deg, #FFD54F, #FFC107);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 32pt; font-weight: 900; color: #06182A;
-    }
-    .b-cover-brand-text {
-      font-size: 11pt; color: rgba(255,255,255,0.7); letter-spacing: 2px;
-    }
-    .b-cover-brand-text strong {
-      font-size: 14pt; color: #fff; display: block; letter-spacing: 1px;
-      font-weight: 700; margin-bottom: 1mm;
-    }
-
-    .b-cover-tag {
-      display: inline-block;
-      font-size: 9pt; color: #FFD54F; letter-spacing: 4px;
-      padding: 2mm 5mm; border: 0.5pt solid #FFD54F;
-      border-radius: 2mm; margin-bottom: 10mm;
-      width: fit-content;
-    }
-
-    .b-cover-title {
-      font-size: 48pt; font-weight: 900;
-      color: #fff; letter-spacing: 4px;
-      line-height: 1.15; margin-bottom: 8mm;
-    }
+    .b-cover { background: linear-gradient(135deg, #06182A 0%, #0A2540 60%, #06182A 100%); color: #fff; display: flex; flex-direction: column; justify-content: space-between; padding: 0; }
+    .b-cover-bar { height: 4mm; background: linear-gradient(90deg, #FFD54F 0%, #FFC107 50%, #FFD54F 100%); }
+    .b-cover-body { flex: 1; padding: 18mm 20mm; display: flex; flex-direction: column; justify-content: center; }
+    .b-cover-brand { display: flex; align-items: center; gap: 4mm; margin-bottom: 20mm; }
+    .b-cover-mark { width: 18mm; height: 18mm; background: linear-gradient(135deg, #FFD54F, #FFC107); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32pt; font-weight: 900; color: #06182A; }
+    .b-cover-brand-text { font-size: 11pt; color: rgba(255,255,255,0.7); letter-spacing: 2px; }
+    .b-cover-brand-text strong { font-size: 14pt; color: #fff; display: block; letter-spacing: 1px; font-weight: 700; margin-bottom: 1mm; }
+    .b-cover-tag { display: inline-block; font-size: 9pt; color: #FFD54F; letter-spacing: 4px; padding: 2mm 5mm; border: 0.5pt solid #FFD54F; border-radius: 2mm; margin-bottom: 10mm; width: fit-content; }
+    .b-cover-title { font-size: 48pt; font-weight: 900; color: #fff; letter-spacing: 4px; line-height: 1.15; margin-bottom: 8mm; }
     .b-cover-title .accent { color: #FFD54F; }
-
-    .b-cover-sub {
-      font-size: 16pt;
-      color: rgba(255,255,255,0.7);
-      letter-spacing: 2px;
-      line-height: 1.6;
-      margin-bottom: 12mm;
-    }
+    .b-cover-sub { font-size: 16pt; color: rgba(255,255,255,0.7); letter-spacing: 2px; line-height: 1.6; margin-bottom: 12mm; }
     .b-cover-sub strong { color: #FFD54F; font-weight: 700; }
-
-    /* 大引言 */
-    .b-cover-quote {
-      padding: 6mm 8mm;
-      background: rgba(255, 213, 79, 0.08);
-      border-left: 3pt solid #FFD54F;
-      font-size: 14pt;
-      font-weight: 600;
-      line-height: 1.6;
-      letter-spacing: 1px;
-      border-radius: 1mm;
-    }
-    .b-cover-quote .from {
-      display: block;
-      margin-top: 4mm;
-      font-size: 10pt;
-      color: rgba(255,255,255,0.5);
-      font-weight: 400;
-      letter-spacing: 2px;
-    }
-
-    .b-cover-foot {
-      padding: 8mm 20mm;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      background: rgba(0,0,0,0.2);
-      border-top: 0.5pt solid rgba(255,213,79,0.3);
-    }
-    .b-cover-foot-info {
-      font-size: 9pt; color: rgba(255,255,255,0.7);
-      letter-spacing: 1px; line-height: 1.8;
-    }
+    .b-cover-quote { padding: 6mm 8mm; background: rgba(255, 213, 79, 0.08); border-left: 3pt solid #FFD54F; font-size: 14pt; font-weight: 600; line-height: 1.6; letter-spacing: 1px; border-radius: 1mm; }
+    .b-cover-quote .from { display: block; margin-top: 4mm; font-size: 10pt; color: rgba(255,255,255,0.5); font-weight: 400; letter-spacing: 2px; }
+    .b-cover-foot { padding: 8mm 20mm; display: flex; justify-content: space-between; align-items: flex-end; background: rgba(0,0,0,0.2); border-top: 0.5pt solid rgba(255,213,79,0.3); }
+    .b-cover-foot-info { font-size: 9pt; color: rgba(255,255,255,0.7); letter-spacing: 1px; line-height: 1.8; }
     .b-cover-foot-info strong { color: #FFD54F; }
-    .b-cover-qr {
-      width: 28mm; height: 28mm;
-      background: #fff;
-      border-radius: 2mm;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 7pt; color: #06182A; text-align: center;
-      line-height: 1.3; padding: 2mm; letter-spacing: 0.5px;
-      font-weight: 700;
-    }
+    .b-cover-qr { width: 26mm; height: 26mm; background: #fff; border-radius: 2mm; display: flex; align-items: center; justify-content: center; font-size: 7pt; color: #06182A; text-align: center; line-height: 1.3; padding: 2mm; letter-spacing: 0.5px; font-weight: 700; }
 
-    /* =================== Page 2: 为什么是投融资 =================== */
-    .b-page2 {
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-    }
-    .b-page2-header {
-      padding: 16mm 20mm 8mm;
-      background: linear-gradient(180deg, #FFFBEA 0%, #fff 100%);
-      border-bottom: 0.5pt solid #FFD54F;
-    }
-    .b-page2-num {
-      font-size: 80pt;
-      font-weight: 900;
-      color: #FFD54F;
-      line-height: 1;
-      letter-spacing: -2px;
-      margin-bottom: 2mm;
-      font-family: "Georgia", serif;
-    }
-    .b-page2-title {
-      font-size: 30pt; font-weight: 900;
-      color: #06182A; letter-spacing: 1px;
-      line-height: 1.2;
-      margin-bottom: 4mm;
-    }
-    .b-page2-tagline {
-      font-size: 13pt; color: #666; letter-spacing: 1px;
-    }
-
-    .b-page2-body {
-      flex: 1;
-      padding: 8mm 20mm 16mm;
-    }
-
-    .b-quote-big {
-      font-size: 18pt; font-weight: 700;
-      color: #06182A;
-      line-height: 1.5;
-      letter-spacing: 1px;
-      margin-bottom: 6mm;
-      padding: 0 0 0 6mm;
-      border-left: 4pt solid #FFD54F;
-    }
+    /* =================== Page 2: 核心理念（合并 P2+P3）==================== */
+    .b-page2 { padding: 0; display: flex; flex-direction: column; background: #fff; }
+    .b-page2-head { padding: 14mm 20mm 6mm; background: linear-gradient(180deg, #FFFBEA 0%, #fff 100%); border-bottom: 0.5pt solid #FFD54F; }
+    .b-page2-num { font-size: 60pt; font-weight: 900; color: #FFD54F; line-height: 1; letter-spacing: -2px; margin-bottom: 2mm; font-family: "Georgia", serif; }
+    .b-page2-title { font-size: 26pt; font-weight: 900; color: #06182A; letter-spacing: 1px; line-height: 1.2; margin-bottom: 3mm; }
+    .b-page2-tagline { font-size: 11pt; color: #666; letter-spacing: 1px; }
+    .b-page2-body { padding: 6mm 20mm 8mm; flex: 1; }
+    .b-quote-big { font-size: 17pt; font-weight: 700; color: #06182A; line-height: 1.5; letter-spacing: 1px; margin-bottom: 5mm; padding: 0 0 0 5mm; border-left: 4pt solid #FFD54F; }
     .b-quote-big .accent { color: #B8860B; }
-
-    .b-prose {
-      font-size: 12pt; line-height: 1.85; color: #333;
-      margin-bottom: 5mm; text-align: justify;
-    }
+    .b-prose { font-size: 11pt; line-height: 1.8; color: #333; margin-bottom: 4mm; text-align: justify; }
     .b-prose strong { color: #B8860B; font-weight: 700; }
-    .b-prose .hl {
-      background: linear-gradient(transparent 60%, #FFFBEA 60%);
-      padding: 0 1mm; font-weight: 700;
-    }
-
-    /* 飞轮图 */
-    .b-flywheel {
-      margin: 8mm auto 6mm;
-      padding: 6mm 4mm;
-      background: linear-gradient(135deg, #06182A 0%, #0A2540 100%);
-      border-radius: 4mm;
-      text-align: center;
-      color: #fff;
-      max-width: 160mm;
-    }
-    .b-flywheel-title {
-      font-size: 10pt; color: #FFD54F;
-      letter-spacing: 3px; margin-bottom: 6mm;
-    }
-    .b-flywheel-svg {
-      width: 100%; max-width: 130mm; height: auto;
-      display: block; margin: 0 auto;
-    }
-    .b-flywheel-caption {
-      font-size: 9pt; color: rgba(255,255,255,0.6);
-      margin-top: 4mm; letter-spacing: 1px;
-    }
-
-    /* 3 大数字 */
-    .b-stats-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 4mm;
-      margin-top: 6mm;
-    }
-    .b-stat-card {
-      padding: 5mm 3mm;
-      background: #fff;
-      border: 1pt solid #E5E8EE;
-      border-radius: 3mm;
-      text-align: center;
-    }
-    .b-stat-card .num {
-      font-size: 32pt; font-weight: 900;
-      color: #B8860B; line-height: 1;
-      margin-bottom: 2mm;
-      font-family: "Georgia", serif;
-    }
-    .b-stat-card .lbl {
-      font-size: 10pt; color: #666; letter-spacing: 1px;
-    }
-
-    .b-page2-foot {
-      padding: 6mm 20mm;
-      background: #06182A;
-      color: rgba(255,255,255,0.5);
-      font-size: 8pt; letter-spacing: 1px;
-      display: flex; justify-content: space-between;
-    }
+    .b-prose .hl { background: linear-gradient(transparent 60%, #FFFBEA 60%); padding: 0 1mm; font-weight: 700; }
+    .b-flywheel { margin: 5mm auto 5mm; padding: 5mm 4mm; background: linear-gradient(135deg, #06182A 0%, #0A2540 100%); border-radius: 4mm; text-align: center; color: #fff; max-width: 165mm; }
+    .b-flywheel-title { font-size: 10pt; color: #FFD54F; letter-spacing: 3px; margin-bottom: 4mm; }
+    .b-flywheel-svg { width: 100%; max-width: 130mm; height: auto; display: block; margin: 0 auto; }
+    .b-flywheel-caption { font-size: 9pt; color: rgba(255,255,255,0.6); margin-top: 3mm; letter-spacing: 1px; }
+    .b-stats-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3mm; margin-top: 4mm; }
+    .b-stat-card { padding: 4mm 3mm; background: #fff; border: 1pt solid #E5E8EE; border-radius: 3mm; text-align: center; }
+    .b-stat-card .num { font-size: 26pt; font-weight: 900; color: #B8860B; line-height: 1; margin-bottom: 2mm; font-family: "Georgia", serif; }
+    .b-stat-card .lbl { font-size: 9pt; color: #666; letter-spacing: 1px; }
+    .b-page2-foot { padding: 5mm 20mm; background: #06182A; color: rgba(255,255,255,0.5); font-size: 8pt; letter-spacing: 1px; display: flex; justify-content: space-between; }
     .b-page2-foot strong { color: #FFD54F; }
 
-    /* =================== Page 3: 发起人故事 =================== */
-    .b-page3 {
-      padding: 0;
-      display: flex; flex-direction: row;
-    }
-    .b-page3-left {
-      width: 45%;
-      background: linear-gradient(180deg, #06182A 0%, #0A2540 100%);
-      color: #fff;
-      padding: 20mm 16mm;
-      display: flex; flex-direction: column;
-      justify-content: center;
-    }
-    .b-page3-label {
-      font-size: 9pt; color: #FFD54F;
-      letter-spacing: 4px; margin-bottom: 8mm;
-    }
-    .b-page3-name {
-      font-size: 36pt; font-weight: 900;
-      color: #fff; letter-spacing: 2px;
-      line-height: 1.1; margin-bottom: 6mm;
-    }
+    /* =================== Page 3: 创始人故事（左右分栏）==================== */
+    .b-page3 { padding: 0; display: flex; flex-direction: row; }
+    .b-page3-left { width: 45%; background: linear-gradient(180deg, #06182A 0%, #0A2540 100%); color: #fff; padding: 18mm 14mm; display: flex; flex-direction: column; justify-content: center; }
+    .b-page3-label { font-size: 9pt; color: #FFD54F; letter-spacing: 4px; margin-bottom: 6mm; }
+    .b-page3-name { font-size: 32pt; font-weight: 900; color: #fff; letter-spacing: 2px; line-height: 1.1; margin-bottom: 6mm; }
     .b-page3-name .accent { color: #FFD54F; }
-
-    .b-page3-trait {
-      font-size: 13pt; color: rgba(255,255,255,0.85);
-      letter-spacing: 2px; line-height: 1.7;
-      margin-bottom: 8mm;
-    }
-
-    .b-page3-tags {
-      display: flex; gap: 3mm; flex-wrap: wrap;
-      margin-bottom: 8mm;
-    }
-    .b-page3-tag {
-      padding: 2mm 4mm;
-      background: rgba(255,213,79,0.15);
-      border: 0.5pt solid rgba(255,213,79,0.4);
-      border-radius: 4mm;
-      font-size: 10pt; color: #FFD54F;
-      letter-spacing: 1px;
-    }
-
-    .b-page3-meta {
-      padding-top: 6mm;
-      border-top: 0.5pt solid rgba(255,255,255,0.15);
-      font-size: 10pt; color: rgba(255,255,255,0.6);
-      letter-spacing: 1px; line-height: 1.8;
-    }
+    .b-page3-trait { font-size: 12pt; color: rgba(255,255,255,0.85); letter-spacing: 1.5px; line-height: 1.7; margin-bottom: 6mm; }
+    .b-page3-tags { display: flex; gap: 3mm; flex-wrap: wrap; margin-bottom: 6mm; }
+    .b-page3-tag { padding: 2mm 4mm; background: rgba(255,213,79,0.15); border: 0.5pt solid rgba(255,213,79,0.4); border-radius: 4mm; font-size: 10pt; color: #FFD54F; letter-spacing: 1px; }
+    .b-page3-meta { padding-top: 5mm; border-top: 0.5pt solid rgba(255,255,255,0.15); font-size: 10pt; color: rgba(255,255,255,0.6); letter-spacing: 1px; line-height: 1.8; }
     .b-page3-meta strong { color: #FFD54F; display: block; }
-
-    .b-page3-right {
-      width: 55%;
-      padding: 20mm 16mm;
-      background: #fff;
-    }
-    .b-page3-story-title {
-      font-size: 22pt; font-weight: 800;
-      color: #06182A; letter-spacing: 1px;
-      margin-bottom: 6mm;
-    }
-    .b-page3-story {
-      font-size: 11pt; line-height: 1.95;
-      color: #333; margin-bottom: 5mm;
-      text-align: justify;
-    }
+    .b-page3-right { width: 55%; padding: 18mm 14mm; background: #fff; }
+    .b-page3-story-title { font-size: 22pt; font-weight: 800; color: #06182A; letter-spacing: 1px; margin-bottom: 5mm; }
+    .b-page3-story { font-size: 10.5pt; line-height: 1.9; color: #333; margin-bottom: 4mm; text-align: justify; }
     .b-page3-story strong { color: #B8860B; font-weight: 700; }
-    .b-page3-story .quote {
-      display: block;
-      padding: 5mm 6mm;
-      margin: 5mm 0;
-      background: #FFFBEA;
-      border-left: 3pt solid #FFD54F;
-      font-size: 13pt; font-weight: 600;
-      font-style: italic;
-      color: #06182A;
-      letter-spacing: 0.5px;
-      line-height: 1.6;
-      border-radius: 1mm;
-    }
+    .b-page3-story .quote { display: block; padding: 4mm 5mm; margin: 4mm 0; background: #FFFBEA; border-left: 3pt solid #FFD54F; font-size: 12pt; font-weight: 600; font-style: italic; color: #06182A; letter-spacing: 0.5px; line-height: 1.6; border-radius: 1mm; }
 
-    /* =================== Page 4: 3 个真实案例 =================== */
-    .b-page4 {
-      padding: 0;
-      display: flex; flex-direction: column;
-      background: linear-gradient(180deg, #FFFBEA 0%, #fff 8%);
-    }
-    .b-page4-header {
-      padding: 12mm 20mm 6mm;
-      text-align: center;
-    }
-    .b-page4-tag {
-      font-size: 9pt; color: #B8860B;
-      letter-spacing: 4px; margin-bottom: 3mm;
-    }
-    .b-page4-title {
-      font-size: 28pt; font-weight: 900;
-      color: #06182A; letter-spacing: 1px;
-      margin-bottom: 3mm;
-    }
-    .b-page4-sub {
-      font-size: 11pt; color: #666;
-      letter-spacing: 1px;
-    }
+    /* =================== Page 4: 5-8 年愿景（新）==================== */
+    .b-page4 { background: #fff; }
+    .b-page4-head { text-align: center; padding-bottom: 6mm; border-bottom: 0.5pt solid #E5E8EE; margin-bottom: 8mm; }
+    .b-page4-tag { font-size: 9pt; color: #B8860B; letter-spacing: 4px; margin-bottom: 2mm; }
+    .b-page4-title { font-size: 26pt; font-weight: 900; color: #06182A; letter-spacing: 1px; margin-bottom: 2mm; }
+    .b-page4-sub { font-size: 11pt; color: #666; letter-spacing: 1px; }
+    .b-timeline { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 4mm; margin-bottom: 8mm; }
+    .b-tl-card { padding: 5mm 4mm; background: linear-gradient(180deg, #FFFBEA 0%, #fff 100%); border: 1pt solid #FFD54F; border-radius: 3mm; position: relative; }
+    .b-tl-year { font-size: 18pt; font-weight: 900; color: #B8860B; letter-spacing: 1px; margin-bottom: 1mm; font-family: "Georgia", serif; }
+    .b-tl-stage { font-size: 9pt; color: #FFD54F; letter-spacing: 1px; margin-bottom: 3mm; padding: 1mm 3mm; background: rgba(255,213,79,0.15); border-radius: 3mm; display: inline-block; }
+    .b-tl-title { font-size: 12pt; font-weight: 800; color: #06182A; letter-spacing: 1px; margin-bottom: 2mm; }
+    .b-tl-desc { font-size: 9pt; color: #555; line-height: 1.6; }
+    .b-tl-desc strong { color: #06182A; font-weight: 700; }
+    .b-page4-quote { padding: 6mm 8mm; background: linear-gradient(135deg, #FFFBEA 0%, #FFF8DC 100%); border-left: 4pt solid #B8860B; border-radius: 2mm; font-size: 13pt; font-weight: 600; color: #06182A; line-height: 1.6; letter-spacing: 0.5px; text-align: center; margin-bottom: 6mm; }
+    .b-page4-quote .from { display: block; margin-top: 3mm; font-size: 9pt; color: #888; font-weight: 400; letter-spacing: 2px; }
+    .b-page4-foot { position: absolute; bottom: 8mm; left: 20mm; right: 20mm; display: flex; justify-content: space-between; font-size: 8pt; color: #999; letter-spacing: 1px; }
+    .b-page4-foot strong { color: #B8860B; }
 
-    .b-case-row {
-      flex: 1;
-      padding: 4mm 20mm 14mm;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 5mm;
-    }
-    .b-case {
-      background: #fff;
-      border: 1pt solid #E5E8EE;
-      border-radius: 4mm;
-      padding: 6mm 5mm;
-      display: flex; flex-direction: column;
-      position: relative;
-      overflow: hidden;
-    }
-    .b-case::before {
-      content: ''; position: absolute;
-      top: 0; left: 0; right: 0; height: 3mm;
-      background: linear-gradient(90deg, #FFD54F 0%, #FFC107 100%);
-    }
-    .b-case-icon {
-      font-size: 32pt; margin-top: 2mm; margin-bottom: 3mm;
-    }
-    .b-case-name {
-      font-size: 16pt; font-weight: 800;
-      color: #06182A; letter-spacing: 1px;
-      margin-bottom: 1mm;
-    }
-    .b-case-role {
-      font-size: 9pt; color: #B8860B;
-      letter-spacing: 1px; margin-bottom: 4mm;
-    }
-    .b-case-num {
-      display: inline-block;
-      font-size: 11pt; font-weight: 800;
-      color: #FFD54F;
-      background: rgba(255,213,79,0.12);
-      padding: 1.5mm 4mm;
-      border-radius: 12mm;
-      margin-bottom: 4mm;
-    }
-    .b-case-story {
-      font-size: 9.5pt; line-height: 1.7;
-      color: #555;
-    }
-    .b-case-story p {
-      margin-bottom: 2mm;
-    }
+    /* =================== Page 5: 我们的信条（新）==================== */
+    .b-page5 { padding: 0; background: linear-gradient(180deg, #FFFBEA 0%, #fff 30%); }
+    .b-page5-head { text-align: center; padding: 0 0 6mm; margin-bottom: 6mm; }
+    .b-page5-tag { font-size: 9pt; color: #B8860B; letter-spacing: 4px; margin-bottom: 2mm; }
+    .b-page5-title { font-size: 26pt; font-weight: 900; color: #06182A; letter-spacing: 1px; margin-bottom: 2mm; }
+    .b-page5-sub { font-size: 11pt; color: #666; }
+    .b-page5-body { padding: 0 4mm; }
+    .b-belief-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4mm; margin-bottom: 6mm; }
+    .b-belief { padding: 6mm 5mm; background: #fff; border: 1pt solid #FFD54F; border-radius: 3mm; }
+    .b-belief-icon { font-size: 30pt; margin-bottom: 3mm; }
+    .b-belief-title { font-size: 14pt; font-weight: 800; color: #06182A; letter-spacing: 1px; margin-bottom: 1mm; }
+    .b-belief-en { font-size: 8pt; color: #B8860B; letter-spacing: 2px; margin-bottom: 3mm; }
+    .b-belief-text { font-size: 10pt; color: #444; line-height: 1.7; }
+    .b-belief-text strong { color: #06182A; font-weight: 700; }
+    .b-reject-box { padding: 6mm 8mm; background: #06182A; color: #fff; border-radius: 3mm; }
+    .b-reject-box h3 { font-size: 13pt; color: #FFD54F; letter-spacing: 2px; margin-bottom: 4mm; }
+    .b-reject-box p { font-size: 10pt; color: rgba(255,255,255,0.8); line-height: 1.7; margin-bottom: 2mm; }
+    .b-reject-box strong { color: #FFD54F; }
+    .b-page5-foot { position: absolute; bottom: 8mm; left: 20mm; right: 20mm; display: flex; justify-content: space-between; font-size: 8pt; color: #999; letter-spacing: 1px; }
+    .b-page5-foot strong { color: #B8860B; }
+
+    /* =================== Page 6: 3 个真实案例 ==================== */
+    .b-page6 { padding: 0; display: flex; flex-direction: column; }
+    .b-page6-head { padding: 12mm 20mm 5mm; text-align: center; }
+    .b-page6-tag { font-size: 9pt; color: #B8860B; letter-spacing: 4px; margin-bottom: 2mm; }
+    .b-page6-title { font-size: 26pt; font-weight: 900; color: #06182A; letter-spacing: 1px; margin-bottom: 2mm; }
+    .b-page6-sub { font-size: 11pt; color: #666; }
+    .b-case-row { flex: 1; padding: 4mm 20mm 14mm; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 5mm; }
+    .b-case { background: #fff; border: 1pt solid #E5E8EE; border-radius: 4mm; padding: 6mm 5mm; display: flex; flex-direction: column; position: relative; overflow: hidden; }
+    .b-case::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3mm; background: linear-gradient(90deg, #FFD54F 0%, #FFC107 100%); }
+    .b-case-icon { font-size: 30pt; margin-top: 2mm; margin-bottom: 2mm; }
+    .b-case-name { font-size: 16pt; font-weight: 800; color: #06182A; letter-spacing: 1px; margin-bottom: 1mm; }
+    .b-case-role { font-size: 9pt; color: #B8860B; letter-spacing: 1px; margin-bottom: 3mm; }
+    .b-case-num { display: inline-block; font-size: 10pt; font-weight: 800; color: #FFD54F; background: rgba(255,213,79,0.12); padding: 1.5mm 3mm; border-radius: 12mm; margin-bottom: 3mm; }
+    .b-case-story { font-size: 9.5pt; line-height: 1.7; color: #555; }
+    .b-case-story p { margin-bottom: 2mm; }
     .b-case-story strong { color: #06182A; font-weight: 700; }
+    .b-page6-foot { padding: 5mm 20mm; background: #06182A; color: rgba(255,255,255,0.5); font-size: 8pt; letter-spacing: 1px; display: flex; justify-content: space-between; }
+    .b-page6-foot strong { color: #FFD54F; }
 
-    .b-page4-foot {
-      padding: 5mm 20mm;
-      background: #06182A;
-      color: rgba(255,255,255,0.5);
-      font-size: 8pt; letter-spacing: 1px;
-      display: flex; justify-content: space-between;
-      text-align: center;
-    }
-    .b-page4-foot strong { color: #FFD54F; }
-
-    /* =================== Page 5: 我们擅长的 3 件事 =================== */
-    .b-page5 {
-      padding: 0;
-      display: flex; flex-direction: column;
-      background: #06182A;
-      color: #fff;
-    }
-    .b-page5-header {
-      padding: 12mm 20mm 4mm;
-      text-align: center;
-    }
-    .b-page5-tag {
-      font-size: 9pt; color: #FFD54F;
-      letter-spacing: 4px; margin-bottom: 3mm;
-    }
-    .b-page5-title {
-      font-size: 30pt; font-weight: 900;
-      color: #fff; letter-spacing: 1px;
-      margin-bottom: 3mm;
-    }
-    .b-page5-sub {
-      font-size: 12pt; color: rgba(255,255,255,0.6);
-      letter-spacing: 1px;
-    }
-
-    .b-skill-row {
-      flex: 1;
-      padding: 4mm 20mm 8mm;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 4mm;
-    }
-    .b-skill {
-      padding: 6mm 5mm;
-      background: rgba(255,255,255,0.04);
-      border: 0.5pt solid rgba(255,213,79,0.25);
-      border-radius: 4mm;
-      color: #fff;
-    }
-    .b-skill-num {
-      font-size: 36pt; font-weight: 900;
-      color: #FFD54F; line-height: 1;
-      margin-bottom: 2mm;
-      font-family: "Georgia", serif;
-    }
-    .b-skill-title {
-      font-size: 16pt; font-weight: 800;
-      color: #fff; letter-spacing: 1px;
-      margin-bottom: 1mm;
-    }
-    .b-skill-en {
-      font-size: 8pt; color: rgba(255,255,255,0.4);
-      letter-spacing: 2px; margin-bottom: 4mm;
-    }
-    .b-skill-desc {
-      font-size: 10pt; color: rgba(255,255,255,0.8);
-      line-height: 1.7;
-    }
+    /* =================== Page 7: 我们的 3 大擅长 ==================== */
+    .b-page7 { padding: 0; display: flex; flex-direction: column; background: #06182A; color: #fff; }
+    .b-page7-head { padding: 12mm 20mm 4mm; text-align: center; }
+    .b-page7-tag { font-size: 9pt; color: #FFD54F; letter-spacing: 4px; margin-bottom: 2mm; }
+    .b-page7-title { font-size: 26pt; font-weight: 900; color: #fff; letter-spacing: 1px; margin-bottom: 2mm; }
+    .b-page7-sub { font-size: 11pt; color: rgba(255,255,255,0.6); }
+    .b-skill-row { flex: 1; padding: 4mm 20mm 8mm; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4mm; }
+    .b-skill { padding: 6mm 5mm; background: rgba(255,255,255,0.04); border: 0.5pt solid rgba(255,213,79,0.25); border-radius: 4mm; color: #fff; }
+    .b-skill-num { font-size: 32pt; font-weight: 900; color: #FFD54F; line-height: 1; margin-bottom: 2mm; font-family: "Georgia", serif; }
+    .b-skill-title { font-size: 16pt; font-weight: 800; color: #fff; letter-spacing: 1px; margin-bottom: 1mm; }
+    .b-skill-en { font-size: 8pt; color: rgba(255,255,255,0.4); letter-spacing: 2px; margin-bottom: 3mm; }
+    .b-skill-desc { font-size: 9.5pt; color: rgba(255,255,255,0.8); line-height: 1.7; }
     .b-skill-desc strong { color: #FFD54F; }
+    .b-page7-foot { padding: 5mm 20mm; background: rgba(0,0,0,0.3); color: rgba(255,255,255,0.5); font-size: 8pt; letter-spacing: 1px; display: flex; justify-content: space-between; border-top: 0.5pt solid rgba(255,213,79,0.2); }
+    .b-page7-foot strong { color: #FFD54F; }
 
-    .b-page5-foot {
-      padding: 5mm 20mm;
-      background: rgba(0,0,0,0.3);
-      color: rgba(255,255,255,0.5);
-      font-size: 8pt; letter-spacing: 1px;
-      display: flex; justify-content: space-between;
-      border-top: 0.5pt solid rgba(255,213,79,0.2);
-    }
-    .b-page5-foot strong { color: #FFD54F; }
+    /* =================== Page 8: 乾元生态（新）==================== */
+    .b-page8 { background: #fff; }
+    .b-page8-head { text-align: center; padding-bottom: 5mm; margin-bottom: 6mm; border-bottom: 0.5pt solid #E5E8EE; }
+    .b-page8-tag { font-size: 9pt; color: #B8860B; letter-spacing: 4px; margin-bottom: 2mm; }
+    .b-page8-title { font-size: 26pt; font-weight: 900; color: #06182A; letter-spacing: 1px; margin-bottom: 2mm; }
+    .b-page8-sub { font-size: 11pt; color: #666; }
+    .b-eco-quote { padding: 4mm 6mm; background: #FFFBEA; border-left: 4pt solid #FFD54F; border-radius: 2mm; font-size: 12pt; font-weight: 600; color: #06182A; line-height: 1.6; margin-bottom: 5mm; }
+    .b-eco-row { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; margin-bottom: 5mm; }
+    .b-eco-card { padding: 5mm 5mm; background: #fff; border: 1pt solid #E5E8EE; border-radius: 3mm; display: flex; gap: 3mm; }
+    .b-eco-icon { font-size: 24pt; flex-shrink: 0; }
+    .b-eco-body { flex: 1; }
+    .b-eco-title { font-size: 13pt; font-weight: 800; color: #06182A; letter-spacing: 1px; margin-bottom: 1mm; }
+    .b-eco-en { font-size: 8pt; color: #B8860B; letter-spacing: 2px; margin-bottom: 2mm; }
+    .b-eco-desc { font-size: 9pt; color: #555; line-height: 1.55; }
+    .b-eco-desc strong { color: #06182A; font-weight: 700; }
+    .b-eco-summary { padding: 5mm 6mm; background: linear-gradient(135deg, #FFFBEA 0%, #FFF8DC 100%); border: 1pt solid #FFD54F; border-radius: 3mm; text-align: center; }
+    .b-eco-summary-title { font-size: 11pt; color: #B8860B; letter-spacing: 2px; margin-bottom: 2mm; }
+    .b-eco-summary-text { font-size: 13pt; font-weight: 700; color: #06182A; line-height: 1.5; letter-spacing: 0.5px; }
+    .b-page8-foot { position: absolute; bottom: 8mm; left: 20mm; right: 20mm; display: flex; justify-content: space-between; font-size: 8pt; color: #999; letter-spacing: 1px; }
+    .b-page8-foot strong { color: #B8860B; }
 
-    /* =================== Page 6: CTA =================== */
-    .b-page6 {
-      padding: 0;
-      display: flex; flex-direction: column;
-      background: linear-gradient(135deg, #06182A 0%, #0A2540 100%);
-      color: #fff;
-    }
-    .b-page6-top {
-      padding: 16mm 20mm 8mm;
-      flex: 1;
-    }
-    .b-page6-tag {
-      font-size: 9pt; color: #FFD54F;
-      letter-spacing: 4px; margin-bottom: 8mm;
-    }
-    .b-page6-title {
-      font-size: 36pt; font-weight: 900;
-      color: #fff; letter-spacing: 2px;
-      line-height: 1.2; margin-bottom: 8mm;
-    }
-    .b-page6-title .accent { color: #FFD54F; }
-
-    .b-page6-sub {
-      font-size: 14pt; color: rgba(255,255,255,0.8);
-      line-height: 1.7; letter-spacing: 1px;
-      margin-bottom: 10mm;
-    }
-
-    .b-people {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 4mm;
-      margin-bottom: 8mm;
-    }
-    .b-person {
-      padding: 5mm 4mm;
-      background: rgba(255,213,79,0.08);
-      border: 0.5pt solid rgba(255,213,79,0.3);
-      border-radius: 3mm;
-    }
+    /* =================== Page 9: 邀请 + CTA ==================== */
+    .b-page9 { padding: 0; display: flex; flex-direction: column; background: linear-gradient(135deg, #06182A 0%, #0A2540 100%); color: #fff; }
+    .b-page9-top { padding: 14mm 20mm 8mm; flex: 1; }
+    .b-page9-tag { font-size: 9pt; color: #FFD54F; letter-spacing: 4px; margin-bottom: 6mm; }
+    .b-page9-title { font-size: 32pt; font-weight: 900; color: #fff; letter-spacing: 2px; line-height: 1.2; margin-bottom: 6mm; }
+    .b-page9-title .accent { color: #FFD54F; }
+    .b-page9-sub { font-size: 13pt; color: rgba(255,255,255,0.8); line-height: 1.7; letter-spacing: 1px; margin-bottom: 8mm; }
+    .b-people { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4mm; margin-bottom: 8mm; }
+    .b-person { padding: 4mm 4mm; background: rgba(255,213,79,0.08); border: 0.5pt solid rgba(255,213,79,0.3); border-radius: 3mm; }
     .b-person-icon { font-size: 22pt; margin-bottom: 2mm; }
-    .b-person-title {
-      font-size: 12pt; font-weight: 800;
-      color: #FFD54F; letter-spacing: 1px;
-      margin-bottom: 1.5mm;
-    }
-    .b-person-desc {
-      font-size: 9pt; color: rgba(255,255,255,0.7);
-      line-height: 1.6;
-    }
-
-    .b-cta-box {
-      padding: 8mm 8mm;
-      background: linear-gradient(135deg, #FFD54F 0%, #FFC107 100%);
-      color: #06182A;
-      border-radius: 4mm;
-      text-align: center;
-      margin-bottom: 6mm;
-    }
-    .b-cta-box h3 {
-      font-size: 18pt; font-weight: 900;
-      letter-spacing: 2px; margin-bottom: 4mm;
-    }
-    .b-cta-box p {
-      font-size: 11pt; color: #1a1a1a;
-      line-height: 1.7;
-    }
+    .b-person-title { font-size: 11pt; font-weight: 800; color: #FFD54F; letter-spacing: 1px; margin-bottom: 1.5mm; }
+    .b-person-desc { font-size: 8.5pt; color: rgba(255,255,255,0.7); line-height: 1.5; }
+    .b-cta-box { padding: 7mm 7mm; background: linear-gradient(135deg, #FFD54F 0%, #FFC107 100%); color: #06182A; border-radius: 4mm; text-align: center; margin-bottom: 6mm; }
+    .b-cta-box h3 { font-size: 17pt; font-weight: 900; letter-spacing: 2px; margin-bottom: 4mm; }
+    .b-cta-box p { font-size: 10.5pt; color: #1a1a1a; line-height: 1.7; }
     .b-cta-box strong { font-weight: 800; }
-
-    .b-contact-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 4mm;
-    }
-    .b-contact-cell {
-      padding: 4mm 3mm;
-      background: rgba(255,255,255,0.06);
-      border: 0.5pt solid rgba(255,255,255,0.15);
-      border-radius: 3mm;
-      text-align: center;
-    }
-    .b-contact-cell-icon { font-size: 18pt; margin-bottom: 1.5mm; }
-    .b-contact-cell-title {
-      font-size: 9pt; font-weight: 800;
-      color: #FFD54F; letter-spacing: 2px;
-      margin-bottom: 1mm;
-    }
-    .b-contact-cell-value {
-      font-size: 9pt; color: rgba(255,255,255,0.8);
-      line-height: 1.4; font-weight: 700;
-    }
-
-    .b-page6-foot {
-      padding: 6mm 20mm;
-      background: rgba(0,0,0,0.3);
-      font-size: 8pt;
-      color: rgba(255,255,255,0.5);
-      letter-spacing: 1px;
-      border-top: 0.5pt solid rgba(255,213,79,0.2);
-    }
-    .b-page6-foot .disclaimer {
-      font-size: 7.5pt; color: rgba(255,255,255,0.4);
-      line-height: 1.5;
-    }
+    .b-contact-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4mm; }
+    .b-contact-cell { padding: 4mm 3mm; background: rgba(255,255,255,0.06); border: 0.5pt solid rgba(255,255,255,0.15); border-radius: 3mm; text-align: center; }
+    .b-contact-cell-icon { font-size: 16pt; margin-bottom: 1mm; }
+    .b-contact-cell-title { font-size: 8pt; font-weight: 800; color: #FFD54F; letter-spacing: 2px; margin-bottom: 1mm; }
+    .b-contact-cell-value { font-size: 9pt; color: rgba(255,255,255,0.8); line-height: 1.4; font-weight: 700; }
+    .b-page9-foot { padding: 5mm 20mm; background: rgba(0,0,0,0.3); font-size: 7.5pt; color: rgba(255,255,255,0.4); letter-spacing: 1px; border-top: 0.5pt solid rgba(255,213,79,0.2); }
+    .b-page9-foot .disclaimer { font-size: 7.5pt; color: rgba(255,255,255,0.4); line-height: 1.5; }
   </style>
 </head>
 <body>
@@ -616,19 +226,12 @@
         乾元资本集团 · 集团级业务集群
       </div>
     </div>
-
     <div class="b-cover-tag">BRAND BROCHURE · 品牌宣传册</div>
-
-    <div class="b-cover-title">
-      找钱 · 用钱<br>
-      让<span class="accent">钱生钱</span>
-    </div>
-
+    <div class="b-cover-title">找钱 · 用钱<br>让<span class="accent">钱生钱</span></div>
     <div class="b-cover-sub">
       融资 + 投资 + 循环 · 自我增强的飞轮<br>
       <strong>5-8 年长期主义</strong> · 个人研究方向
     </div>
-
     <div class="b-cover-quote">
       "融资不是求人借钱，投资不是碰运气。<br>
       它们是同一件事的两面——<br>
@@ -636,7 +239,6 @@
       <span class="from">—— 乾元投融资规划和管理 · 核心理念</span>
     </div>
   </div>
-
   <div class="b-cover-foot">
     <div class="b-cover-foot-info">
       <strong>乾元资本集团（筹备）</strong><br>
@@ -644,123 +246,83 @@
       5 年内不开公司 · 不正式工商注册<br>
       <span style="font-size:8pt;color:rgba(255,255,255,0.4);">v1.0 · 2026-09</span>
     </div>
-    <div class="b-cover-qr">
-      联系<br>二维码<br>
-      <span style="font-size:7pt;">qygc@<br>163.com</span>
-    </div>
+    <div class="b-cover-qr">联系<br>二维码<br><span style="font-size:7pt;">qygc@<br>163.com</span></div>
   </div>
 </div>
 
-<!-- ========== Page 2: 为什么是"投融资" ========== -->
+<!-- ========== Page 2: 核心理念（一页） ========== -->
 <div class="b-page b-page2">
-  <div class="b-page2-header">
+  <div class="b-page2-head">
     <div class="b-page2-num">01</div>
-    <div class="b-page2-title">融资和投资，<br>是同一件事的两面</div>
+    <div class="b-page2-title">融资和投资，是同一件事的两面</div>
     <div class="b-page2-tagline">ONE IDEA · 一个核心理念</div>
   </div>
-
   <div class="b-page2-body">
     <div class="b-quote-big">
       <span class="accent">80%</span> 的人融资难，<br>
       是因为把融资和投资当<span class="accent">两件</span>事。
     </div>
-
     <p class="b-prose">
-      5 年前的某个失眠夜晚，忽然冒出一句话：<strong>"这一辈子，到底想做成什么？"</strong><br><br>
-      答案慢慢凝聚成一个结构——乾元资本（集团母体）下设<strong>7 家乾元系子公司</strong>，覆盖金融、出海、不动产等长期方向。
+      5 年前的某个失眠夜晚，忽然冒出一句话：<strong>"这一辈子，到底想做成什么？"</strong>答案慢慢凝聚成一个结构——乾元资本（集团母体）下设 <strong class="hl">7 家乾元系子公司</strong>，覆盖金融、出海、不动产等长期方向。
     </p>
-
     <p class="b-prose">
       其中最特殊的一家公司，叫 <strong class="hl">"乾元投融资规划和管理"</strong>。它不是只投不运营的财务投资者，也不是只找钱的融资中介——它是<strong class="hl">把融资和投资打通成一件事</strong>的业务集群。
     </p>
 
-    <!-- 飞轮 SVG -->
     <div class="b-flywheel">
       <div class="b-flywheel-title">THE FLYWHEEL · 自我增强的飞轮</div>
       <svg class="b-flywheel-svg" viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <linearGradient id="goldGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stop-color="#FFD54F"/>
             <stop offset="100%" stop-color="#FFC107"/>
           </linearGradient>
+          <marker id="arr2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L8,3 z" fill="#FFD54F"/>
+          </marker>
         </defs>
-        <!-- 4 节点 -->
         <g font-family="Microsoft YaHei, PingFang SC, sans-serif">
-          <!-- 中心圆 -->
-          <circle cx="200" cy="120" r="38" fill="url(#goldGrad)" stroke="#FFE183" stroke-width="2"/>
+          <circle cx="200" cy="120" r="38" fill="url(#goldGrad2)" stroke="#FFE183" stroke-width="2"/>
           <text x="200" y="118" text-anchor="middle" fill="#06182A" font-size="14" font-weight="900">飞 轮</text>
           <text x="200" y="134" text-anchor="middle" fill="#06182A" font-size="9" font-weight="700">FLYWHEEL</text>
-
-          <!-- 节点 1: 融资 (左) -->
           <circle cx="60" cy="120" r="32" fill="#0A2540" stroke="#FFD54F" stroke-width="1.5"/>
           <text x="60" y="118" text-anchor="middle" fill="#FFD54F" font-size="13" font-weight="800">融 资</text>
           <text x="60" y="134" text-anchor="middle" fill="#FFD54F" font-size="8" font-weight="700">FINANCE</text>
-
-          <!-- 节点 2: 投资 (右) -->
           <circle cx="340" cy="120" r="32" fill="#0A2540" stroke="#FFD54F" stroke-width="1.5"/>
           <text x="340" y="118" text-anchor="middle" fill="#FFD54F" font-size="13" font-weight="800">投 资</text>
           <text x="340" y="134" text-anchor="middle" fill="#FFD54F" font-size="8" font-weight="700">INVEST</text>
-
-          <!-- 节点 3: 业绩 (下) -->
           <circle cx="200" cy="210" r="32" fill="#0A2540" stroke="#FFD54F" stroke-width="1.5"/>
           <text x="200" y="208" text-anchor="middle" fill="#FFD54F" font-size="13" font-weight="800">业 绩</text>
           <text x="200" y="224" text-anchor="middle" fill="#FFD54F" font-size="8" font-weight="700">RESULT</text>
-
-          <!-- 节点 4: 信用 (上) -->
           <circle cx="200" cy="30" r="32" fill="#0A2540" stroke="#FFD54F" stroke-width="1.5"/>
           <text x="200" y="28" text-anchor="middle" fill="#FFD54F" font-size="13" font-weight="800">信 用</text>
           <text x="200" y="44" text-anchor="middle" fill="#FFD54F" font-size="8" font-weight="700">CREDIT</text>
-
-          <!-- 连接线 + 箭头 (顺时针) -->
-          <!-- 融资 → 投资 -->
-          <path d="M 92 120 L 308 120" stroke="#FFD54F" stroke-width="2" fill="none" marker-end="url(#arr)"/>
-          <!-- 投资 → 业绩 -->
-          <path d="M 322 142 L 218 200" stroke="#FFD54F" stroke-width="2" fill="none" marker-end="url(#arr)"/>
-          <!-- 业绩 → 信用 -->
-          <path d="M 200 178 L 200 62" stroke="#FFD54F" stroke-width="2" fill="none" marker-end="url(#arr)"/>
-          <!-- 信用 → 融资 -->
-          <path d="M 178 50 L 80 100" stroke="#FFD54F" stroke-width="2" fill="none" marker-end="url(#arr)"/>
-
-          <!-- 箭头定义 -->
-          <defs>
-            <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
-              <path d="M0,0 L0,6 L8,3 z" fill="#FFD54F"/>
-            </marker>
-          </defs>
+          <path d="M 92 120 L 308 120" stroke="#FFD54F" stroke-width="2" fill="none" marker-end="url(#arr2)"/>
+          <path d="M 322 142 L 218 200" stroke="#FFD54F" stroke-width="2" fill="none" marker-end="url(#arr2)"/>
+          <path d="M 200 178 L 200 62" stroke="#FFD54F" stroke-width="2" fill="none" marker-end="url(#arr2)"/>
+          <path d="M 178 50 L 80 100" stroke="#FFD54F" stroke-width="2" fill="none" marker-end="url(#arr2)"/>
         </g>
       </svg>
       <div class="b-flywheel-caption">融 → 投 → 绩 → 信 → 再融，每一轮比上一轮更厚</div>
     </div>
 
     <div class="b-stats-row">
-      <div class="b-stat-card">
-        <div class="num">5-8</div>
-        <div class="lbl">年规划周期</div>
-      </div>
-      <div class="b-stat-card">
-        <div class="num">12<span style="font-size:18pt">×</span></div>
-        <div class="lbl">信贷杠杆</div>
-      </div>
-      <div class="b-stat-card">
-        <div class="num">3<span style="font-size:18pt">类</span></div>
-        <div class="lbl">业务集群</div>
-      </div>
+      <div class="b-stat-card"><div class="num">5-8</div><div class="lbl">年规划周期</div></div>
+      <div class="b-stat-card"><div class="num">12<span style="font-size:18pt">×</span></div><div class="lbl">信贷杠杆</div></div>
+      <div class="b-stat-card"><div class="num">3<span style="font-size:18pt">类</span></div><div class="lbl">业务集群</div></div>
     </div>
   </div>
-
   <div class="b-page2-foot">
     <span><strong>乾元投融资规划和管理</strong> · 品牌宣传册 v1.0</span>
-    <span>P. 02 / 06</span>
+    <span>P. 02 / 09</span>
   </div>
 </div>
 
-<!-- ========== Page 3: 发起人故事 ========== -->
+<!-- ========== Page 3: 创始人故事 ========== -->
 <div class="b-page b-page3">
   <div class="b-page3-left">
     <div class="b-page3-label">FOUNDER · 发起人</div>
-    <div class="b-page3-name">
-      我 是 谁
-    </div>
+    <div class="b-page3-name">我是谁</div>
     <div class="b-page3-trait">
       偏慢、偏闷、偏长期。<br>
       不擅社交，但擅长<br>
@@ -780,31 +342,25 @@
       湖北 · 武汉
     </div>
   </div>
-
   <div class="b-page3-right">
     <div class="b-page3-story-title">那个失眠的夜晚</div>
-
     <p class="b-page3-story">
       5 年前某个失眠的夜晚，忽然冒出一句话：<strong>"这一辈子，到底想做成什么？"</strong><br><br>
       当时正为方向焦虑，但答案慢慢凝聚成一个结构——
     </p>
-
     <span class="b-page3-story quote">
       "乾元资本"（集团母体）→ 7 家乾元系子公司，<br>
       覆盖金融 / 出海 / 不动产等长期方向。
     </span>
-
     <p class="b-page3-story">
       "乾元"取自《周易》<strong>"大哉乾元，万物资始"</strong>，意为万物之始，厚德载物。<br><br>
       我知道这不是一朝一夕的事。所以给自己定了 <strong>3 条规矩</strong>——
     </p>
-
     <p class="b-page3-story">
       <strong>① 不开公司</strong>：5 年内不办任何工商注册，绝不触碰合规红线<br>
       <strong>② 先做业务</strong>：3 个方向试水（黄金 / AI 外贸 / 量化），哪个跑通算哪个<br>
       <strong>③ 积累资金</strong>：5 年内清理存量负债，5 年后再启新项目
     </p>
-
     <p class="b-page3-story">
       我不是天才，也没什么特别资源。<br>
       但我相信——<strong>慢就是快，厚就是大，5-8 年磨一件事的人，最终会成为有重量的人。</strong>
@@ -812,14 +368,132 @@
   </div>
 </div>
 
-<!-- ========== Page 4: 3 个真实案例 ========== -->
+<!-- ========== Page 4: 5-8 年愿景 ========== -->
 <div class="b-page b-page4">
-  <div class="b-page4-header">
-    <div class="b-page4-tag">CASES · 真实案例</div>
-    <div class="b-page4-title">3 个飞轮转起来的故事</div>
-    <div class="b-page4-sub">不是数据，是故事</div>
+  <div class="b-page4-head">
+    <div class="b-page4-tag">VISION · 5-8 年愿景</div>
+    <div class="b-page4-title">用 30 年时间，把自己磨成有重量的人</div>
+    <div class="b-page4-sub">5-8 年是起步 · 30 年才是终局</div>
   </div>
 
+  <div class="b-timeline">
+    <div class="b-tl-card">
+      <div class="b-tl-year">5-6 年</div>
+      <div class="b-tl-stage">信用积累期</div>
+      <div class="b-tl-title">🌱 慢就是快</div>
+      <div class="b-tl-desc">
+        5 年清债 + 建立个人信用 + 养流水<br>
+        小额试投<br>
+        <strong>目标：融资 10-30 万</strong>
+      </div>
+    </div>
+    <div class="b-tl-card">
+      <div class="b-tl-year">第 7 年</div>
+      <div class="b-tl-stage">小循环期</div>
+      <div class="b-tl-title">🌿 跑通循环</div>
+      <div class="b-tl-desc">
+        完成 1-2 轮"融资→投资→业绩"小循环<br>
+        业绩公开化 + 种子用户<br>
+        <strong>目标：融资 50-100 万</strong>
+      </div>
+    </div>
+    <div class="b-tl-card">
+      <div class="b-tl-year">8 年后</div>
+      <div class="b-tl-stage">飞轮期</div>
+      <div class="b-tl-title">🌳 飞轮自转</div>
+      <div class="b-tl-desc">
+        扩大融资规模 + 多元投资组合<br>
+        飞轮自转 + 团队化<br>
+        <strong>目标：融资 300 万+</strong>
+      </div>
+    </div>
+    <div class="b-tl-card">
+      <div class="b-tl-year">30 年</div>
+      <div class="b-tl-stage">长期复利期</div>
+      <div class="b-tl-title">💎 厚积薄发</div>
+      <div class="b-tl-desc">
+        飞轮已稳定自转<br>
+        复利显现<br>
+        <strong>从"个人"变成"有重量的人"</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="b-page4-quote">
+    "30 年后回看今天，<br>
+    我希望自己是一个<strong style="color:#B8860B;">慢慢变厚</strong>的人。"
+    <span class="from">—— 乾元资本的 slogan · 也是个人承诺</span>
+  </div>
+
+  <div class="b-page4-foot">
+    <span><strong>乾元投融资规划和管理</strong> · 品牌宣传册 v1.0</span>
+    <span>P. 04 / 09</span>
+  </div>
+</div>
+
+<!-- ========== Page 5: 我们的信条 ========== -->
+<div class="b-page b-page5">
+  <div class="b-page5-head">
+    <div class="b-page5-tag">PHILOSOPHY · 我们的信条</div>
+    <div class="b-page5-title">3 个相信 · 4 个拒绝</div>
+    <div class="b-page5-sub">不是方法论，是判断标准</div>
+  </div>
+
+  <div class="b-page5-body">
+    <div class="b-belief-row">
+      <div class="b-belief">
+        <div class="b-belief-icon">🌀</div>
+        <div class="b-belief-title">飞轮之上</div>
+        <div class="b-belief-en">THE FLYWHEEL</div>
+        <div class="b-belief-text">
+          <strong>每一轮比上一轮更厚</strong>，时间越长、复利越大。<br>
+          我们不接受"一次赚够"的项目——那是赌博，不是飞轮。
+        </div>
+      </div>
+      <div class="b-belief">
+        <div class="b-belief-icon">⏳</div>
+        <div class="b-belief-title">长期主义</div>
+        <div class="b-belief-en">LONG-TERM</div>
+        <div class="b-belief-text">
+          <strong>5-8 年起步 · 30 年视角</strong>。<br>
+          拒绝短期暴利诱惑。<br>
+          慢就是快，厚积薄发。
+        </div>
+      </div>
+      <div class="b-belief">
+        <div class="b-belief-icon">🤝</div>
+        <div class="b-belief-title">共生共建</div>
+        <div class="b-belief-en">CO-SHARING</div>
+        <div class="b-belief-text">
+          <strong>客户不是被服务者，是共建者</strong>。<br>
+          业绩公开、信用互认、合作长期——<br>
+          每一方都得到真实回报。
+        </div>
+      </div>
+    </div>
+
+    <div class="b-reject-box">
+      <h3>🚫 我 们 拒 绝 4 类 项 目</h3>
+      <p><strong>① 承诺保本</strong>：保本是幻觉，<strong>真正稳的资产不靠承诺</strong></p>
+      <p><strong>② 一年翻倍</strong>：一年翻倍是赌博，<strong>真正赚的是慢慢变厚</strong></p>
+      <p><strong>③ 闷声发大财</strong>：闷声的项目不可持续，<strong>业绩公开才是真业绩</strong></p>
+      <p><strong>④ 短期暴利诱惑</strong>：短期暴利必有陷阱，<strong>5-8 年慢钱才是真钱</strong></p>
+    </div>
+  </div>
+
+  <div class="b-page5-foot">
+    <span><strong>乾元投融资规划和管理</strong> · 品牌宣传册 v1.0</span>
+    <span>P. 05 / 09</span>
+  </div>
+</div>
+
+<!-- ========== Page 6: 3 个真实案例 ========== -->
+<div class="b-page b-page6">
+  <div class="b-page6-head">
+    <div class="b-page6-tag">CASES · 真实案例</div>
+    <div class="b-page6-title">3 个飞轮转起来的故事</div>
+    <div class="b-page6-sub">不是数据，是故事</div>
+  </div>
   <div class="b-case-row">
     <div class="b-case">
       <div class="b-case-icon">🚜</div>
@@ -830,10 +504,9 @@
         <p><strong>第一年：</strong>用名下按揭商铺评估 80 万，做经营贷。</p>
         <p><strong>第二年：</strong>80 万 + 自己的 30 万，拿下法院拍卖的工业用地（评估 200 万，成交 110 万）。</p>
         <p><strong>第三年：</strong>工业用地抵押，再融 100 万。</p>
-        <p style="color:#B8860B;font-style:italic;margin-top:6mm;">资产 → 融资 → 投资 → 信用，飞轮第一圈。</p>
+        <p style="color:#B8860B;font-style:italic;margin-top:4mm;">资产 → 融资 → 投资 → 信用，飞轮第一圈。</p>
       </div>
     </div>
-
     <div class="b-case">
       <div class="b-case-icon">👨‍💻</div>
       <div class="b-case-name">小李</div>
@@ -844,10 +517,9 @@
         <p><strong>第二步：</strong>用公积金 + 社保，信用贷 30 万。</p>
         <p><strong>第三步：</strong>30 万做首付，买第一套房（评估 200 万，按揭 170 万）。</p>
         <p><strong>第四步：</strong>30 万净资产 + 12 倍杠杆 = 360 万可融资规模。</p>
-        <p style="color:#B8860B;font-style:italic;margin-top:6mm;">他没有原始资产，但他有信用。信用，是可以经营的资产。</p>
+        <p style="color:#B8860B;font-style:italic;margin-top:4mm;">信用，是可以经营的资产。</p>
       </div>
     </div>
-
     <div class="b-case">
       <div class="b-case-icon">🚀</div>
       <div class="b-case-name">张总</div>
@@ -858,25 +530,23 @@
         <p><strong>第二年：</strong>250 万投资早期项目股权 + 业绩对赌。</p>
         <p><strong>第三年：</strong>项目成功退出，回报 600 万，业绩公开。</p>
         <p><strong>第四年：</strong>600 万业绩背书，融到 1000 万 — 比第一年多 4 倍。</p>
-        <p style="color:#B8860B;font-style:italic;margin-top:6mm;">飞轮转起来了：业绩越好 → 信用越好 → 融得越多 → 投得越大。</p>
+        <p style="color:#B8860B;font-style:italic;margin-top:4mm;">飞轮转起来了：业绩越好 → 信用越好 → 融得越多。</p>
       </div>
     </div>
   </div>
-
-  <div class="b-page4-foot">
+  <div class="b-page6-foot">
     <span><strong>乾元投融资规划和管理</strong> · 品牌宣传册 v1.0</span>
-    <span>P. 04 / 06 · 3 个真实故事</span>
+    <span>P. 06 / 09</span>
   </div>
 </div>
 
-<!-- ========== Page 5: 我们擅长的 3 件事 ========== -->
-<div class="b-page b-page5">
-  <div class="b-page5-header">
-    <div class="b-page5-tag">WHAT WE DO · 我们擅长的</div>
-    <div class="b-page5-title">3 件事，让我们不同</div>
-    <div class="b-page5-sub">不只是融资中介 · 不只是财务投资 · 我们是闭环设计者</div>
+<!-- ========== Page 7: 我们擅长的 3 件事 ========== -->
+<div class="b-page b-page7">
+  <div class="b-page7-head">
+    <div class="b-page7-tag">WHAT WE DO · 我们擅长的</div>
+    <div class="b-page7-title">3 件事，让我们不同</div>
+    <div class="b-page7-sub">不只是融资中介 · 不只是财务投资 · 我们是闭环设计者</div>
   </div>
-
   <div class="b-skill-row">
     <div class="b-skill">
       <div class="b-skill-num">01</div>
@@ -887,7 +557,6 @@
         不是"求人借钱"，是用 5-8 年建立起来的<strong>个人信用资产</strong>，让融资像呼吸一样自然。
       </div>
     </div>
-
     <div class="b-skill">
       <div class="b-skill-num">02</div>
       <div class="b-skill-title">用 钱</div>
@@ -897,7 +566,6 @@
         不是"赌一个项目"，是用<strong>分散 + 长期</strong>的逻辑，让每一笔钱都在 5-8 年里复利滚动。
       </div>
     </div>
-
     <div class="b-skill">
       <div class="b-skill-num">03</div>
       <div class="b-skill-title">循环</div>
@@ -908,22 +576,92 @@
       </div>
     </div>
   </div>
-
-  <div class="b-page5-foot">
+  <div class="b-page7-foot">
     <span><strong>乾元投融资规划和管理</strong> · 品牌宣传册 v1.0</span>
-    <span>P. 05 / 06</span>
+    <span>P. 07 / 09</span>
   </div>
 </div>
 
-<!-- ========== Page 6: 邀请 + CTA ========== -->
-<div class="b-page b-page6">
-  <div class="b-page6-top">
-    <div class="b-page6-tag">INVITATION · 邀请</div>
-    <div class="b-page6-title">
-      如果你也是<br>
-      <span class="accent">这样的人</span>
+<!-- ========== Page 8: 乾元生态 ========== -->
+<div class="b-page b-page8">
+  <div class="b-page8-head">
+    <div class="b-page8-tag">ECOSYSTEM · 乾元生态</div>
+    <div class="b-page8-title">我们不是一个人在战斗</div>
+    <div class="b-page8-sub">乾元系 4 大协同业务 · 共同支撑投融资飞轮</div>
+  </div>
+
+  <div class="b-eco-quote">
+    乾元投融资不是孤立的，<strong>背后有 4 大业务协同支撑</strong>。<br>
+    黄金 / 出海 / 量化 / 企服 各自分工，共同让飞轮更厚。
+  </div>
+
+  <div class="b-eco-row">
+    <div class="b-eco-card">
+      <div class="b-eco-icon">📈</div>
+      <div class="b-eco-body">
+        <div class="b-eco-title">乾元黄金</div>
+        <div class="b-eco-en">GOLD · 实物黄金业务</div>
+        <div class="b-eco-desc">
+          实物黄金 / 积存金 / 旧金回收。<br>
+          为投融资提供<strong>大宗资产配置</strong> + 客户场景入口。
+        </div>
+      </div>
     </div>
-    <div class="b-page6-sub">
+    <div class="b-eco-card">
+      <div class="b-eco-icon">🌍</div>
+      <div class="b-eco-body">
+        <div class="b-eco-title">乾元出海</div>
+        <div class="b-eco-en">GLOBAL · AI 外贸</div>
+        <div class="b-eco-desc">
+          AI 外贸 / Dropshipping / 全球贸易。<br>
+          为投融资提供<strong>海外资产视角</strong> + 真实营收记录。
+        </div>
+      </div>
+    </div>
+    <div class="b-eco-card">
+      <div class="b-eco-icon">⚡</div>
+      <div class="b-eco-body">
+        <div class="b-eco-title">乾元量化</div>
+        <div class="b-eco-en">QUANT · 量化交易</div>
+        <div class="b-eco-desc">
+          1 家公司 2 个事业部（交易 + 研发）。<br>
+          为投融资提供<strong>系统化业绩记录</strong> + 量化技术背景。
+        </div>
+      </div>
+    </div>
+    <div class="b-eco-card">
+      <div class="b-eco-icon">💼</div>
+      <div class="b-eco-body">
+        <div class="b-eco-title">乾元企服</div>
+        <div class="b-eco-en">SERVICE · 内部资金中心</div>
+        <div class="b-eco-desc">
+          8 大职能（资金归集 / 调度 / 风控 / 合规）。<br>
+          为投融资提供<strong>专业的资金运营支撑</strong>。
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="b-eco-summary">
+    <div class="b-eco-summary-title">WHY ECOSYSTEM</div>
+    <div class="b-eco-summary-text">
+      单一业务容易被风吹倒，<strong>生态协同才有韧性</strong>。<br>
+      4 大业务各有分工，共同让<strong>投融资飞轮</strong>转得更稳、更远。
+    </div>
+  </div>
+
+  <div class="b-page8-foot">
+    <span><strong>乾元投融资规划和管理</strong> · 品牌宣传册 v1.0</span>
+    <span>P. 08 / 09</span>
+  </div>
+</div>
+
+<!-- ========== Page 9: 邀请 + CTA ========== -->
+<div class="b-page b-page9">
+  <div class="b-page9-top">
+    <div class="b-page9-tag">INVITATION · 邀请</div>
+    <div class="b-page9-title">如果你也是<br><span class="accent">这样的人</span></div>
+    <div class="b-page9-sub">
       我们在寻找 <strong>3 类同路人</strong>——愿意用 5-8 年慢慢变厚的人。<br>
       不是客户，是<strong>共建者</strong>。
     </div>
@@ -942,7 +680,7 @@
       <div class="b-person">
         <div class="b-person-icon">📚</div>
         <div class="b-person-title">知识伙伴</div>
-        <div class="b-person-desc">懂融资 / 投资 / 不良资产某一领域</div>
+        <div class="b-person-desc">懂融资 / 投资 / 不动产某一领域</div>
       </div>
     </div>
 
@@ -973,7 +711,7 @@
     </div>
   </div>
 
-  <div class="b-page6-foot">
+  <div class="b-page9-foot">
     <div class="disclaimer">
       ⚠ 本网站为个人博客性质，<strong>不构成投资建议或商业承诺</strong>。<br>
       所有内容仅供学习参考。乾元资本（筹备）· 5 年内不开公司 · 央企合规优先。<br>

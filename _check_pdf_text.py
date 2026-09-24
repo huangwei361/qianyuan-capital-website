@@ -1,5 +1,5 @@
 import pdfplumber, os
-f = r'C:\Users\64549\.minimax\金融财富公司成立\invest-brochure-v3.pdf'
+f = r'C:\Users\64549\.minimax\金融财富公司成立\invest-brochure-v4.pdf'
 with pdfplumber.open(f) as pdf:
     print(f'Pages: {len(pdf.pages)}')
     print(f'Size: {os.path.getsize(f)} bytes ({os.path.getsize(f)/1024:.0f} KB)')
