@@ -465,7 +465,7 @@
     .b-page8-tag { font-size: 9pt; color: #B8860B; letter-spacing: 4px; margin-bottom: 2mm; }
     .b-page8-title { font-size: 26pt; font-weight: 900; color: #06182A; letter-spacing: 1px; margin-bottom: 2mm; }
     .b-page8-sub { font-size: 11pt; color: #666; }
-    .b-case-row { flex: 1; padding: 4mm 20mm 14mm; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 5mm; }
+    .b-case-row { flex: 1; padding: 4mm 20mm 6mm; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 5mm; }
     .b-case { background: #fff; border: 1pt solid #E5E8EE; border-radius: 4mm; padding: 6mm 5mm; display: flex; flex-direction: column; position: relative; overflow: hidden; }
     .b-case::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3mm; background: linear-gradient(90deg, #FFD54F 0%, #FFC107 100%); }
     .b-case-icon { font-size: 30pt; margin-top: 2mm; margin-bottom: 2mm; }
@@ -475,7 +475,27 @@
     .b-case-story { font-size: 9.5pt; line-height: 1.7; color: #555; }
     .b-case-story p { margin-bottom: 2mm; }
     .b-case-story strong { color: #06182A; font-weight: 700; }
-    .b-page8-foot { padding: 5mm 20mm; background: #06182A; color: rgba(255,255,255,0.5); font-size: 8pt; letter-spacing: 1px; display: flex; justify-content: space-between; }
+    .b-case-lesson {
+      margin-top: auto;
+      padding: 4mm 4mm;
+      background: linear-gradient(180deg, #FFFBEA 0%, #FFF8DC 100%);
+      border-left: 3pt solid #FFD54F;
+      border-radius: 2mm;
+    }
+    .b-case-lesson-title { font-size: 9pt; font-weight: 900; color: #B8860B; letter-spacing: 2px; margin-bottom: 2mm; }
+    .b-case-lesson-text { font-size: 8.5pt; line-height: 1.6; color: #06182A; }
+    .b-case-summary {
+      padding: 5mm 8mm;
+      background: linear-gradient(135deg, #06182A 0%, #0A2540 100%);
+      color: #fff;
+      border-radius: 3mm;
+      text-align: center;
+      margin: 0 20mm 6mm;
+    }
+    .b-case-summary-text { font-size: 11pt; line-height: 1.6; letter-spacing: 1px; }
+    .b-case-summary-text strong { color: #FFD54F; }
+    .b-case-summary-text .accent { color: #FFD54F; font-weight: 700; }
+    .b-page8-foot { padding: 4mm 20mm; background: #06182A; color: rgba(255,255,255,0.5); font-size: 8pt; letter-spacing: 1px; display: flex; justify-content: space-between; }
     .b-page8-foot strong { color: #FFD54F; }
 
     /* =================== Page 7: 我们的 3 大擅长 ==================== */
@@ -484,14 +504,34 @@
     .b-page9-tag { font-size: 9pt; color: #FFD54F; letter-spacing: 4px; margin-bottom: 2mm; }
     .b-page9-title { font-size: 26pt; font-weight: 900; color: #fff; letter-spacing: 1px; margin-bottom: 2mm; }
     .b-page9-sub { font-size: 11pt; color: rgba(255,255,255,0.6); }
-    .b-skill-row { flex: 1; padding: 4mm 20mm 8mm; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4mm; }
-    .b-skill { padding: 6mm 5mm; background: rgba(255,255,255,0.04); border: 0.5pt solid rgba(255,213,79,0.25); border-radius: 4mm; color: #fff; }
+    .b-skill-row { flex: 1; padding: 4mm 20mm 5mm; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4mm; }
+    .b-skill { padding: 6mm 5mm; background: rgba(255,255,255,0.04); border: 0.5pt solid rgba(255,213,79,0.25); border-radius: 4mm; color: #fff; display: flex; flex-direction: column; }
     .b-skill-num { font-size: 32pt; font-weight: 900; color: #FFD54F; line-height: 1; margin-bottom: 2mm; font-family: "Georgia", serif; }
     .b-skill-title { font-size: 16pt; font-weight: 800; color: #fff; letter-spacing: 1px; margin-bottom: 1mm; }
     .b-skill-en { font-size: 8pt; color: rgba(255,255,255,0.4); letter-spacing: 2px; margin-bottom: 3mm; }
     .b-skill-desc { font-size: 9.5pt; color: rgba(255,255,255,0.8); line-height: 1.7; }
     .b-skill-desc strong { color: #FFD54F; }
-    .b-page9-foot { padding: 5mm 20mm; background: rgba(0,0,0,0.3); color: rgba(255,255,255,0.5); font-size: 8pt; letter-spacing: 1px; display: flex; justify-content: space-between; border-top: 0.5pt solid rgba(255,213,79,0.2); }
+    .b-skill-detail {
+      margin-top: auto;
+      padding: 4mm 4mm;
+      background: rgba(255,213,79,0.06);
+      border-left: 3pt solid #FFD54F;
+      border-radius: 2mm;
+    }
+    .b-skill-detail-title { font-size: 9pt; font-weight: 900; color: #FFD54F; letter-spacing: 2px; margin-bottom: 2mm; }
+    .b-skill-detail-text { font-size: 8.5pt; line-height: 1.6; color: rgba(255,255,255,0.85); }
+    .b-skill-summary {
+      padding: 5mm 8mm;
+      background: linear-gradient(135deg, #FFD54F 0%, #FFC107 100%);
+      color: #06182A;
+      border-radius: 3mm;
+      text-align: center;
+      margin: 0 20mm 5mm;
+    }
+    .b-skill-summary-title { font-size: 9pt; font-weight: 900; letter-spacing: 2px; margin-bottom: 2mm; opacity: 0.7; }
+    .b-skill-summary-text { font-size: 11pt; line-height: 1.6; letter-spacing: 1px; font-weight: 700; }
+    .b-skill-summary-text .accent { color: #06182A; font-weight: 900; text-decoration: underline; }
+    .b-page9-foot { padding: 4mm 20mm; background: rgba(0,0,0,0.3); color: rgba(255,255,255,0.5); font-size: 8pt; letter-spacing: 1px; display: flex; justify-content: space-between; border-top: 0.5pt solid rgba(255,213,79,0.2); }
     .b-page9-foot strong { color: #FFD54F; }
 
     /* =================== Page 8: 乾元生态（新）==================== */
@@ -1135,7 +1175,15 @@
         <p><strong>第一年：</strong>用名下按揭商铺评估 80 万，做经营贷。</p>
         <p><strong>第二年：</strong>80 万 + 自己的 30 万，拿下法院拍卖的工业用地（评估 200 万，成交 110 万）。</p>
         <p><strong>第三年：</strong>工业用地抵押，再融 100 万。</p>
-        <p style="color:#B8860B;font-style:italic;margin-top:4mm;">资产 → 融资 → 投资 → 信用，飞轮第一圈。</p>
+        <p style="color:#B8860B;font-style:italic;margin-top:3mm;">资产 → 融资 → 投资 → 信用，飞轮第一圈。</p>
+      </div>
+      <div class="b-case-lesson">
+        <div class="b-case-lesson-title">关键启示</div>
+        <div class="b-case-lesson-text">
+          <strong>已有资产者</strong>：用现有抵押物起步，<br>
+          把<strong>别人的钱</strong>变成<strong>自己的资产</strong>，<br>
+          再用新资产做下一轮融资。
+        </div>
       </div>
     </div>
     <div class="b-case">
@@ -1148,7 +1196,15 @@
         <p><strong>第二步：</strong>用公积金 + 社保，信用贷 30 万。</p>
         <p><strong>第三步：</strong>30 万做首付，买第一套房（评估 200 万，按揭 170 万）。</p>
         <p><strong>第四步：</strong>30 万净资产 + 12 倍杠杆 = 360 万可融资规模。</p>
-        <p style="color:#B8860B;font-style:italic;margin-top:4mm;">信用，是可以经营的资产。</p>
+        <p style="color:#B8860B;font-style:italic;margin-top:3mm;">信用，是可以经营的资产。</p>
+      </div>
+      <div class="b-case-lesson">
+        <div class="b-case-lesson-title">关键启示</div>
+        <div class="b-case-lesson-text">
+          <strong>信用小白</strong>：先<strong>养流水 + 养征信</strong> 2 年，<br>
+          再用公积金 + 社保撬动<strong>第一笔信用资产</strong>，<br>
+          然后靠杠杆放大。
+        </div>
       </div>
     </div>
     <div class="b-case">
@@ -1161,8 +1217,22 @@
         <p><strong>第二年：</strong>250 万投资早期项目股权 + 业绩对赌。</p>
         <p><strong>第三年：</strong>项目成功退出，回报 600 万，业绩公开。</p>
         <p><strong>第四年：</strong>600 万业绩背书，融到 1000 万 — 比第一年多 4 倍。</p>
-        <p style="color:#B8860B;font-style:italic;margin-top:4mm;">飞轮转起来了：业绩越好 → 信用越好 → 融得越多。</p>
+        <p style="color:#B8860B;font-style:italic;margin-top:3mm;">飞轮转起来了：业绩越好 → 信用越好 → 融得越多。</p>
       </div>
+      <div class="b-case-lesson">
+        <div class="b-case-lesson-title">关键启示</div>
+        <div class="b-case-lesson-text">
+          <strong>企业主</strong>：用<strong>业绩</strong>做最硬的信用背书，<br>
+          每完成一轮投资，<strong>下一轮融资</strong>都比上一轮多。<br>
+          飞轮效应 = 4 年 4 倍。
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="b-case-summary">
+    <div class="b-case-summary-text">
+      <strong>3 个案例 · 同一个规律</strong>：信用是翅膀，资产是跑道，跑道越长、飞得越远。<br>
+      <span class="accent">不是看你现在有多少钱，是看你 5-8 年后能滚出多少钱。</span>
     </div>
   </div>
   <div class="b-page8-foot">
@@ -1172,11 +1242,11 @@
 </div>
 
 <!-- ========== Page 9: 我们擅长的 3 件事 ========== -->
-<div class="b-page b-page7">
-  <div class="b-page7-head">
-    <div class="b-page7-tag">WHAT WE DO · 我们擅长的</div>
-    <div class="b-page7-title">3 件事，让我们不同</div>
-    <div class="b-page7-sub">不只是融资中介 · 不只是财务投资 · 我们是闭环设计者</div>
+<div class="b-page b-page9">
+  <div class="b-page9-head">
+    <div class="b-page9-tag">WHAT WE DO · 我们擅长的</div>
+    <div class="b-page9-title">3 件事，让我们不同</div>
+    <div class="b-page9-sub">不只是融资中介 · 不只是财务投资 · 我们是闭环设计者</div>
   </div>
   <div class="b-skill-row">
     <div class="b-skill">
@@ -1184,8 +1254,16 @@
       <div class="b-skill-title">找 钱</div>
       <div class="b-skill-en">FINANCING</div>
       <div class="b-skill-desc">
-        用<strong>信用 + 身份 + 筹码</strong>撬动外部资金。<br><br>
+        用<strong>信用 + 身份 + 筹码</strong>撬动外部资金。<br>
         不是"求人借钱"，是用 5-8 年建立起来的<strong>个人信用资产</strong>，让融资像呼吸一样自然。
+      </div>
+      <div class="b-skill-detail">
+        <div class="b-skill-detail-title">实操 3 步</div>
+        <div class="b-skill-detail-text">
+          ① 信用养流水（2 年）<br>
+          ② 信用贷 / 抵押贷（1 年）<br>
+          ③ 经营贷 / 股权估值（长期）
+        </div>
       </div>
     </div>
     <div class="b-skill">
@@ -1193,8 +1271,17 @@
       <div class="b-skill-title">用 钱</div>
       <div class="b-skill-en">INVESTING</div>
       <div class="b-skill-desc">
-        战略 / 财务 / 不动产 / 海外，<strong>多资产配置</strong>。<br><br>
+        战略 / 财务 / 不动产 / 海外，<strong>多资产配置</strong>。<br>
         不是"赌一个项目"，是用<strong>分散 + 长期</strong>的逻辑，让每一笔钱都在 5-8 年里复利滚动。
+      </div>
+      <div class="b-skill-detail">
+        <div class="b-skill-detail-title">实操 4 类</div>
+        <div class="b-skill-detail-text">
+          ① 实物黄金（防御）<br>
+          ② 不动产投资（中期）<br>
+          ③ 股权 / 项目（成长）<br>
+          ④ 海外资产（避险）
+        </div>
       </div>
     </div>
     <div class="b-skill">
@@ -1202,9 +1289,26 @@
       <div class="b-skill-title">循环</div>
       <div class="b-skill-en">FLYWHEEL</div>
       <div class="b-skill-desc">
-        业绩 → 信用 → 再融资。<br><br>
+        业绩 → 信用 → 再融资。<br>
         不是"一次性买卖"，是<strong>让飞轮自转</strong>的设计 — 每完成一轮，下一轮都比上一轮融得更多、投得更准。
       </div>
+      <div class="b-skill-detail">
+        <div class="b-skill-detail-title">实操 4 步</div>
+        <div class="b-skill-detail-text">
+          ① 融到第一笔（10 万）<br>
+          ② 投出有业绩的项目<br>
+          ③ 用业绩换下一轮融资<br>
+          ④ 飞轮自转，规模翻倍
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="b-skill-summary">
+    <div class="b-skill-summary-title">WHY THIS MATTERS</div>
+    <div class="b-skill-summary-text">
+      <strong>3 件事不拆开做</strong>，才能形成飞轮。<br>
+      只做找钱 = 资金掮客；只做用钱 = 财务投资者；只做循环 = 概念。<br>
+      <span class="accent">3 件一起做 = 闭环设计者。</span>
     </div>
   </div>
   <div class="b-page9-foot">
