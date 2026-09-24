@@ -1,4 +1,4 @@
-"""批量生成 7 个乾元系子站"""
+﻿"""批量生成 7 个乾元系子站"""
 import os
 
 # 子站配置：(目录, 品牌字, 品牌色, 名称, 副标题, hero描述, 业务定位, 内容, 5-8年规划)
@@ -75,22 +75,94 @@ SUBS = [
         "char": "投",
         "color": "#FFD54F",
         "name": "乾元投资",
-        "tagline": "战略投资 / 财务投资 / 多元资产配置",
-        "hero_sub": "<strong>只投不运营</strong>，<br>5-8 年后期大资金阶段，<br>长期复利，慢就是快。",
-        "stats": [("只投", "不运营"), ("5-8 年", "启动期"), ("复利", "核心策略")],
-        "about_text": "乾元投资是集团旗下的<strong>战略投资业务</strong>，<br>负责集团外部投资 + 内部资产配置，<br><strong>只投资、不亲自运营</strong>。",
+        "tagline": "投融资规划和管理 · 找钱 + 用钱 + 循环",
+        "hero_sub": "把<strong>融资</strong>（找钱）和<strong>投资</strong>（用钱）打通，<br>形成<strong>自我增强的循环</strong>，<br>5-8 年后期大资金阶段，长期复利。",
+        "stats": [("3 大", "方向"), ("5-8 年", "启动期"), ("复利", "核心策略")],
+        "about_text": "乾元投资是集团旗下的<strong>投融资规划和管理业务</strong>，<br>核心是<strong>3 大方向</strong>：<strong>融资</strong>（找钱）+ <strong>投资</strong>（用钱）+ <strong>两者结合的循环</strong>，<br>通过投融资一体化的飞轮，实现长期复利增长。",
         "sections": [
-            ("", "📈 战略投资", "对外部有潜力的企业做股权投资，<br>不参与日常运营，只做股东。"),
-            ("", "💼 财务投资", "在公开市场做多资产配置：<br>股票 / 债券 / REITs / 商品 / 海外。"),
-            ("", "🏢 不动产投资", "商业地产 / 写字楼 / 物流仓储，<br>稳定现金流 + 长期升值。"),
-            ("", "🌐 海外配置", "QDII 基金 / 美股 / 港股 / 加密资产，<br>分散单一市场风险。"),
-            ("", "🛡️ 风控原则", "单笔不超过总资产 10%，<br>行业分散 + 时间分散 + 地域分散。"),
+            ("", "💰 融 资 · 找 钱", "把外部资金引到乾元系：<br><strong>股权融资</strong>（出让部分股权换资金）/ <strong>债权融资</strong>（银行贷款 / 信用借款）/ <strong>信用融资</strong>（基于业绩和信用）/ <strong>合作众筹</strong>（联合投资 / 项目跟投）。"),
+            ("", "📈 投 资 · 用 钱", "把资金配置到能产生收益的资产：<br><strong>战略投资</strong>（外部潜力企业的股权）/ <strong>财务投资</strong>（公开市场多资产配置）/ <strong>不动产投资</strong>（商业地产 / 写字楼 / 仓储）/ <strong>海外配置</strong>（QDII / 美股 / 港股）。"),
+            ("", "🔄 投 融 循 环 · 关键", "这是乾元投资最核心的方法论：<br><strong>融到的钱 → 投资产生业绩 → 业绩建立信用 → 信用反哺下一轮融资</strong>，形成自我增强的飞轮。<br><strong>循环越转越大，复利越滚越厚</strong>。"),
         ],
         "stages": [
-            ("🌱 5-6 年 起步", "5 年清债 + 现金储备"),
-            ("🌿 7 年 试投", "小资金开始财务投资"),
-            ("🌳 8 年后 战略", "对外股权 + 不动产 + 多元资产"),
+            ("🌱 5-6 年 信用积累", "5 年清债 + 建立个人信用 + 小额试投"),
+            ("🌿 7 年 跑通小循环", "完成 1-2 轮'融资→投资→业绩'小循环"),
+            ("🌳 8 年后 飞轮放大", "扩大融资规模 + 多元投资组合 + 飞轮自转"),
         ],
+        "loop_section": '''
+<!-- ===== 投融资飞轮 · 商业闭环 ===== -->
+<section class="content" id="loop" style="background: var(--navy-deep);">
+  <div class="container">
+    <div class="section-tag">商 业 飞 轮</div>
+    <h2 class="section-title">投融资循环 · 自我增强</h2>
+    <p class="section-sub">
+      乾元投资不是"先融资再投资"的两段式，而是<strong>投融资一体化的飞轮</strong>：<br>
+      <strong style="color:#FFD54F;">融到的钱 → 投出去产生业绩 → 业绩建立信用 → 信用反哺下一轮融资</strong>，<br>
+      每一轮循环都让飞轮转得更快、融得更多、投得更准。
+    </p>
+
+    <div class="loop-wrap">
+      <div class="loop-title">融 · 投 · 绩 · 信 · <span class="accent">再融</span></div>
+      <div class="loop-sub">融资 + 投资 + 业绩 + 信用 四要素循环 · 每一轮都比上一轮更厚</div>
+
+      <div class="loop-flow">
+        <div class="loop-col loop-col-rd">
+          <div class="loop-col-label">💰 融 资</div>
+          <div class="loop-col-title">找钱（外部资金）</div>
+          <ul class="loop-col-list">
+            <li>股权融资（出让股权换资金）</li>
+            <li>债权融资（银行贷款 / 信用借款）</li>
+            <li>信用融资（基于业绩背书）</li>
+            <li>联合众筹（项目跟投）</li>
+          </ul>
+        </div>
+
+        <div class="loop-center">
+          <div class="loop-pill">🔥 资金池</div>
+          <div class="loop-arrow">↓</div>
+          <div class="loop-pill down">⚔ 双 轮 出 击</div>
+          <div class="loop-arrow up">↑</div>
+          <div class="loop-pill">🚀 飞轮自转</div>
+        </div>
+
+        <div class="loop-col loop-col-tr">
+          <div class="loop-col-label">📈 投 资</div>
+          <div class="loop-col-title">用钱（资产配置）</div>
+          <ul class="loop-col-list">
+            <li>战略投资（外部潜力企业股权）</li>
+            <li>财务投资（公开市场多资产）</li>
+            <li>不动产（商业 / 写字楼 / 仓储）</li>
+            <li>海外配置（QDII / 美股 / 港股）</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="loop-benefit">
+        <div class="loop-bn">
+          <div class="loop-bn-icon">📊</div>
+          <div class="loop-bn-title">业绩积累</div>
+          <div class="loop-bn-desc">投资产生真实业绩<br>形成可对外展示的回报</div>
+        </div>
+        <div class="loop-bn highlight">
+          <div class="loop-bn-icon">🛡️</div>
+          <div class="loop-bn-title">信用反哺</div>
+          <div class="loop-bn-desc">业绩 → 信用升级<br>→ 下一轮融资更易、更大、更便宜</div>
+        </div>
+        <div class="loop-bn">
+          <div class="loop-bn-icon">🔁</div>
+          <div class="loop-bn-title">飞轮放大</div>
+          <div class="loop-bn-desc">每一轮循环<br>都比上一轮融得多、投得准</div>
+        </div>
+      </div>
+
+      <p style="margin-top: 22px; text-align: center; font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.8;">
+        <strong style="color:#FFD54F;">核心逻辑</strong>：融资和投资不是两件事，而是<strong>同一件事的两面</strong>。<br>
+        投得好 → 业绩好 → 信用好 → 融得更多 → 投得更大 → 业绩更好，<strong style="color:#FFD54F;">复利增长</strong>。
+      </p>
+    </div>
+  </div>
+</section>
+''',
     },
     {
         "dir": "rental",
@@ -214,6 +286,8 @@ TEMPLATE = '''<!DOCTYPE html>
   </div>
 </section>
 
+{loop_section}
+
 <!-- 兄弟部门 -->
 <section class="sibling">
   <div class="container">
@@ -232,7 +306,7 @@ TEMPLATE = '''<!DOCTYPE html>
           <a href="quant-rd.html">🔬 研发</a>
         </div>
       </div>
-      <a href="invest.html" class="sibling-link"><div class="sl-tag">🟡 后期</div><div class="sl-name">乾元投资</div></a>
+      <a href="invest.html" class="sibling-link"><div class="sl-tag">🟡 投融资</div><div class="sl-name">乾元投资</div></a>
       <a href="rental.html" class="sibling-link"><div class="sl-tag">⚪ 自营</div><div class="sl-name">乾元租赁</div></a>
       <a href="asset.html" class="sibling-link"><div class="sl-tag">⚪ 学习</div><div class="sl-name">乾元资产处理</div></a>
     </div>
@@ -306,6 +380,7 @@ for sub in SUBS:
         about_text=sub['about_text'],
         cards_html=cards_html,
         stages_html=stages_html,
+        loop_section=sub.get('loop_section', ''),
     )
 
     target = os.path.join(base, f'{sub["dir"]}.html')
