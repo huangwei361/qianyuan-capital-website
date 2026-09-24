@@ -1,10 +1,12 @@
 import pdfplumber, os
-f = r'C:\Users\64549\.minimax\金融财富公司成立\invest-brochure-v4.pdf'
+f = r'C:\Users\64549\.minimax\金融财富公司成立\invest-brochure-v5.pdf'
 with pdfplumber.open(f) as pdf:
     print(f'Pages: {len(pdf.pages)}')
-    print(f'Size: {os.path.getsize(f)} bytes ({os.path.getsize(f)/1024:.0f} KB)')
+    print(f'Size: {os.path.getsize(f)/1024:.0f} KB')
     print()
-    for i, page in enumerate(pdf.pages):
-        text = page.extract_text() or ''
-        title = text.split('\n')[0] if text else '(empty)'
-        print(f'P{i+1}: {len(text):>4} chars | {title[:60]}')
+    # 重点看 P5（信条页）
+    p5 = pdf.pages[4] if len(pdf.pages) >= 5 else None
+    if p5:
+        text = p5.extract_text() or ''
+        print(f'P5 ({len(text)} chars):')
+        print(text[:800])

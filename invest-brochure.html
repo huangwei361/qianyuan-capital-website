@@ -109,26 +109,140 @@
     .b-page4-foot { position: absolute; bottom: 8mm; left: 20mm; right: 20mm; display: flex; justify-content: space-between; font-size: 8pt; color: #999; letter-spacing: 1px; }
     .b-page4-foot strong { color: #B8860B; }
 
-    /* =================== Page 5: 我们的信条（新）==================== */
-    .b-page5 { padding: 0; background: linear-gradient(180deg, #FFFBEA 0%, #fff 30%); }
-    .b-page5-head { text-align: center; padding: 0 0 6mm; margin-bottom: 6mm; }
+    /* =================== Page 5: 我们的信条（重设计）==================== */
+    .b-page5 { padding: 0; display: flex; flex-direction: column; background: #fff; }
+    .b-page5-head { text-align: center; padding: 10mm 20mm 5mm; background: linear-gradient(180deg, #FFFBEA 0%, #fff 100%); border-bottom: 0.5pt solid #FFD54F; }
     .b-page5-tag { font-size: 9pt; color: #B8860B; letter-spacing: 4px; margin-bottom: 2mm; }
     .b-page5-title { font-size: 26pt; font-weight: 900; color: #06182A; letter-spacing: 1px; margin-bottom: 2mm; }
     .b-page5-sub { font-size: 11pt; color: #666; }
-    .b-page5-body { padding: 0 4mm; }
-    .b-belief-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4mm; margin-bottom: 6mm; }
-    .b-belief { padding: 6mm 5mm; background: #fff; border: 1pt solid #FFD54F; border-radius: 3mm; }
-    .b-belief-icon { font-size: 30pt; margin-bottom: 3mm; }
-    .b-belief-title { font-size: 14pt; font-weight: 800; color: #06182A; letter-spacing: 1px; margin-bottom: 1mm; }
-    .b-belief-en { font-size: 8pt; color: #B8860B; letter-spacing: 2px; margin-bottom: 3mm; }
-    .b-belief-text { font-size: 10pt; color: #444; line-height: 1.7; }
+
+    /* 3 个相信：上半页 */
+    .b-page5-believe { padding: 6mm 20mm 5mm; background: #FFFBEA; }
+    .b-believe-head {
+      display: flex; align-items: center; gap: 3mm;
+      margin-bottom: 4mm;
+    }
+    .b-believe-head-mark {
+      width: 8mm; height: 8mm;
+      background: linear-gradient(135deg, #FFD54F, #FFC107);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14pt; font-weight: 900; color: #06182A;
+    }
+    .b-believe-head-title {
+      font-size: 15pt; font-weight: 800;
+      color: #06182A; letter-spacing: 1px;
+    }
+    .b-believe-head-en {
+      font-size: 9pt; color: #B8860B;
+      letter-spacing: 2px; margin-left: auto;
+    }
+
+    .b-belief-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4mm; }
+    .b-belief {
+      padding: 5mm 4mm;
+      background: #fff;
+      border: 1pt solid #FFD54F;
+      border-radius: 3mm;
+      text-align: center;
+      position: relative;
+    }
+    .b-belief-icon { font-size: 26pt; margin-bottom: 2mm; }
+    .b-belief-num {
+      font-size: 9pt; color: #B8860B;
+      letter-spacing: 2px; margin-bottom: 1mm;
+      font-family: "Georgia", serif;
+    }
+    .b-belief-title {
+      font-size: 14pt; font-weight: 800;
+      color: #06182A; letter-spacing: 1px;
+      margin-bottom: 1mm;
+    }
+    .b-belief-en {
+      font-size: 7pt; color: #B8860B;
+      letter-spacing: 1.5px; margin-bottom: 3mm;
+    }
+    .b-belief-text {
+      font-size: 9pt; color: #444;
+      line-height: 1.65;
+    }
     .b-belief-text strong { color: #06182A; font-weight: 700; }
-    .b-reject-box { padding: 6mm 8mm; background: #06182A; color: #fff; border-radius: 3mm; }
-    .b-reject-box h3 { font-size: 13pt; color: #FFD54F; letter-spacing: 2px; margin-bottom: 4mm; }
-    .b-reject-box p { font-size: 10pt; color: rgba(255,255,255,0.8); line-height: 1.7; margin-bottom: 2mm; }
-    .b-reject-box strong { color: #FFD54F; }
-    .b-page5-foot { position: absolute; bottom: 8mm; left: 20mm; right: 20mm; display: flex; justify-content: space-between; font-size: 8pt; color: #999; letter-spacing: 1px; }
-    .b-page5-foot strong { color: #B8860B; }
+
+    /* 中间过渡语 */
+    .b-reject-intro {
+      padding: 4mm 20mm 3mm;
+      text-align: center;
+      background: linear-gradient(180deg, #FFFBEA 0%, #06182A 100%);
+    }
+    .b-reject-intro-text {
+      font-size: 13pt; font-weight: 700;
+      color: #06182A;
+      letter-spacing: 2px;
+      line-height: 1.4;
+    }
+    .b-reject-intro-text .accent { color: #B8860B; }
+
+    /* 4 个拒绝：下半页（深蓝底） */
+    .b-page5-reject { flex: 1; padding: 5mm 20mm 8mm; background: #06182A; color: #fff; }
+    .b-reject-head {
+      display: flex; align-items: center; gap: 3mm;
+      margin-bottom: 4mm;
+    }
+    .b-reject-head-mark {
+      width: 8mm; height: 8mm;
+      background: linear-gradient(135deg, #FFD54F, #FFC107);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13pt; font-weight: 900; color: #06182A;
+    }
+    .b-reject-head-title {
+      font-size: 15pt; font-weight: 800;
+      color: #FFD54F; letter-spacing: 1px;
+    }
+    .b-reject-head-en {
+      font-size: 9pt; color: rgba(255,213,79,0.6);
+      letter-spacing: 2px; margin-left: auto;
+    }
+    .b-reject-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4mm;
+    }
+    .b-reject-card {
+      padding: 5mm 5mm;
+      background: rgba(255,255,255,0.04);
+      border: 0.5pt solid rgba(255,213,79,0.3);
+      border-radius: 3mm;
+      display: flex; align-items: flex-start; gap: 3mm;
+    }
+    .b-reject-num {
+      font-size: 22pt; font-weight: 900;
+      color: #FFD54F; line-height: 1;
+      font-family: "Georgia", serif;
+      flex-shrink: 0;
+      width: 12mm;
+    }
+    .b-reject-body { flex: 1; }
+    .b-reject-title {
+      font-size: 12pt; font-weight: 800;
+      color: #fff; letter-spacing: 1px;
+      margin-bottom: 1.5mm;
+    }
+    .b-reject-text {
+      font-size: 9pt; color: rgba(255,255,255,0.75);
+      line-height: 1.6;
+    }
+    .b-reject-text strong { color: #FFD54F; font-weight: 700; }
+
+    .b-page5-foot {
+      padding: 4mm 20mm;
+      background: rgba(0,0,0,0.4);
+      color: rgba(255,255,255,0.5);
+      font-size: 8pt; letter-spacing: 1px;
+      display: flex; justify-content: space-between;
+      border-top: 0.5pt solid rgba(255,213,79,0.2);
+    }
+    .b-page5-foot strong { color: #FFD54F; }
 
     /* =================== Page 6: 3 个真实案例 ==================== */
     .b-page6 { padding: 0; display: flex; flex-direction: column; }
@@ -431,7 +545,7 @@
   </div>
 </div>
 
-<!-- ========== Page 5: 我们的信条 ========== -->
+<!-- ========== Page 5: 我们的信条（重设计）========== -->
 <div class="b-page b-page5">
   <div class="b-page5-head">
     <div class="b-page5-tag">PHILOSOPHY · 我们的信条</div>
@@ -439,19 +553,28 @@
     <div class="b-page5-sub">不是方法论，是判断标准</div>
   </div>
 
-  <div class="b-page5-body">
+  <!-- 上半：3 个相信（米黄底） -->
+  <div class="b-page5-believe">
+    <div class="b-believe-head">
+      <div class="b-believe-head-mark">✓</div>
+      <div class="b-believe-head-title">我们相信的 3 件事</div>
+      <div class="b-believe-head-en">WHAT WE BELIEVE</div>
+    </div>
     <div class="b-belief-row">
       <div class="b-belief">
         <div class="b-belief-icon">🌀</div>
+        <div class="b-belief-num">NO. 01</div>
         <div class="b-belief-title">飞轮之上</div>
         <div class="b-belief-en">THE FLYWHEEL</div>
         <div class="b-belief-text">
           <strong>每一轮比上一轮更厚</strong>，时间越长、复利越大。<br>
-          我们不接受"一次赚够"的项目——那是赌博，不是飞轮。
+          不接受"一次赚够"的项目——<br>
+          那是赌博，不是飞轮。
         </div>
       </div>
       <div class="b-belief">
         <div class="b-belief-icon">⏳</div>
+        <div class="b-belief-num">NO. 02</div>
         <div class="b-belief-title">长期主义</div>
         <div class="b-belief-en">LONG-TERM</div>
         <div class="b-belief-text">
@@ -462,6 +585,7 @@
       </div>
       <div class="b-belief">
         <div class="b-belief-icon">🤝</div>
+        <div class="b-belief-num">NO. 03</div>
         <div class="b-belief-title">共生共建</div>
         <div class="b-belief-en">CO-SHARING</div>
         <div class="b-belief-text">
@@ -471,13 +595,68 @@
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="b-reject-box">
-      <h3>🚫 我 们 拒 绝 4 类 项 目</h3>
-      <p><strong>① 承诺保本</strong>：保本是幻觉，<strong>真正稳的资产不靠承诺</strong></p>
-      <p><strong>② 一年翻倍</strong>：一年翻倍是赌博，<strong>真正赚的是慢慢变厚</strong></p>
-      <p><strong>③ 闷声发大财</strong>：闷声的项目不可持续，<strong>业绩公开才是真业绩</strong></p>
-      <p><strong>④ 短期暴利诱惑</strong>：短期暴利必有陷阱，<strong>5-8 年慢钱才是真钱</strong></p>
+  <!-- 中间过渡语 -->
+  <div class="b-reject-intro">
+    <div class="b-reject-intro-text">
+      所以我们 <span class="accent">拒绝</span> 4 类项目 ——<br>
+      不是挑剔，是<strong>对长期复利的尊重</strong>
+    </div>
+  </div>
+
+  <!-- 下半：4 个拒绝（深蓝底） -->
+  <div class="b-page5-reject">
+    <div class="b-reject-head">
+      <div class="b-reject-head-mark">✕</div>
+      <div class="b-reject-head-title">我们拒绝的 4 件事</div>
+      <div class="b-reject-head-en">WHAT WE REFUSE</div>
+    </div>
+    <div class="b-reject-grid">
+      <div class="b-reject-card">
+        <div class="b-reject-num">01</div>
+        <div class="b-reject-body">
+          <div class="b-reject-title">承诺保本</div>
+          <div class="b-reject-text">
+            <strong>保本是幻觉</strong>。<br>
+            真正稳的资产不靠承诺，<br>
+            靠<strong>分散 + 长期 + 信用</strong>。
+          </div>
+        </div>
+      </div>
+      <div class="b-reject-card">
+        <div class="b-reject-num">02</div>
+        <div class="b-reject-body">
+          <div class="b-reject-title">一年翻倍</div>
+          <div class="b-reject-text">
+            <strong>一年翻倍是赌博</strong>。<br>
+            真正赚的是<strong>慢慢变厚</strong>，<br>
+            不是<strong>一年暴富</strong>。
+          </div>
+        </div>
+      </div>
+      <div class="b-reject-card">
+        <div class="b-reject-num">03</div>
+        <div class="b-reject-body">
+          <div class="b-reject-title">闷声发大财</div>
+          <div class="b-reject-text">
+            <strong>闷声的项目不可持续</strong>。<br>
+            <strong>业绩公开</strong>才是真业绩，<br>
+            我们承诺<strong>定期公开业绩</strong>。
+          </div>
+        </div>
+      </div>
+      <div class="b-reject-card">
+        <div class="b-reject-num">04</div>
+        <div class="b-reject-body">
+          <div class="b-reject-title">短期暴利诱惑</div>
+          <div class="b-reject-text">
+            <strong>短期暴利必有陷阱</strong>。<br>
+            我们要的是<strong>5-8 年慢钱</strong>，<br>
+            不是<strong>3 个月快钱</strong>。
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
