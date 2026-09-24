@@ -45,6 +45,11 @@
     }
     .b-page:last-child { page-break-after: auto; }
 
+    /* 强制中文显示 + 字体回退 */
+    body, .b-page, .b-card, .b-loop-box, .b-stat, .b-contact-cell {
+      font-family: "Microsoft YaHei", "微软雅黑", "SimSun", "PingFang SC", "Helvetica Neue", sans-serif !important;
+    }
+
     .b-cover {
       background: linear-gradient(135deg, #0A2540 0%, #06182A 60%, #0A2540 100%);
       color: #fff;
