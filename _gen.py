@@ -72,17 +72,17 @@ SUBS = [
     },
     {
         "dir": "invest",
-        "char": "投",
+        "char": "融",
         "color": "#FFD54F",
-        "name": "乾元投资",
-        "tagline": "投融资规划和管理 · 找钱 + 用钱 + 循环",
-        "hero_sub": "把<strong>融资</strong>（找钱）和<strong>投资</strong>（用钱）打通，<br>形成<strong>自我增强的循环</strong>，<br>5-8 年后期大资金阶段，长期复利。",
-        "stats": [("3 大", "方向"), ("5-8 年", "启动期"), ("复利", "核心策略")],
-        "about_text": "乾元投资是集团旗下的<strong>投融资规划和管理业务</strong>，<br>核心是<strong>3 大方向</strong>：<strong>融资</strong>（找钱）+ <strong>投资</strong>（用钱）+ <strong>两者结合的循环</strong>，<br>通过投融资一体化的飞轮，实现长期复利增长。",
+        "name": "乾元投融资规划和管理",
+        "tagline": "集团级业务集群 · 投融资主业 + 企服 + 资产处理",
+        "hero_sub": "集团级<strong>业务集群</strong>，整合<strong>投融资主业</strong>、<strong>乾元企服</strong>、<strong>乾元资产处理</strong> 3 大业务，<br>形成<strong>投融资规划和管理</strong>的完整闭环，<br>5-8 年后期大资金阶段，长期复利。",
+        "stats": [("3 大", "业务"), ("5-8 年", "启动期"), ("复利", "核心策略")],
+        "about_text": "<strong>乾元投融资规划和管理</strong>是集团旗下的<strong>集团级业务集群</strong>（原乾元投资升级），<br>下设 <strong>3 大业务</strong>：<strong>投融资主业</strong>（找钱 + 用钱 + 循环）+ <strong>乾元企服</strong>（内部资金中心）+ <strong>乾元资产处理</strong>（不良资产价值重塑），<br>通过业务协同实现长期复利增长。",
         "sections": [
-            ("", "💰 融 资 · 找 钱", "把外部资金引到乾元系：<br><strong>股权融资</strong>（出让部分股权换资金）/ <strong>债权融资</strong>（银行贷款 / 信用借款）/ <strong>信用融资</strong>（基于业绩和信用）/ <strong>合作众筹</strong>（联合投资 / 项目跟投）。"),
-            ("", "📈 投 资 · 用 钱", "把资金配置到能产生收益的资产：<br><strong>战略投资</strong>（外部潜力企业的股权）/ <strong>财务投资</strong>（公开市场多资产配置）/ <strong>不动产投资</strong>（商业地产 / 写字楼 / 仓储）/ <strong>海外配置</strong>（QDII / 美股 / 港股）。"),
-            ("", "🔄 投 融 循 环 · 关键", "这是乾元投资最核心的方法论：<br><strong>融到的钱 → 投资产生业绩 → 业绩建立信用 → 信用反哺下一轮融资</strong>，形成自我增强的飞轮。<br><strong>循环越转越大，复利越滚越厚</strong>。"),
+            ("", "📈 投 融 资 主 业", "核心业务：<strong>融资</strong>（找钱）+ <strong>投资</strong>（用钱）+ <strong>两者结合的循环</strong>。<br>把外部资金引到乾元系（股权/债权/信用/众筹），再把资金配置到能产生收益的资产（战略/财务/不动产/海外），通过<strong>业绩→信用→再融资</strong>的飞轮放大。"),
+            ("", "💼 乾 元 企 服", "集团<strong>内部资金中心</strong>，8 大职能模块：<br><strong>资金归集 / 投资调度 / 融资支持 / 税务福利 / 风控合规 / 战略投资 / 福利社保 / 内部审计</strong>。"),
+            ("", "⚖️ 乾 元 资 产 处 理", "<strong>不良资产</strong>价值重塑：<br><strong>法拍房</strong>（司法拍卖捡漏）/ <strong>不良债权</strong>（AMC 收购 / 催收 / 重整）/ <strong>困境企业</strong>（经营困难企业重组）。<br><strong>5 年内只学习不实操</strong>，专业门槛极高。"),
         ],
         "stages": [
             ("🌱 5-6 年 信用积累", "5 年清债 + 建立个人信用 + 小额试投"),
@@ -294,7 +294,6 @@ TEMPLATE = '''<!DOCTYPE html>
     <div class="section-tag">乾 元 系 其 他 子 公 司</div>
     <div class="sibling-grid" style="margin-top: 16px;">
       <a href="index.html" class="sibling-link"><div class="sl-tag">集团总部</div><div class="sl-name">乾元资本</div></a>
-      <a href="qifu.html" class="sibling-link"><div class="sl-tag">内部服务</div><div class="sl-name">乾元企服</div></a>
       <a href="gold.html" class="sibling-link"><div class="sl-tag">🟢 业务</div><div class="sl-name">乾元黄金</div></a>
       <a href="global.html" class="sibling-link"><div class="sl-tag">🟢 业务</div><div class="sl-name">乾元出海</div></a>
       <div class="sibling-link sibling-link-quant">
@@ -306,9 +305,16 @@ TEMPLATE = '''<!DOCTYPE html>
           <a href="quant-rd.html">🔬 研发</a>
         </div>
       </div>
-      <a href="invest.html" class="sibling-link"><div class="sl-tag">🟡 投融资</div><div class="sl-name">乾元投资</div></a>
+      <div class="sibling-link sibling-link-invest">
+        <div class="sl-tag">🟡 业务集群</div>
+        <div class="sl-name">乾元投融资规划和管理</div>
+        <div class="sl-subs">
+          <a href="invest.html">📈 投融资主业</a>
+          <a href="qifu.html">💼 企服</a>
+          <a href="asset.html">⚖️ 资产处理</a>
+        </div>
+      </div>
       <a href="rental.html" class="sibling-link"><div class="sl-tag">⚪ 自营</div><div class="sl-name">乾元租赁</div></a>
-      <a href="asset.html" class="sibling-link"><div class="sl-tag">⚪ 学习</div><div class="sl-name">乾元资产处理</div></a>
     </div>
   </div>
 </section>

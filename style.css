@@ -785,6 +785,31 @@ section { padding: 80px 0; }
   letter-spacing: 0.5px;
 }
 
+/* 投融资业务集群卡：3 个子业务链接 */
+.subsite-card-with-shop .sc-sub-links {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(255, 213, 79, 0.3);
+}
+.subsite-card-with-shop .sc-sub-link {
+  display: block;
+  padding: 9px 14px;
+  background: linear-gradient(135deg, rgba(255, 213, 79, 0.10) 0%, rgba(255, 213, 79, 0.02) 100%);
+  border-bottom: 1px solid rgba(255, 213, 79, 0.15);
+  color: #FFD54F;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  transition: 0.2s;
+}
+.subsite-card-with-shop .sc-sub-link:last-child { border-bottom: none; }
+.subsite-card-with-shop .sc-sub-link:hover {
+  background: linear-gradient(135deg, rgba(255, 213, 79, 0.28) 0%, rgba(255, 213, 79, 0.10) 100%);
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
 /* 量化双事业部卡（备用，保留兼容） */
 .subsite-card-quant {
   display: flex;
