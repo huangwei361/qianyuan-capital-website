@@ -411,6 +411,60 @@
 
     </div>
 
+    <!-- 因子组合方法论 -->
+    <h3 style="margin-top: 36px; margin-bottom: 14px; color: #06182A; font-size: 20px; font-weight: 800;">
+      🎯 因子如何组合成策略
+    </h3>
+    <p style="font-size: 13.5px; color: #888; margin-bottom: 18px;">
+      单一因子在不同行情下表现差异大，<strong>多个低相关性因子组合</strong>是稳健 alpha 的关键。
+    </p>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 36px;">
+
+      <div style="padding: 20px; background: linear-gradient(135deg, #06182A 0%, #0A2540 100%); border-radius: 8px; color: #fff;">
+        <h4 style="font-size: 15px; color: #D4AF37; font-weight: 800; margin-bottom: 10px;">📊 主流组合方法</h4>
+        <ul style="list-style: none; padding: 0; margin: 0; font-size: 12.5px; line-height: 2;">
+          <li>· <strong style="color:#FFD54F;">打分模型</strong>：截面 rank → 标准化 → 加权求和 → 综合分</li>
+          <li>· <strong style="color:#FFD54F;">中性化</strong>：先行业中性（消行业偏差），可选市值中性</li>
+          <li>· <strong style="color:#FFD54F;">风险平价</strong>：按波动率倒数加权，等风险贡献</li>
+          <li>· <strong style="color:#FFD54F;">动态权重</strong>：根据市场状态调整各因子激活度</li>
+        </ul>
+      </div>
+
+      <div style="padding: 20px; background: linear-gradient(135deg, #06182A 0%, #0A2540 100%); border-radius: 8px; color: #fff;">
+        <h4 style="font-size: 15px; color: #D4AF37; font-weight: 800; margin-bottom: 10px;">🛡️ 组合的工程纪律</h4>
+        <ul style="list-style: none; padding: 0; margin: 0; font-size: 12.5px; line-height: 2;">
+          <li>· <strong style="color:#FFD54F;">样本外检验</strong>：最近 1-2 年数据锁定，只跑一次</li>
+          <li>· <strong style="color:#FFD54F;">IC 监控</strong>：月度滚动 IC 持续下降需减权或剔除</li>
+          <li>· <strong style="color:#FFD54F;">拥挤度</strong>：因子相关股票成交量暴增即触发减仓</li>
+          <li>· <strong style="color:#FFD54F;">风控底线</strong>：行业暴露上限 + 单股权重上限 + 回撤减仓</li>
+        </ul>
+      </div>
+
+      <div style="padding: 20px; background: #fff; border: 1px solid #E5E8EE; border-radius: 8px; grid-column: span 2;">
+        <h4 style="font-size: 15px; color: #06182A; font-weight: 800; margin-bottom: 10px;">💡 我们重点研究的策略类型</h4>
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 10px;">
+          <div style="padding: 12px; background: #FFFBEA; border-radius: 6px;">
+            <strong style="color: #B8860B; font-size: 13px;">📈 多因子选股</strong>
+            <p style="font-size: 11.5px; color: #555; margin: 4px 0 0; line-height: 1.6;">横截面打分 → Top N 等权 / 加权</p>
+          </div>
+          <div style="padding: 12px; background: #FFFBEA; border-radius: 6px;">
+            <strong style="color: #B8860B; font-size: 13px;">🔄 行业轮动</strong>
+            <p style="font-size: 11.5px; color: #555; margin: 4px 0 0; line-height: 1.6;">行业相对强度排序 → 配比调整</p>
+          </div>
+          <div style="padding: 12px; background: #FFFBEA; border-radius: 6px;">
+            <strong style="color: #B8860B; font-size: 13px;">🎨 风格轮动</strong>
+            <p style="font-size: 11.5px; color: #555; margin: 4px 0 0; line-height: 1.6;">因子风格暴露切换 → 适应市场</p>
+          </div>
+          <div style="padding: 12px; background: #FFFBEA; border-radius: 6px;">
+            <strong style="color: #B8860B; font-size: 13px;">⚖️ 风险平价</strong>
+            <p style="font-size: 11.5px; color: #555; margin: 4px 0 0; line-height: 1.6;">等风险贡献加权</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
     <!-- 探索中：方向级 -->
     <h3 style="margin-top: 36px; margin-bottom: 14px; color: #06182A; font-size: 20px; font-weight: 800;">
       🔭 探索中的因子与策略
