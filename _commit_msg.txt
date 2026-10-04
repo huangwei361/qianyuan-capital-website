@@ -1,18 +1,4 @@
-rename: 顶级集群从"投融资规划和管理"升级为"乾元投融资子公司（投融资管理公司）"
+rename: 子页 title 也升级为"乾元投融资子公司"
 
-变更：
-- invest.html — title / hero hl / 文案改为新口径
-- qifu.html — title / hero 改为"乾元投融资子公司 · 企服版块"
-- asset.html — title / hero 改为"乾元投融资子公司 · 资产处理"
-
-新架构：
-- 乾元投融资子公司（投融资管理公司）
-  ├── 投融资（版块）
-  ├── 企服（版块）
-  └── 资产处理（下挂）
-
-[docs] 4 份投融资链路文档从 集团/ 移到 投融资规划和管理/
-- 乾元资本·投融资计划与分步走图·思路整理版.md/.docx
-- 乾元资本·投融资计划与分步走图·原始口述版.md/.docx
-
-脚本归档：_rename_top.py
+- invest-plan.html  · 业务方案 v1.0
+- invest-brochure.html · 品牌宣传册
