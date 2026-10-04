@@ -8,8 +8,8 @@ from docx.enum.table import WD_TABLE_ALIGNMENT
 from docx.oxml.ns import qn
 from docx.oxml import OxmlElement
 
-SRC = r'C:\Users\64549\.minimax\金融财富公司成立\乾元量化·多因子选股策略·V1.md'
-OUT = r'C:\Users\64549\.minimax\金融财富公司成立\乾元量化·多因子选股策略·V1.docx'
+SRC = r'C:\Users\64549\.minimax\金融财富公司成立\乾元资本·投融资计划与分步走图·原始口述版.md'
+OUT = r'C:\Users\64549\.minimax\金融财富公司成立\乾元资本·投融资计划与分步走图·原始口述版.docx'
 
 with open(SRC, 'r', encoding='utf-8') as f:
     md = f.read()
