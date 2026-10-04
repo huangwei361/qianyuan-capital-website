@@ -1,33 +1,10 @@
-refactor: 按 1+5 架构拆分子目录（13 个 HTML + 2 CSS + 21 脚本）
+feat: quant-rd add 因子组合方法论 between 已落地 and 探索中
 
-变更：
-- 13 个 HTML 文件按业务集群分目录：
-  - invest/ 顶级集群（含 plan/brochure/qifu/asset 下挂）
-  - gold/、global/、quant/、rental/ 各集群
-- 入口文件统一用 index.html
-- 2 个量化定制 CSS 移到 quant/
-- 21 个工具脚本移到 tools/，去掉下划线前缀
-- 清理 7 个临时输出文件
+补全"因子如何组合成策略"的方法论 section：
 
-链接修复：
-- 185 处链接全部按"统一加 ../ + ../"规则批量重写
-- 同集群链接短而美，跨集群链接加 ../
-- 修复 gold/dashboard.html 的 art/ 路径错误 → ../assets/img/
-- 修复 quant/rd.html 和 trading.html 的 quant.html#loop → index.html#loop
+🎯 因子组合方法论（核心方法学）：
+- 主流组合方法（深蓝底 4 要点）：打分模型 / 中性化 / 风险平价 / 动态权重
+- 组合的工程纪律（深蓝底 4 要点）：样本外检验 / IC 监控 / 拥挤度 / 风控底线
+- 我们重点研究的策略类型（4 卡片）：多因子选股 / 行业轮动 / 风格轮动 / 风险平价
 
-验证：
-- 14 个 HTML 全部 200
-- 131 个跨页/资源链接全部 200，0 错误
-- 启动 python -m http.server 8000 测试通过
-
-README 同步更新（1+5 架构 + URL 映射表）。
-
-GitHub Pages 部署 URL 变化：
-- 集团：/
-- 投融资：/invest/
-- 黄金：/gold/
-- 出海：/global/
-- 量化：/quant/
-- 租赁：/rental/
-- 企服：/invest/qifu/
-- 资产处理：/invest/asset/
+保密继续：未出现具体公式、参数、权重、代码、调仓频率、业绩数字
