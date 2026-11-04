@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>不良资产抄底 · 方法论与纪律 · 乾元投融资子公司</title>
+  <meta name="description" content="乾元资本集团旗下 乾元资产处理 · 不良资产抄底业务线：资产功能分层、融资三步顺序、硬门槛与四条不做红线">
+  <link rel="stylesheet" href="_sub.css">
+  <style>
+    :root {
+      --brand: #90A4AE;
+      --brand-light: #B1BFC6;
+      --brand-dim: rgba(144, 164, 174, 0.15);
+    }
+    /* 硬门槛 */
+    .gate-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 26px;
+    }
+    .gate {
+      padding: 20px 22px;
+      background: rgba(10, 37, 64, 0.5);
+      border: 1.5px solid var(--border);
+      border-left: 3px solid var(--brand);
+      border-radius: 10px;
+    }
+    .gate-h { font-size: 15px; font-weight: 800; color: var(--brand); margin-bottom: 6px; letter-spacing: 0.5px; }
+    .gate-v { font-size: 13px; color: var(--text-dim); line-height: 1.65; }
+    /* 不做的红线 */
+    .no-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 26px;
+    }
+    .no-item {
+      padding: 20px;
+      background: rgba(122, 42, 42, 0.20);
+      border: 1px solid rgba(229, 115, 115, 0.35);
+      border-radius: 10px;
+    }
+    .no-item h4 { font-size: 14.5px; font-weight: 800; color: #EF9A9A; margin-bottom: 8px; }
+    .no-item p { font-size: 12.5px; color: var(--text-dim); line-height: 1.6; }
+    .no-x { font-size: 22px; margin-bottom: 8px; }
+    /* 边界声明 */
+    .note-box {
+      margin-top: 28px; padding: 22px 26px;
+      background: rgba(212, 175, 55, 0.07);
+      border: 1px solid var(--border); border-radius: 12px;
+    }
+    .note-box h4 { font-size: 15px; color: var(--brand); margin-bottom: 10px; letter-spacing: 0.5px; }
+    .note-box ul { list-style: none; padding: 0; margin: 0; }
+    .note-box li {
+      font-size: 12.5px; color: var(--text-dim); line-height: 1.85;
+      padding-left: 16px; position: relative;
+    }
+    .note-box li::before {
+      content: '·'; position: absolute; left: 0; color: var(--brand); font-weight: 800;
+    }
+    /* 三步条（3 列覆盖） */
+    .steps-3 { grid-template-columns: repeat(3, 1fr); }
+    @media (max-width: 900px) {
+      .gate-grid { grid-template-columns: 1fr; }
+      .no-grid { grid-template-columns: 1fr 1fr; }
+      .steps-3 { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px) {
+      .no-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%2390A4AE'/><text x='50' y='62' font-size='40' text-anchor='middle' fill='%230A2540' font-family='serif' font-weight='800'>抄</text></svg>">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="asset.html" class="brand">
+      <div class="brand-mark">抄</div>
+      <span>乾元资产处理 · 不良资产抄底业务线</span>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="#about">业务定位</a></li>
+      <li><a href="#method">方法论</a></li>
+      <li><a href="#gate">硬门槛</a></li>
+      <li><a href="#rules">不做什么</a></li>
+      <li><a href="asset.html" class="back-link">← 资产处理</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div class="hero-tag">乾元资本集团 · 乾元投融资子公司 · 乾元资产处理 · 业务线</div>
+    <h1>
+      <span class="hl">不良资产抄底</span>
+      <span class="sm">折价买入 · 价值修复 · 明确退出</span>
+    </h1>
+    <p class="hero-sub">这是乾元资产处理下面的一条具体业务线。<br>
+      我们认为不良资产的本质是<strong>定价错配</strong>，而不是"便宜"本身——<br>
+      折价买入只是开始，<strong>能不能修得动、卖给谁、多久能退</strong>，才决定这笔生意成不成。</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num" style="color: #90A4AE;">3 条</div><div class="lbl">执行主线</div></div>
+      <div class="hero-stat"><div class="num" style="color: #90A4AE;">≥ 6%</div><div class="lbl">租售比硬门槛</div></div>
+      <div class="hero-stat"><div class="num" style="color: #90A4AE;">自有资金</div><div class="lbl">不加杠杆</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== 业务定位 ===== -->
+<section class="about" id="about" style="background: var(--navy-deep);">
+  <div class="container">
+    <div class="section-tag">业 务 定 位</div>
+    <h2 class="section-title">这条线到底在做什么</h2>
+    <p class="section-sub">
+      不良资产抄底属于<strong>乾元资产处理</strong>，与法拍房、不良债权、困境重组同属一个体系。<br>
+      它的打法很朴素：<strong>用低于市场预期的价格买入真实存在的资产</strong>，通过修复与运营把它变回正常资产，<br>
+      然后在<strong>事先设计好的路径</strong>上把它卖掉，赚取中间这段价值修复的钱。
+    </p>
+  </div>
+</section>
+
+<!-- ===== 方法论骨架 ===== -->
+<section class="content" id="method">
+  <div class="container">
+    <div class="section-tag">方 法 论 骨 架</div>
+    <h2 class="section-title">资产功能分层</h2>
+    <p class="section-sub">同样一笔资产，在组合里承担的功能不同，评价标准就完全不同。<br>先想清楚它要扮演什么角色，再谈买不买。</p>
+
+    <div class="method-grid">
+      <div class="method-card">
+        <div class="method-card-tag">第 一 层</div>
+        <div class="method-card-title">提升资质</div>
+        <div class="method-card-en">EQUITY BOOSTER</div>
+        <ul class="method-card-list">
+          <li>本身不直接产生现金流</li>
+          <li>作用是让主体"好看"、让融资条件更好</li>
+          <li>要求：干净、无瑕疵、无隐性负债</li>
+        </ul>
+        <div class="method-card-tip">关键在时点：要装得早，装晚了不起作用。</div>
+      </div>
+      <div class="method-card">
+        <div class="method-card-tag">第 二 层</div>
+        <div class="method-card-title">融资性</div>
+        <div class="method-card-en">CASH FLOW ASSET</div>
+        <ul class="method-card-list">
+          <li>资产自己会产出现金流</li>
+          <li>依赖真实经营与真实租约</li>
+          <li>要求：租金覆盖率经得起资金成本检验</li>
+        </ul>
+        <div class="method-card-tip">租金盖不住资金成本，这类资产一票否决。</div>
+      </div>
+      <div class="method-card">
+        <div class="method-card-tag">第 三 层</div>
+        <div class="method-card-title">不良资产</div>
+        <div class="method-card-en">DISTRESSED ASSET</div>
+        <ul class="method-card-list">
+          <li>价格低于市场预期，来源是折价</li>
+          <li>收益全部来自价值修复的差价</li>
+          <li>要求：修复路径清晰、退出有人接</li>
+        </ul>
+        <div class="method-card-tip">抄底抄的是信息差，不是运气。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 融资三步 ===== -->
+<section class="content" id="steps" style="background: var(--navy-deep);">
+  <div class="container">
+    <div class="section-tag">顺 序 不 能 反</div>
+    <h2 class="section-title">融资三步：资质 → 数据 → 资产</h2>
+    <p class="section-sub">
+      资质是能不能做的前提，数据是能不能信的依据，资产是最后的选择题。<br>
+      <strong style="color:#B1BFC6;">顺序反了，就会滑向"先定资产、再想办法把它讲成好资产"。</strong>
+    </p>
+
+    <div class="steps-bar steps-3">
+      <div class="step-cell">
+        <div class="step-num">01</div>
+        <div class="step-title">优化资质</div>
+        <div class="step-desc">主体、股权、合规、征信<br>先解决"能不能做"</div>
+      </div>
+      <div class="step-cell">
+        <div class="step-num">02</div>
+        <div class="step-title">优化数据</div>
+        <div class="step-desc">流水、租约、合同、纳税<br>再解决"能不能信"</div>
+      </div>
+      <div class="step-cell">
+        <div class="step-num">03</div>
+        <div class="step-title">配置资产</div>
+        <div class="step-desc">买什么、买多少、多久退<br>最后才做选择题</div>
+      </div>
+    </div>
+
+    <div class="formula-box">
+      <div class="formula-line">融资不是目的，<span class="num">赚钱</span>才是目的</div>
+      <div class="formula-result">每一笔资产在买入之前，就必须先回答三个问题：怎么出、多久出、卖给谁</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 业务版图 ===== -->
+<section class="content" id="map">
+  <div class="container">
+    <div class="section-tag">业 务 版 图</div>
+    <h2 class="section-title">乾元资产处理 · 5 条业务线</h2>
+    <p class="section-sub">本页是其中一条。其余几条提供货源、现金流与处置通道，彼此协同。</p>
+
+    <div class="card-grid cols-3" style="margin-top: 24px;">
+      <div class="card">
+        <div class="card-icon">🏛️</div>
+        <h4>法拍房投资</h4>
+        <p>从司法拍卖中折价收购，<br>修复后转售。</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">💳</div>
+        <h4>不良债权收购</h4>
+        <p>从机构折价收购，<br>催收 / 重整 / 诉讼变现。</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🏭</div>
+        <h4>困境资产重组</h4>
+        <p>收购经营困难但有价值的企业，<br>重组后退出。</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🏢</div>
+        <h4>融资性资产配置</h4>
+        <p>带真实租约的商用 / 公寓 / 核心区写字楼，<br>按覆盖率门槛进入。</p>
+      </div>
+      <div class="card" style="border-color: var(--brand); background: rgba(144,164,174,0.12);">
+        <div class="card-icon">⚖️</div>
+        <h4 style="color: var(--brand);">不良资产抄底 ← 本页</h4>
+        <p>法拍折扣 + 价值修复，<br>靠修复赚差价、靠退出收现金。</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔗</div>
+        <h4>协同关系</h4>
+        <p>法拍房提供货源，<br>债权提供现金流，重组提供通道。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 硬门槛 ===== -->
+<section class="content" id="gate" style="background: var(--navy-deep);">
+  <div class="container">
+    <div class="section-tag">硬 门 槛</div>
+    <h2 class="section-title">不满足这些条件，再便宜也不买</h2>
+    <p class="section-sub">门槛写在前面，是为了在看到"便宜"的时候，还保有一双清醒的眼睛。</p>
+
+    <div class="gate-grid">
+      <div class="gate">
+        <div class="gate-h">租售比 ≥ 6%</div>
+        <div class="gate-v">真实租金必须覆盖资金成本。盖不住的资产，不管多便宜都不进。</div>
+      </div>
+      <div class="gate">
+        <div class="gate-h">真实主体 + 真实租约</div>
+        <div class="gate-v">只做有实际租户、实际经营、实际流水的资产，不做纸面繁荣。</div>
+      </div>
+      <div class="gate">
+        <div class="gate-h">按真实市价评估</div>
+        <div class="gate-v">估值与成数一律按真实市价测算，不靠虚高评估放大杠杆。</div>
+      </div>
+      <div class="gate">
+        <div class="gate-h">自有资金，不加杠杆</div>
+        <div class="gate-v">不新增贷款、不引入配资、不用别人的钱做自己的杠杆。</div>
+      </div>
+      <div class="gate">
+        <div class="gate-h">退出路径前置</div>
+        <div class="gate-v">买入前就写清楚：怎么出、多久出、卖给谁、什么条件下出。</div>
+      </div>
+      <div class="gate">
+        <div class="gate-h">现金流优先</div>
+        <div class="gate-v">现金流会断裂的资产，即使折价再大也一票否决。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 不做什么 ===== -->
+<section class="content" id="rules">
+  <div class="container">
+    <div class="section-tag">我 们 不 做 的 事</div>
+    <h2 class="section-title">四条不碰的红线</h2>
+    <p class="section-sub">这行里最快的钱，往往来自最不该碰的地方。<strong style="color:#EF9A9A;">我们主动放弃这些收益。</strong></p>
+
+    <div class="no-grid">
+      <div class="no-item">
+        <div class="no-x">🚫</div>
+        <h4>不做高评高贷</h4>
+        <p>收益只能来自低买高卖和价值修复。<br>靠评估虚高撬杠杆的做法，不进我们的方法论。</p>
+      </div>
+      <div class="no-item">
+        <div class="no-x">🚫</div>
+        <h4>不买壳不嫁接</h4>
+        <p>不碰股权代持、不做空壳主体过账、<br>不用别人的执照做自己的生意。</p>
+      </div>
+      <div class="no-item">
+        <div class="no-x">🚫</div>
+        <h4>不做资金方</h4>
+        <p>不参与配资、不替他人撮合放贷、<br>不赚"介绍费"这类中间钱。</p>
+      </div>
+      <div class="no-item">
+        <div class="no-x">🚫</div>
+        <h4>不碰违规用途资金</h4>
+        <p>购房与贷款的时间窗、用途与来源，<br>必须经得起监管与银行审查。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 退出路径 ===== -->
+<section class="content" id="exit" style="background: var(--navy-deep);">
+  <div class="container">
+    <div class="section-tag">退 出 路 径</div>
+    <h2 class="section-title">买入 · 修复 · 退出</h2>
+    <p class="section-sub">一笔交易从买入那天起，退出就已经开始了。退出不是终点，是利润兑现的地方。</p>
+
+    <div class="loop-benefit" style="margin-top: 26px;">
+      <div class="loop-bn">
+        <div class="loop-bn-icon">🛒</div>
+        <div class="loop-bn-title">买入</div>
+        <div class="loop-bn-desc">折价捡漏 · 尽调定性<br>算清持有成本与最坏情形</div>
+      </div>
+      <div class="loop-bn highlight">
+        <div class="loop-bn-icon">🔧</div>
+        <div class="loop-bn-title">修复</div>
+        <div class="loop-bn-desc">改造增值 · 债务重组<br>运营提升 · 现金流回归</div>
+      </div>
+      <div class="loop-bn">
+        <div class="loop-bn-icon">🚪</div>
+        <div class="loop-bn-title">退出</div>
+        <div class="loop-bn-desc">机构接盘 · 打包转让<br>转售 · 长期持有收租</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 规划 ===== -->
+<section class="content" id="plan">
+  <div class="container">
+    <div class="section-tag">5-8 年 规 划</div>
+    <h2 class="section-title">三阶段推进</h2>
+    <div class="card-grid cols-3" style="margin-top: 24px;">
+      <div class="stage-card">
+        <div class="stage">📚 5-6 年 学习</div>
+        <h4>5-6 年 学习</h4>
+        <p>读案例 · 跑流程 · 攒尽调能力<br>先把门槛吃透</p>
+      </div>
+      <div class="stage-card">
+        <div class="stage">🌱 7 年 试水</div>
+        <h4>7 年 试水</h4>
+        <p>自有资金小额参与 1-2 单<br>只做看得懂的品类</p>
+      </div>
+      <div class="stage-card">
+        <div class="stage">🌳 8 年后 规模化</div>
+        <h4>8 年后 规模化</h4>
+        <p>团队化 · 渠道化<br>退出能力成型后再放大</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 内容边界 ===== -->
+<section class="content" id="boundary" style="background: var(--navy-deep);">
+  <div class="container">
+    <div class="section-tag">内 容 边 界</div>
+    <h2 class="section-title">这一页刻意没写什么</h2>
+
+    <div class="note-box">
+      <h4>本页公开范围</h4>
+      <ul>
+        <li>只讲<strong>方法论方向、筛选纪律与风险边界</strong>，不含具体项目、标的、金额与交易对手</li>
+        <li>内部资料（数据复算、法规核查、案例拆解、执行方案）<strong>不在此页公开</strong></li>
+        <li>本页所有内容为方向性表述，<strong>不构成投资建议、要约或商业承诺</strong></li>
+        <li>实际业务以正式签署的文件为准；本页所述门槛为内部标准，<strong>可随市场与监管变化调整</strong></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 兄弟部门 -->
+<section class="sibling">
+  <div class="container">
+    <div class="section-tag">乾 元 系 其 他 子 公 司</div>
+    <div class="sibling-grid" style="margin-top: 16px;">
+      <a href="index.html" class="sibling-link"><div class="sl-tag">集团总部</div><div class="sl-name">乾元资本</div></a>
+      <a href="gold.html" class="sibling-link"><div class="sl-tag">🟢 业务</div><div class="sl-name">乾元黄金</div></a>
+      <a href="global.html" class="sibling-link"><div class="sl-tag">🟢 业务</div><div class="sl-name">乾元出海</div></a>
+      <div class="sibling-link sibling-link-quant">
+        <div class="sl-tag">🟡 业务</div>
+        <div class="sl-name">乾元量化</div>
+        <div class="sl-subs">
+          <a href="quant.html">📊 总览</a>
+          <a href="quant-trading.html">📈 交易</a>
+          <a href="quant-rd.html">🔬 研发</a>
+        </div>
+      </div>
+      <div class="sibling-link sibling-link-invest">
+        <div class="sl-tag">🟡 业务集群</div>
+        <div class="sl-name">乾元投融资规划和管理</div>
+        <div class="sl-subs">
+          <a href="invest.html">📈 主业</a>
+          <a href="qifu.html">💼 企服</a>
+          <a href="asset.html">⚖️ 资产处理</a>
+          <a href="asset-npl.html">⚖️ 抄底业务线</a>
+          <a href="invest-plan.html">📋 方案</a>
+          <a href="invest-brochure.html">📰 宣传册</a>
+        </div>
+      </div>
+      <a href="rental.html" class="sibling-link"><div class="sl-tag">⚪ 自营</div><div class="sl-name">乾元租赁</div></a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <p><strong style="color: var(--brand);">不良资产抄底业务线</strong> · 乾元资产处理 · 乾元资本集团旗下</p>
+    <p><a href="asset.html">← 乾元资产处理</a> · <a href="invest.html">乾元投融资子公司</a> · <a href="index.html">集团主站</a></p>
+    <p>© 2026 乾元资本 · 本网站为个人博客性质，不构成投资建议或商业承诺</p>
+  </div>
+</footer>
+
+</body>
+</html>
