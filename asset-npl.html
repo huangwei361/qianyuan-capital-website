@@ -55,10 +55,34 @@
     }
     /* 三步条（3 列覆盖） */
     .steps-3 { grid-template-columns: repeat(3, 1fr); }
+
+    /* === 图形图示 === */
+    .figure {
+      margin: 30px 0 6px;
+      padding: 26px 24px 20px;
+      background: rgba(10, 37, 64, 0.45);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+    .figure-title {
+      font-size: 12.5px; font-weight: 800; color: var(--brand);
+      letter-spacing: 2px; margin-bottom: 18px;
+    }
+    .figure svg { width: 100%; height: auto; display: block; }
+    .figure-cap {
+      margin-top: 16px; padding-top: 13px;
+      border-top: 1px solid var(--border);
+      font-size: 12px; color: var(--text-dim); text-align: center;
+      letter-spacing: 0.5px; line-height: 1.75;
+    }
+    .figure-cap b { color: var(--brand-light); font-weight: 700; }
+
     @media (max-width: 900px) {
       .gate-grid { grid-template-columns: 1fr; }
       .no-grid { grid-template-columns: 1fr 1fr; }
       .steps-3 { grid-template-columns: 1fr; }
+      .figure { padding: 18px 12px 14px; }
+      .figure-title { letter-spacing: 1px; }
     }
     @media (max-width: 560px) {
       .no-grid { grid-template-columns: 1fr; }
@@ -112,6 +136,40 @@
       它的打法很朴素：<strong>用低于市场预期的价格买入真实存在的资产</strong>，通过修复与运营把它变回正常资产，<br>
       然后在<strong>事先设计好的路径</strong>上把它卖掉，赚取中间这段价值修复的钱。
     </p>
+
+    <div class="figure">
+      <div class="figure-title">本 线 在 集 团 中 的 位 置</div>
+      <svg viewBox="0 0 1000 140" role="img" aria-label="不良资产抄底业务线在乾元资本集团中的层级位置">
+        <defs>
+          <marker id="arw0" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L8,3 z" fill="#D4AF37"/>
+          </marker>
+        </defs>
+        <g font-family="Microsoft YaHei, PingFang SC, sans-serif">
+          <text x="50" y="26" fill="#8FA6B8" font-size="11" letter-spacing="2">集 团</text>
+          <text x="300" y="26" fill="#8FA6B8" font-size="11" letter-spacing="2">业 务 集 群</text>
+          <text x="580" y="26" fill="#8FA6B8" font-size="11" letter-spacing="2">子 公 司</text>
+          <text x="810" y="26" fill="#D4AF37" font-size="11" letter-spacing="2">业 务 线</text>
+
+          <rect x="40" y="40" width="210" height="62" rx="9" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.18)"/>
+          <text x="145" y="78" fill="#E8EEF5" font-size="15" font-weight="700" text-anchor="middle">乾元资本集团</text>
+
+          <rect x="290" y="40" width="240" height="62" rx="9" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.18)"/>
+          <text x="410" y="78" fill="#E8EEF5" font-size="15" font-weight="700" text-anchor="middle">乾元投融资子公司</text>
+
+          <rect x="570" y="40" width="190" height="62" rx="9" fill="rgba(144,164,174,0.14)" stroke="#90A4AE"/>
+          <text x="665" y="78" fill="#E8EEF5" font-size="15" font-weight="700" text-anchor="middle">乾元资产处理</text>
+
+          <rect x="800" y="40" width="180" height="62" rx="9" fill="rgba(212,175,55,0.15)" stroke="#D4AF37" stroke-width="1.6"/>
+          <text x="890" y="78" fill="#D4AF37" font-size="15" font-weight="800" text-anchor="middle">不良资产抄底</text>
+
+          <line x1="256" y1="71" x2="282" y2="71" stroke="#D4AF37" stroke-width="1.8" marker-end="url(#arw0)"/>
+          <line x1="536" y1="71" x2="562" y2="71" stroke="#D4AF37" stroke-width="1.8" marker-end="url(#arw0)"/>
+          <line x1="766" y1="71" x2="792" y2="71" stroke="#D4AF37" stroke-width="1.8" marker-end="url(#arw0)"/>
+        </g>
+      </svg>
+      <div class="figure-cap">从集团到业务线的四级承接：<b>集团 → 投融资集群 → 资产处理子公司 → 不良资产抄底业务线</b>；本页只讲最下面一层。</div>
+    </div>
   </div>
 </section>
 
@@ -156,6 +214,76 @@
         </ul>
         <div class="method-card-tip">抄底抄的是信息差，不是运气。</div>
       </div>
+    </div>
+
+    <div class="figure">
+      <div class="figure-title">方 法 论 全 图 · 三 步 与 三 层</div>
+      <svg viewBox="0 0 1000 612" role="img" aria-label="融资三步与资产功能三层的完整方法论结构图">
+        <defs>
+          <marker id="arw1" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L8,3 z" fill="#D4AF37"/>
+          </marker>
+        </defs>
+        <g font-family="Microsoft YaHei, PingFang SC, sans-serif">
+
+          <!-- 三步 -->
+          <text x="40" y="26" fill="#8FA6B8" font-size="11" letter-spacing="2">融 资 三 步 · 顺 序 不 能 反</text>
+
+          <rect x="40" y="40" width="270" height="130" rx="12" fill="rgba(15,45,77,0.6)" stroke="rgba(144,164,174,0.35)"/>
+          <text x="62" y="78" fill="#D4AF37" font-size="22" font-weight="800">01</text>
+          <text x="108" y="78" fill="#E8EEF5" font-size="18" font-weight="700">优化资质</text>
+          <text x="62" y="110" fill="#9FB3C2" font-size="12.5">主体 · 股权 · 合规 · 征信</text>
+          <text x="62" y="134" fill="#9FB3C2" font-size="12.5">先把主体和负债理干净</text>
+          <text x="62" y="156" fill="#D4AF37" font-size="12.5" font-weight="600">解决：能不能做</text>
+
+          <rect x="365" y="40" width="270" height="130" rx="12" fill="rgba(15,45,77,0.6)" stroke="rgba(144,164,174,0.35)"/>
+          <text x="387" y="78" fill="#D4AF37" font-size="22" font-weight="800">02</text>
+          <text x="433" y="78" fill="#E8EEF5" font-size="18" font-weight="700">优化数据</text>
+          <text x="387" y="110" fill="#9FB3C2" font-size="12.5">流水 · 租约 · 合同 · 纳税</text>
+          <text x="387" y="134" fill="#9FB3C2" font-size="12.5">让经营数据经得起核验</text>
+          <text x="387" y="156" fill="#D4AF37" font-size="12.5" font-weight="600">解决：能不能信</text>
+
+          <rect x="690" y="40" width="270" height="130" rx="12" fill="rgba(212,175,55,0.10)" stroke="rgba(212,175,55,0.55)" stroke-width="1.5"/>
+          <text x="712" y="78" fill="#D4AF37" font-size="22" font-weight="800">03</text>
+          <text x="758" y="78" fill="#E8EEF5" font-size="18" font-weight="700">配置资产</text>
+          <text x="712" y="110" fill="#9FB3C2" font-size="12.5">买什么 · 买多少 · 多久退</text>
+          <text x="712" y="134" fill="#9FB3C2" font-size="12.5">最后才是选择题</text>
+          <text x="712" y="156" fill="#D4AF37" font-size="12.5" font-weight="600">解决：该不该买</text>
+
+          <line x1="318" y1="105" x2="355" y2="105" stroke="#D4AF37" stroke-width="2" marker-end="url(#arw1)"/>
+          <line x1="643" y1="105" x2="680" y2="105" stroke="#D4AF37" stroke-width="2" marker-end="url(#arw1)"/>
+
+          <!-- 连接线 -->
+          <polyline points="825,176 825,210 505,210 505,244" fill="none" stroke="#D4AF37" stroke-width="1.8" marker-end="url(#arw1)"/>
+          <text x="495" y="232" fill="#D4AF37" font-size="12.5" font-weight="600" text-anchor="end">按功能分层</text>
+
+          <!-- 三层容器 -->
+          <rect x="40" y="252" width="920" height="336" rx="14" fill="rgba(255,255,255,0.02)" stroke="rgba(212,175,55,0.3)" stroke-dasharray="6 5"/>
+          <text x="60" y="272" fill="#8FA6B8" font-size="11" letter-spacing="2">资 产 功 能 三 层</text>
+
+          <rect x="64" y="288" width="872" height="88" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.12)"/>
+          <rect x="64" y="288" width="5" height="88" rx="2.5" fill="#4FC3F7"/>
+          <text x="90" y="314" fill="#4FC3F7" font-size="11" letter-spacing="1">第 一 层</text>
+          <text x="90" y="342" fill="#E8EEF5" font-size="18" font-weight="700">提升资质</text>
+          <text x="912" y="314" fill="#7E93A4" font-size="11" letter-spacing="2" text-anchor="end">EQUITY BOOSTER</text>
+          <text x="90" y="364" fill="#9FB3C2" font-size="12.5">本身不产现金流，作用是让主体"好看"；要求干净无隐性负债，且要装得早</text>
+
+          <rect x="64" y="388" width="872" height="88" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.12)"/>
+          <rect x="64" y="388" width="5" height="88" rx="2.5" fill="#90A4AE"/>
+          <text x="90" y="414" fill="#B1BFC6" font-size="11" letter-spacing="1">第 二 层</text>
+          <text x="90" y="442" fill="#E8EEF5" font-size="18" font-weight="700">融资性</text>
+          <text x="912" y="414" fill="#7E93A4" font-size="11" letter-spacing="2" text-anchor="end">CASH FLOW ASSET</text>
+          <text x="90" y="464" fill="#9FB3C2" font-size="12.5">自己产现金流，依赖真实租约；租金覆盖率必须盖得住资金成本</text>
+
+          <rect x="64" y="488" width="872" height="88" rx="10" fill="rgba(212,175,55,0.08)" stroke="rgba(212,175,55,0.4)"/>
+          <rect x="64" y="488" width="5" height="88" rx="2.5" fill="#D4AF37"/>
+          <text x="90" y="514" fill="#D4AF37" font-size="11" letter-spacing="1">第 三 层</text>
+          <text x="90" y="542" fill="#E8EEF5" font-size="18" font-weight="700">不良资产</text>
+          <text x="912" y="514" fill="#8A7A4A" font-size="11" letter-spacing="2" text-anchor="end">DISTRESSED ASSET</text>
+          <text x="90" y="564" fill="#9FB3C2" font-size="12.5">收益全部来自价值修复的差价；要求修复路径清晰、退出有人接盘</text>
+        </g>
+      </svg>
+      <div class="figure-cap">上层是<b>顺序</b>（资质 → 数据 → 资产），下层是<b>配置资产时的功能分层</b>；顺序反了，就会滑向"先定资产、再想办法把它讲成好资产"。</div>
     </div>
   </div>
 </section>
@@ -234,6 +362,60 @@
         <p>法拍房提供货源，<br>债权提供现金流，重组提供通道。</p>
       </div>
     </div>
+
+    <div class="figure">
+      <div class="figure-title">业 务 协 同 结 构</div>
+      <svg viewBox="0 0 1000 480" role="img" aria-label="乾元资产处理五条业务线的协同结构图">
+        <defs>
+          <marker id="arw2" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L8,3 z" fill="#90A4AE"/>
+          </marker>
+          <marker id="arw2g" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L8,3 z" fill="#D4AF37"/>
+          </marker>
+        </defs>
+        <g font-family="Microsoft YaHei, PingFang SC, sans-serif">
+
+          <text x="40" y="30" fill="#8FA6B8" font-size="11" letter-spacing="2">货 源 层 · 不 良 资 产 从 哪 里 来</text>
+
+          <rect x="40" y="44" width="260" height="86" rx="11" fill="rgba(15,45,77,0.6)" stroke="rgba(144,164,174,0.3)"/>
+          <text x="170" y="80" fill="#E8EEF5" font-size="16" font-weight="700" text-anchor="middle">法拍房投资</text>
+          <text x="170" y="104" fill="#9FB3C2" font-size="12" text-anchor="middle">司法拍卖折价收购 → 修复转售</text>
+
+          <rect x="370" y="44" width="260" height="86" rx="11" fill="rgba(15,45,77,0.6)" stroke="rgba(144,164,174,0.3)"/>
+          <text x="500" y="80" fill="#E8EEF5" font-size="16" font-weight="700" text-anchor="middle">不良债权收购</text>
+          <text x="500" y="104" fill="#9FB3C2" font-size="12" text-anchor="middle">从机构折价收购 → 催收 / 重整 / 诉讼</text>
+
+          <rect x="700" y="44" width="260" height="86" rx="11" fill="rgba(15,45,77,0.6)" stroke="rgba(144,164,174,0.3)"/>
+          <text x="830" y="80" fill="#E8EEF5" font-size="16" font-weight="700" text-anchor="middle">困境资产重组</text>
+          <text x="830" y="104" fill="#9FB3C2" font-size="12" text-anchor="middle">收购困境项目 → 重组 → 退出</text>
+
+          <line x1="170" y1="132" x2="170" y2="188" stroke="#90A4AE" stroke-width="1.8" marker-end="url(#arw2)"/>
+          <line x1="500" y1="132" x2="500" y2="188" stroke="#90A4AE" stroke-width="1.8" marker-end="url(#arw2)"/>
+          <line x1="830" y1="132" x2="830" y2="188" stroke="#90A4AE" stroke-width="1.8" marker-end="url(#arw2)"/>
+
+          <rect x="40" y="196" width="920" height="76" rx="11" fill="rgba(144,164,174,0.13)" stroke="#90A4AE" stroke-width="1.4"/>
+          <text x="500" y="230" fill="#E8EEF5" font-size="17" font-weight="700" text-anchor="middle">乾元资产处理 · 统一平台</text>
+          <text x="500" y="254" fill="#B1BFC6" font-size="12.5" text-anchor="middle">统一尽调 / 统一估值 / 统一风控 / 统一退出管理</text>
+
+          <line x1="340" y1="278" x2="340" y2="340" stroke="#D4AF37" stroke-width="1.8" marker-end="url(#arw2g)"/>
+          <line x1="660" y1="278" x2="660" y2="340" stroke="#D4AF37" stroke-width="1.8" marker-end="url(#arw2g)"/>
+
+          <text x="40" y="332" fill="#8FA6B8" font-size="11" letter-spacing="2">收 益 层 · 资 产 如 何 变 现</text>
+
+          <rect x="200" y="348" width="280" height="86" rx="11" fill="rgba(15,45,77,0.6)" stroke="rgba(144,164,174,0.3)"/>
+          <text x="340" y="384" fill="#E8EEF5" font-size="16" font-weight="700" text-anchor="middle">融资性资产配置</text>
+          <text x="340" y="408" fill="#9FB3C2" font-size="12" text-anchor="middle">带真实租约 · 按覆盖率门槛进入</text>
+
+          <rect x="520" y="348" width="280" height="86" rx="11" fill="rgba(212,175,55,0.13)" stroke="#D4AF37" stroke-width="1.6"/>
+          <text x="660" y="384" fill="#D4AF37" font-size="16" font-weight="800" text-anchor="middle">不良资产抄底</text>
+          <text x="660" y="408" fill="#C9B06A" font-size="12" text-anchor="middle">法拍折扣 + 价值修复 · 本页</text>
+
+          <text x="500" y="464" fill="#7E93A4" font-size="12" text-anchor="middle">货源层提供资产与现金流，收益层负责把资产变成回款</text>
+        </g>
+      </svg>
+      <div class="figure-cap">三条货源线（法拍房 / 不良债权 / 困境重组）汇入<b>乾元资产处理统一平台</b>，再落到两条收益线；本页承接的是最右边那条。</div>
+    </div>
   </div>
 </section>
 
@@ -270,6 +452,47 @@
         <div class="gate-v">现金流会断裂的资产，即使折价再大也一票否决。</div>
       </div>
     </div>
+
+    <div class="figure">
+      <div class="figure-title">门 槛 漏 斗 · 从 候 选 到 可 买</div>
+      <svg viewBox="0 0 1000 560" role="img" aria-label="不良资产筛选漏斗：六道硬门槛逐层收敛">
+        <g font-family="Microsoft YaHei, PingFang SC, sans-serif">
+
+          <rect x="50" y="20" width="900" height="58" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.2)"/>
+          <text x="500" y="46" fill="#8FA6B8" font-size="16" font-weight="700" text-anchor="middle">候 选 资 产 池</text>
+          <text x="500" y="67" fill="#7E93A4" font-size="12" text-anchor="middle">任何来源的标的，先过漏斗</text>
+
+          <rect x="90" y="86" width="820" height="58" rx="10" fill="rgba(15,45,77,0.6)" stroke="rgba(144,164,174,0.28)"/>
+          <text x="500" y="112" font-size="15.5" font-weight="700" text-anchor="middle"><tspan fill="#D4AF37">① </tspan><tspan fill="#E8EEF5">租售比 ≥ 6%</tspan></text>
+          <text x="500" y="133" fill="#9FB3C2" font-size="12" text-anchor="middle">真实租金必须覆盖资金成本</text>
+
+          <rect x="130" y="152" width="740" height="58" rx="10" fill="rgba(15,45,77,0.6)" stroke="rgba(144,164,174,0.28)"/>
+          <text x="500" y="178" font-size="15.5" font-weight="700" text-anchor="middle"><tspan fill="#D4AF37">② </tspan><tspan fill="#E8EEF5">真实主体 + 真实租约</tspan></text>
+          <text x="500" y="199" fill="#9FB3C2" font-size="12" text-anchor="middle">有实际租户、实际经营、实际流水</text>
+
+          <rect x="170" y="218" width="660" height="58" rx="10" fill="rgba(15,45,77,0.6)" stroke="rgba(144,164,174,0.28)"/>
+          <text x="500" y="244" font-size="15.5" font-weight="700" text-anchor="middle"><tspan fill="#D4AF37">③ </tspan><tspan fill="#E8EEF5">按真实市价评估</tspan></text>
+          <text x="500" y="265" fill="#9FB3C2" font-size="12" text-anchor="middle">估值与成数按市价算，不靠虚高评估放大杠杆</text>
+
+          <rect x="210" y="284" width="580" height="58" rx="10" fill="rgba(15,45,77,0.6)" stroke="rgba(144,164,174,0.28)"/>
+          <text x="500" y="310" font-size="15.5" font-weight="700" text-anchor="middle"><tspan fill="#D4AF37">④ </tspan><tspan fill="#E8EEF5">自有资金 · 不加杠杆</tspan></text>
+          <text x="500" y="331" fill="#9FB3C2" font-size="12" text-anchor="middle">不新增贷款、不引入配资</text>
+
+          <rect x="250" y="350" width="500" height="58" rx="10" fill="rgba(15,45,77,0.6)" stroke="rgba(144,164,174,0.28)"/>
+          <text x="500" y="376" font-size="15.5" font-weight="700" text-anchor="middle"><tspan fill="#D4AF37">⑤ </tspan><tspan fill="#E8EEF5">退出路径前置</tspan></text>
+          <text x="500" y="397" fill="#9FB3C2" font-size="12" text-anchor="middle">买入前先写清：怎么出、多久出、卖给谁</text>
+
+          <rect x="290" y="416" width="420" height="58" rx="10" fill="rgba(15,45,77,0.6)" stroke="rgba(144,164,174,0.28)"/>
+          <text x="500" y="442" font-size="15.5" font-weight="700" text-anchor="middle"><tspan fill="#D4AF37">⑥ </tspan><tspan fill="#E8EEF5">现金流优先</tspan></text>
+          <text x="500" y="463" fill="#9FB3C2" font-size="12" text-anchor="middle">现金流会断裂的资产一票否决</text>
+
+          <rect x="330" y="482" width="340" height="58" rx="10" fill="rgba(212,175,55,0.15)" stroke="#D4AF37" stroke-width="1.6"/>
+          <text x="500" y="508" fill="#D4AF37" font-size="16" font-weight="800" text-anchor="middle">✓ 可 买 清 单</text>
+          <text x="500" y="529" fill="#C9B06A" font-size="12" text-anchor="middle">进入尽调、定价与交易流程</text>
+        </g>
+      </svg>
+      <div class="figure-cap">六道门槛<b>逐层收敛</b>：任何一关不过，标的当场出局；全部通过才进入可买清单，进入交易流程。</div>
+    </div>
   </div>
 </section>
 
@@ -302,6 +525,64 @@
         <p>购房与贷款的时间窗、用途与来源，<br>必须经得起监管与银行审查。</p>
       </div>
     </div>
+
+    <div class="figure">
+      <div class="figure-title">同 一 个 问 题 · 两 种 做 法</div>
+      <svg viewBox="0 0 1000 590" role="img" aria-label="行业常见做法与乾元做法的逐条对照图">
+        <defs>
+          <marker id="arw3" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L9,3 z" fill="#D4AF37"/>
+          </marker>
+        </defs>
+        <g font-family="Microsoft YaHei, PingFang SC, sans-serif">
+
+          <rect x="40" y="20" width="400" height="48" rx="9" fill="rgba(122,42,42,0.28)" stroke="rgba(229,115,115,0.5)"/>
+          <text x="240" y="50" fill="#EF9A9A" font-size="15" font-weight="800" text-anchor="middle">行业里常见的做法</text>
+
+          <rect x="560" y="20" width="400" height="48" rx="9" fill="rgba(212,175,55,0.14)" stroke="rgba(212,175,55,0.55)"/>
+          <text x="760" y="50" fill="#D4AF37" font-size="15" font-weight="800" text-anchor="middle">乾元的做法</text>
+
+          <!-- row 1 -->
+          <rect x="40" y="96" width="400" height="100" rx="11" fill="rgba(122,42,42,0.16)" stroke="rgba(229,115,115,0.38)" stroke-dasharray="6 4"/>
+          <text x="240" y="138" fill="#EF9A9A" font-size="16" font-weight="700" text-anchor="middle">高评高贷做杠杆</text>
+          <text x="240" y="164" fill="#C4A0A0" font-size="12" text-anchor="middle">靠评估虚高撬倍数</text>
+          <line x1="452" y1="146" x2="540" y2="146" stroke="#D4AF37" stroke-width="2" marker-end="url(#arw3)"/>
+          <rect x="560" y="96" width="400" height="100" rx="11" fill="rgba(212,175,55,0.09)" stroke="rgba(212,175,55,0.4)"/>
+          <text x="760" y="138" fill="#D4AF37" font-size="16" font-weight="700" text-anchor="middle">按真实市价估值</text>
+          <text x="760" y="164" fill="#C9B06A" font-size="12" text-anchor="middle">收益只来自低买高卖与价值修复</text>
+
+          <!-- row 2 -->
+          <rect x="40" y="214" width="400" height="100" rx="11" fill="rgba(122,42,42,0.16)" stroke="rgba(229,115,115,0.38)" stroke-dasharray="6 4"/>
+          <text x="240" y="256" fill="#EF9A9A" font-size="16" font-weight="700" text-anchor="middle">买壳嫁接过账</text>
+          <text x="240" y="282" fill="#C4A0A0" font-size="12" text-anchor="middle">股权代持 · 空壳主体走账</text>
+          <line x1="452" y1="264" x2="540" y2="264" stroke="#D4AF37" stroke-width="2" marker-end="url(#arw3)"/>
+          <rect x="560" y="214" width="400" height="100" rx="11" fill="rgba(212,175,55,0.09)" stroke="rgba(212,175,55,0.4)"/>
+          <text x="760" y="256" fill="#D4AF37" font-size="16" font-weight="700" text-anchor="middle">主体关系始终清楚</text>
+          <text x="760" y="282" fill="#C9B06A" font-size="12" text-anchor="middle">不代持、不借用他人牌照</text>
+
+          <!-- row 3 -->
+          <rect x="40" y="332" width="400" height="100" rx="11" fill="rgba(122,42,42,0.16)" stroke="rgba(229,115,115,0.38)" stroke-dasharray="6 4"/>
+          <text x="240" y="374" fill="#EF9A9A" font-size="16" font-weight="700" text-anchor="middle">做资金方赚配资息</text>
+          <text x="240" y="400" fill="#C4A0A0" font-size="12" text-anchor="middle">介绍费 · 中间费 · 好处费</text>
+          <line x1="452" y1="382" x2="540" y2="382" stroke="#D4AF37" stroke-width="2" marker-end="url(#arw3)"/>
+          <rect x="560" y="332" width="400" height="100" rx="11" fill="rgba(212,175,55,0.09)" stroke="rgba(212,175,55,0.4)"/>
+          <text x="760" y="374" fill="#D4AF37" font-size="16" font-weight="700" text-anchor="middle">只做自有资金的处置</text>
+          <text x="760" y="400" fill="#C9B06A" font-size="12" text-anchor="middle">不碰配资、不做撮合放贷</text>
+
+          <!-- row 4 -->
+          <rect x="40" y="450" width="400" height="100" rx="11" fill="rgba(122,42,42,0.16)" stroke="rgba(229,115,115,0.38)" stroke-dasharray="6 4"/>
+          <text x="240" y="492" fill="#EF9A9A" font-size="16" font-weight="700" text-anchor="middle">用经营贷买房产</text>
+          <text x="240" y="518" fill="#C4A0A0" font-size="12" text-anchor="middle">成交后短期内申请贷款</text>
+          <line x1="452" y1="500" x2="540" y2="500" stroke="#D4AF37" stroke-width="2" marker-end="url(#arw3)"/>
+          <rect x="560" y="450" width="400" height="100" rx="11" fill="rgba(212,175,55,0.09)" stroke="rgba(212,175,55,0.4)"/>
+          <text x="760" y="492" fill="#D4AF37" font-size="16" font-weight="700" text-anchor="middle">用途与时点经得起审查</text>
+          <text x="760" y="518" fill="#C9B06A" font-size="12" text-anchor="middle">不碰监管重点审查的区间</text>
+
+          <text x="500" y="576" fill="#7E93A4" font-size="12" text-anchor="middle">左边不是不能做，是代价与风险最终由我们自己承担</text>
+        </g>
+      </svg>
+      <div class="figure-cap">同一条业务线上，两种路径：左边<b>短期收益更高、长期风险与合规代价更大</b>，右边慢一点但资产与主体始终说得清。</div>
+    </div>
   </div>
 </section>
 
@@ -329,6 +610,61 @@
         <div class="loop-bn-desc">机构接盘 · 打包转让<br>转售 · 长期持有收租</div>
       </div>
     </div>
+
+    <div class="figure">
+      <div class="figure-title">价 值 修 复 闭 环</div>
+      <svg viewBox="0 0 1000 570" role="img" aria-label="买入、修复、退出、回款四环节构成的价值修复闭环">
+        <defs>
+          <marker id="arw4" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L9,3 z" fill="#D4AF37"/>
+          </marker>
+        </defs>
+        <g font-family="Microsoft YaHei, PingFang SC, sans-serif">
+
+          <rect x="70" y="46" width="280" height="112" rx="13" fill="rgba(15,45,77,0.6)" stroke="rgba(144,164,174,0.32)"/>
+          <text x="210" y="88" fill="#E8EEF5" font-size="18" font-weight="700" text-anchor="middle">买 入</text>
+          <text x="210" y="116" fill="#9FB3C2" font-size="12.5" text-anchor="middle">折价捡漏 · 尽调定性</text>
+          <text x="210" y="138" fill="#7E93A4" font-size="12" text-anchor="middle">算清持有成本与最坏情形</text>
+
+          <rect x="650" y="46" width="280" height="112" rx="13" fill="rgba(212,175,55,0.11)" stroke="rgba(212,175,55,0.5)" stroke-width="1.5"/>
+          <text x="790" y="88" fill="#D4AF37" font-size="18" font-weight="800" text-anchor="middle">修 复</text>
+          <text x="790" y="116" fill="#C9B06A" font-size="12.5" text-anchor="middle">改造增值 · 债务重组</text>
+          <text x="790" y="138" fill="#9A8653" font-size="12" text-anchor="middle">运营提升 · 现金流回归</text>
+
+          <rect x="650" y="400" width="280" height="112" rx="13" fill="rgba(15,45,77,0.6)" stroke="rgba(144,164,174,0.32)"/>
+          <text x="790" y="442" fill="#E8EEF5" font-size="18" font-weight="700" text-anchor="middle">退 出</text>
+          <text x="790" y="470" fill="#9FB3C2" font-size="12.5" text-anchor="middle">机构接盘 · 打包转让</text>
+          <text x="790" y="492" fill="#7E93A4" font-size="12" text-anchor="middle">转售 · 长期持有收租</text>
+
+          <rect x="70" y="400" width="280" height="112" rx="13" fill="rgba(15,45,77,0.6)" stroke="rgba(144,164,174,0.32)"/>
+          <text x="210" y="442" fill="#E8EEF5" font-size="18" font-weight="700" text-anchor="middle">回 款</text>
+          <text x="210" y="470" fill="#9FB3C2" font-size="12.5" text-anchor="middle">现金回流 · 利润兑现</text>
+          <text x="210" y="492" fill="#7E93A4" font-size="12" text-anchor="middle">转入下一轮投入</text>
+
+          <!-- arrows -->
+          <line x1="360" y1="102" x2="636" y2="102" stroke="#D4AF37" stroke-width="2.2" marker-end="url(#arw4)"/>
+          <text x="498" y="88" fill="#D4AF37" font-size="13" font-weight="600" text-anchor="middle">选 资 产</text>
+
+          <line x1="790" y1="168" x2="790" y2="388" stroke="#D4AF37" stroke-width="2.2" marker-end="url(#arw4)"/>
+          <text x="806" y="282" fill="#D4AF37" font-size="13" font-weight="600">定 买 家</text>
+
+          <line x1="640" y1="456" x2="364" y2="456" stroke="#D4AF37" stroke-width="2.2" marker-end="url(#arw4)"/>
+          <text x="498" y="442" fill="#D4AF37" font-size="13" font-weight="600" text-anchor="middle">变 现</text>
+
+          <line x1="210" y1="392" x2="210" y2="170" stroke="#D4AF37" stroke-width="2.2" marker-end="url(#arw4)"/>
+          <text x="194" y="282" fill="#D4AF37" font-size="13" font-weight="600" text-anchor="end">再 投 入</text>
+
+          <!-- center -->
+          <circle cx="500" cy="280" r="88" fill="rgba(212,175,55,0.08)" stroke="rgba(212,175,55,0.42)" stroke-width="1.5"/>
+          <circle cx="500" cy="280" r="72" fill="none" stroke="rgba(212,175,55,0.16)" stroke-width="1"/>
+          <text x="500" y="272" fill="#D4AF37" font-size="20" font-weight="800" text-anchor="middle">价值修复</text>
+          <text x="500" y="300" fill="#C9B06A" font-size="13" letter-spacing="3" text-anchor="middle">闭 环</text>
+
+          <text x="500" y="548" fill="#7E93A4" font-size="12" text-anchor="middle">回款重新变成下一轮的买入资金，闭环才转得起来</text>
+        </g>
+      </svg>
+      <div class="figure-cap">四个环节首尾相接：<b>买入 → 修复 → 退出 → 回款 → 再投入</b>；利润来自修复这一段，而不是来自杠杆。</div>
+    </div>
   </div>
 </section>
 
@@ -353,6 +689,52 @@
         <h4>8 年后 规模化</h4>
         <p>团队化 · 渠道化<br>退出能力成型后再放大</p>
       </div>
+    </div>
+
+    <div class="figure">
+      <div class="figure-title">路 线 图</div>
+      <svg viewBox="0 0 1000 400" role="img" aria-label="不良资产抄底业务线五年到八年发展路线图">
+        <g font-family="Microsoft YaHei, PingFang SC, sans-serif">
+          <line x1="70" y1="252" x2="980" y2="252" stroke="rgba(255,255,255,0.14)" stroke-width="1.5"/>
+          <path d="M90,250 C130,246 150,240 180,232 C300,212 380,196 500,170 C630,142 720,122 820,110 C890,104 940,102 980,102"
+                fill="none" stroke="#D4AF37" stroke-width="2.4" opacity="0.55"/>
+          <path d="M90,250 C130,246 150,240 180,232 C300,212 380,196 500,170 C630,142 720,122 820,110 C890,104 940,102 980,102 L980,252 L90,252 Z"
+                fill="url(#gfill)" opacity="0.28"/>
+          <defs>
+            <linearGradient id="gfill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.45"/>
+              <stop offset="100%" stop-color="#D4AF37" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+
+          <circle cx="180" cy="232" r="9" fill="#D4AF37" stroke="#0A2540" stroke-width="2.5"/>
+          <text x="180" y="196" fill="#D4AF37" font-size="13" font-weight="700" text-anchor="middle">第 5-6 年</text>
+          <text x="180" y="166" fill="#E8EEF5" font-size="21" font-weight="800" text-anchor="middle">学 习 期</text>
+
+          <circle cx="500" cy="170" r="9" fill="#D4AF37" stroke="#0A2540" stroke-width="2.5"/>
+          <text x="500" y="134" fill="#D4AF37" font-size="13" font-weight="700" text-anchor="middle">第 7 年</text>
+          <text x="500" y="104" fill="#E8EEF5" font-size="21" font-weight="800" text-anchor="middle">试 水 期</text>
+
+          <circle cx="820" cy="110" r="9" fill="#D4AF37" stroke="#0A2540" stroke-width="2.5"/>
+          <text x="820" y="74" fill="#D4AF37" font-size="13" font-weight="700" text-anchor="middle">第 8 年后</text>
+          <text x="820" y="44" fill="#E8EEF5" font-size="21" font-weight="800" text-anchor="middle">规 模 化</text>
+
+          <rect x="40" y="272" width="280" height="92" rx="11" fill="rgba(15,45,77,0.6)" stroke="rgba(144,164,174,0.28)"/>
+          <text x="180" y="308" fill="#E8EEF5" font-size="14.5" font-weight="700" text-anchor="middle">读案例 · 跑流程</text>
+          <text x="180" y="334" fill="#9FB3C2" font-size="12" text-anchor="middle">攒尽调能力，先把门槛吃透</text>
+
+          <rect x="360" y="272" width="280" height="92" rx="11" fill="rgba(15,45,77,0.6)" stroke="rgba(144,164,174,0.28)"/>
+          <text x="500" y="308" fill="#E8EEF5" font-size="14.5" font-weight="700" text-anchor="middle">自有资金小额参与 1-2 单</text>
+          <text x="500" y="334" fill="#9FB3C2" font-size="12" text-anchor="middle">只做看得懂的品类</text>
+
+          <rect x="680" y="272" width="280" height="92" rx="11" fill="rgba(212,175,55,0.1)" stroke="rgba(212,175,55,0.45)"/>
+          <text x="820" y="308" fill="#D4AF37" font-size="14.5" font-weight="700" text-anchor="middle">团队化 · 渠道化</text>
+          <text x="820" y="334" fill="#C9B06A" font-size="12" text-anchor="middle">退出能力成型后再放大</text>
+
+          <text x="500" y="390" fill="#7E93A4" font-size="12" text-anchor="middle">规模来自退出能力与渠道成熟度，而不是来自加杠杆</text>
+        </g>
+      </svg>
+      <div class="figure-cap">三阶段不是时间到了自动切换，而是<b>能力到了才切换</b>：学习期补尽调能力，试水期验证单笔模型，规模化期才有资格放大。</div>
     </div>
   </div>
 </section>
