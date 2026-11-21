@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>不良资产抄底 · 方法论与纪律 · 乾元投融资子公司</title>
-  <meta name="description" content="乾元资本集团旗下 乾元资产处理 · 不良资产抄底业务线：资产功能分层、融资三步顺序、硬门槛与四条不做红线">
+  <title>不良资产抄底 · 方法论、纪律与案例复算 · 乾元投融资子公司</title>
+  <meta name="description" content="乾元资本集团旗下 乾元资产处理 · 不良资产抄底业务线：资产功能分层、融资前置化、六道硬门槛、四条不做红线，以及 16 个公开案例的逐案复算结论">
   <link rel="stylesheet" href="_sub.css">
   <style>
     :root {
@@ -56,6 +56,118 @@
     /* 三步条（3 列覆盖） */
     .steps-3 { grid-template-columns: repeat(3, 1fr); }
 
+    /* ===== 新增：融资前置化 ===== */
+    .prep-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 26px;
+    }
+    .prep {
+      padding: 20px 22px;
+      background: rgba(10, 37, 64, 0.5);
+      border: 1.5px solid var(--border);
+      border-top: 3px solid var(--brand);
+      border-radius: 10px;
+    }
+    .prep-n {
+      font-size: 11px; font-weight: 800; color: var(--brand);
+      letter-spacing: 2px; margin-bottom: 8px;
+    }
+    .prep-h { font-size: 15px; font-weight: 800; color: #E8EEF5; margin-bottom: 8px; letter-spacing: 0.5px; }
+    .prep-v { font-size: 12.5px; color: var(--text-dim); line-height: 1.7; }
+
+    /* ===== 新增：案例拆解 ===== */
+    .case-summary {
+      margin: 26px 0 6px;
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(10, 37, 64, 0.4);
+    }
+    .case-summary table {
+      width: 100%; border-collapse: collapse; font-size: 12.5px;
+    }
+    .case-summary th {
+      background: rgba(144,164,174,0.14);
+      color: var(--brand-light); font-weight: 800;
+      text-align: left; padding: 12px 14px; white-space: nowrap;
+      letter-spacing: 0.5px; border-bottom: 1px solid var(--border);
+    }
+    .case-summary td {
+      padding: 10px 14px; color: var(--text-dim);
+      border-bottom: 1px solid rgba(255,255,255,0.06); vertical-align: top; line-height: 1.6;
+    }
+    .case-summary tr:last-child td { border-bottom: none; }
+    .case-summary td.nm { color: #E8EEF5; font-weight: 700; white-space: nowrap; }
+    .case-summary td.num { font-family: Consolas, Menlo, monospace; color: #C9B06A; white-space: nowrap; }
+
+    .verdict {
+      display: inline-block; padding: 2px 9px; border-radius: 20px;
+      font-size: 11px; font-weight: 800; white-space: nowrap; letter-spacing: 0.5px;
+    }
+    .v-no   { background: rgba(122,42,42,0.35);  color: #EF9A9A; border: 1px solid rgba(229,115,115,0.45); }
+    .v-mid  { background: rgba(184,134,11,0.22); color: #E0B94A; border: 1px solid rgba(184,134,11,0.45); }
+    .v-ok   { background: rgba(30,110,84,0.30);  color: #7FD1AE; border: 1px solid rgba(80,190,150,0.45); }
+
+    .case-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 26px; }
+    .case {
+      padding: 22px 24px;
+      background: rgba(10, 37, 64, 0.5);
+      border: 1.5px solid var(--border);
+      border-left: 3px solid var(--brand);
+      border-radius: 12px;
+    }
+    .case.no { border-left-color: #E57373; }
+    .case.mid { border-left-color: #E0B94A; }
+    .case.ok { border-left-color: #4FBF95; }
+    .case-h {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 12px; margin-bottom: 4px;
+    }
+    .case-t { font-size: 16px; font-weight: 800; color: #E8EEF5; letter-spacing: 0.5px; }
+    .case-src { font-size: 11px; color: #7E93A4; letter-spacing: 1px; margin-bottom: 14px; }
+    .case-k {
+      font-size: 12.5px; color: var(--text-dim); line-height: 1.8;
+      margin-bottom: 12px;
+    }
+    .case-k b { color: var(--brand-light); font-weight: 700; }
+    .case-k .num { font-family: Consolas, Menlo, monospace; color: #C9B06A; }
+    .calc {
+      background: rgba(6,24,42,0.55);
+      border: 1px solid rgba(144,164,174,0.22);
+      border-radius: 9px; padding: 14px 16px; margin-bottom: 12px;
+    }
+    .calc-h {
+      font-size: 11.5px; font-weight: 800; color: var(--brand);
+      letter-spacing: 1.5px; margin-bottom: 8px;
+    }
+    .calc-l { font-size: 12.5px; color: #B9C7D3; line-height: 1.85; }
+    .calc-l .num { font-family: Consolas, Menlo, monospace; color: #E0B94A; }
+    .calc-l .bad { color: #EF9A9A; font-weight: 700; }
+    .calc-l .good { color: #7FD1AE; font-weight: 700; }
+    .case-c {
+      font-size: 12.5px; line-height: 1.75;
+      padding-top: 12px; border-top: 1px solid var(--border);
+      color: var(--text-dim);
+    }
+    .case-c b { color: var(--brand-light); }
+
+    /* ===== 新增：品类与货源 ===== */
+    .src-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 26px; }
+    .src {
+      padding: 20px; background: rgba(10, 37, 64, 0.5);
+      border: 1.5px solid var(--border); border-radius: 10px;
+    }
+    .src-i { font-size: 22px; margin-bottom: 8px; }
+    .src-h { font-size: 14.5px; font-weight: 800; color: #E8EEF5; margin-bottom: 8px; }
+    .src-v { font-size: 12.5px; color: var(--text-dim); line-height: 1.7; }
+    .cat-row {
+      display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px;
+    }
+    .cat {
+      padding: 5px 12px; font-size: 12px; color: var(--text-dim);
+      background: rgba(144,164,174,0.10);
+      border: 1px solid rgba(144,164,174,0.26); border-radius: 16px;
+    }
+
     /* === 图形图示 === */
     .figure {
       margin: 30px 0 6px;
@@ -69,6 +181,10 @@
       letter-spacing: 2px; margin-bottom: 18px;
     }
     .figure svg { width: 100%; height: auto; display: block; }
+    /* 图示横向滚动容器：窄屏下保持字号可读，不整体压缩 */
+    .fig-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .fig-scroll::-webkit-scrollbar { height: 6px; }
+    .fig-scroll::-webkit-scrollbar-thumb { background: rgba(144,164,174,0.45); border-radius: 3px; }
     .figure-cap {
       margin-top: 16px; padding-top: 13px;
       border-top: 1px solid var(--border);
@@ -78,14 +194,25 @@
     .figure-cap b { color: var(--brand-light); font-weight: 700; }
 
     @media (max-width: 900px) {
+      .fig-scroll svg { min-width: 760px; }
+      .figure::after {
+        content: "图示可左右滑动查看完整内容";
+        display: block; margin-top: 10px;
+        font-size: 11.5px; color: var(--text-dim); text-align: center;
+      }
       .gate-grid { grid-template-columns: 1fr; }
       .no-grid { grid-template-columns: 1fr 1fr; }
       .steps-3 { grid-template-columns: 1fr; }
       .figure { padding: 18px 12px 14px; }
       .figure-title { letter-spacing: 1px; }
+      .prep-grid { grid-template-columns: 1fr 1fr; }
+      .case-list { grid-template-columns: 1fr; }
+      .src-grid { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 560px) {
       .no-grid { grid-template-columns: 1fr; }
+      .prep-grid { grid-template-columns: 1fr; }
+      .src-grid { grid-template-columns: 1fr; }
     }
   </style>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%2390A4AE'/><text x='50' y='62' font-size='40' text-anchor='middle' fill='%230A2540' font-family='serif' font-weight='800'>抄</text></svg>">
@@ -101,8 +228,10 @@
     <ul class="nav-menu">
       <li><a href="#about">业务定位</a></li>
       <li><a href="#method">方法论</a></li>
+      <li><a href="#prep">融资前置</a></li>
       <li><a href="#gate">硬门槛</a></li>
       <li><a href="#rules">不做什么</a></li>
+      <li><a href="#cases">案例</a></li>
       <li><a href="asset.html" class="back-link">← 资产处理</a></li>
     </ul>
   </div>
@@ -122,6 +251,7 @@
       <div class="hero-stat"><div class="num" style="color: #90A4AE;">3 条</div><div class="lbl">执行主线</div></div>
       <div class="hero-stat"><div class="num" style="color: #90A4AE;">≥ 6%</div><div class="lbl">租售比硬门槛</div></div>
       <div class="hero-stat"><div class="num" style="color: #90A4AE;">自有资金</div><div class="lbl">不加杠杆</div></div>
+      <div class="hero-stat"><div class="num" style="color: #90A4AE;">16 个</div><div class="lbl">案例已逐案复算</div></div>
     </div>
   </div>
 </header>
@@ -139,7 +269,7 @@
 
     <div class="figure">
       <div class="figure-title">本 线 在 集 团 中 的 位 置</div>
-      <svg viewBox="0 0 1000 140" role="img" aria-label="不良资产抄底业务线在乾元资本集团中的层级位置">
+      <div class="fig-scroll"><svg viewBox="0 0 1000 140" role="img" aria-label="不良资产抄底业务线在乾元资本集团中的层级位置">
         <defs>
           <marker id="arw0" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto">
             <path d="M0,0 L0,6 L8,3 z" fill="#D4AF37"/>
@@ -167,7 +297,7 @@
           <line x1="536" y1="71" x2="562" y2="71" stroke="#D4AF37" stroke-width="1.8" marker-end="url(#arw0)"/>
           <line x1="766" y1="71" x2="792" y2="71" stroke="#D4AF37" stroke-width="1.8" marker-end="url(#arw0)"/>
         </g>
-      </svg>
+      </svg></div>
       <div class="figure-cap">从集团到业务线的四级承接：<b>集团 → 投融资集群 → 资产处理子公司 → 不良资产抄底业务线</b>；本页只讲最下面一层。</div>
     </div>
   </div>
@@ -218,7 +348,7 @@
 
     <div class="figure">
       <div class="figure-title">方 法 论 全 图 · 三 步 与 三 层</div>
-      <svg viewBox="0 0 1000 612" role="img" aria-label="融资三步与资产功能三层的完整方法论结构图">
+      <div class="fig-scroll"><svg viewBox="0 0 1000 612" role="img" aria-label="融资三步与资产功能三层的完整方法论结构图">
         <defs>
           <marker id="arw1" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto">
             <path d="M0,0 L0,6 L8,3 z" fill="#D4AF37"/>
@@ -282,7 +412,7 @@
           <text x="912" y="514" fill="#8A7A4A" font-size="11" letter-spacing="2" text-anchor="end">DISTRESSED ASSET</text>
           <text x="90" y="564" fill="#9FB3C2" font-size="12.5">收益全部来自价值修复的差价；要求修复路径清晰、退出有人接盘</text>
         </g>
-      </svg>
+      </svg></div>
       <div class="figure-cap">上层是<b>顺序</b>（资质 → 数据 → 资产），下层是<b>配置资产时的功能分层</b>；顺序反了，就会滑向"先定资产、再想办法把它讲成好资产"。</div>
     </div>
   </div>
@@ -319,6 +449,94 @@
     <div class="formula-box">
       <div class="formula-line">融资不是目的，<span class="num">赚钱</span>才是目的</div>
       <div class="formula-result">每一笔资产在买入之前，就必须先回答三个问题：怎么出、多久出、卖给谁</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 融资前置化 ===== -->
+<section class="content" id="prep">
+  <div class="container">
+    <div class="section-tag">融 资 前 置 化</div>
+    <h2 class="section-title">先把现金流算平，再谈放多少钱进来</h2>
+    <p class="section-sub">一条业务线能不能活下来，看的不是融资规模，而是<strong>从立项到能产生现金流之间的那段时间，谁来扛</strong>。</p>
+
+    <div class="prep-grid">
+      <div class="prep">
+        <div class="prep-n">0 1</div>
+        <div class="prep-h">融资是前置动作</div>
+        <div class="prep-v">资质要批、数据要涨、评估要出、贷款要批。<br>缺钱时才去找钱，等来的只有被动报价。</div>
+      </div>
+      <div class="prep">
+        <div class="prep-n">0 2</div>
+        <div class="prep-h">体量是放出来的</div>
+        <div class="prep-v">授信额度随主体体量封顶。<br>体量上不去，额度就到顶——这不是额度问题，是经营问题。</div>
+      </div>
+      <div class="prep">
+        <div class="prep-n">0 3</div>
+        <div class="prep-h">成本要摊开算</div>
+        <div class="prep-v">利息、税费、物业、维护、空置、运营人工、退出成本，<br>逐项列出后仍为正，才进谈判。</div>
+      </div>
+      <div class="prep">
+        <div class="prep-n">0 4</div>
+        <div class="prep-h">不做装进来的规模</div>
+        <div class="prep-v">把别人的资产与流水装进主体，看着体量上去了，<br>但债务是自己的——规模来自业务做深，不来自拼装。</div>
+      </div>
+    </div>
+
+    <div class="figure">
+      <div class="figure-title">前 置 期 · 从 立 项 到 现 金 流</div>
+      <div class="fig-scroll"><svg viewBox="0 0 1000 300" role="img" aria-label="融资前置期时间轴：资质、数据、资产配置与贷款落地的先后与耗时">
+        <defs>
+          <marker id="arw8" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L9,3 z" fill="#90A4AE"/>
+          </marker>
+        </defs>
+        <g font-family="Microsoft YaHei, PingFang SC, sans-serif">
+
+          <text x="40" y="30" fill="#8FA6B8" font-size="11" letter-spacing="2">时 间 顺 序 · 不 可 颠 倒</text>
+
+          <!-- 阶段条 -->
+          <rect x="90" y="52" width="250" height="54" rx="9" fill="rgba(15,45,77,0.62)" stroke="rgba(144,164,174,0.35)"/>
+          <text x="215" y="76" fill="#E8EEF5" font-size="15" font-weight="700" text-anchor="middle">① 优化资质</text>
+          <text x="215" y="95" fill="#9FB3C2" font-size="11.5" text-anchor="middle">法人 / 股东层面 · 3-8 个月</text>
+
+          <rect x="360" y="52" width="250" height="54" rx="9" fill="rgba(15,45,77,0.62)" stroke="rgba(144,164,174,0.35)"/>
+          <text x="485" y="76" fill="#E8EEF5" font-size="15" font-weight="700" text-anchor="middle">② 优化数据</text>
+          <text x="485" y="95" fill="#9FB3C2" font-size="11.5" text-anchor="middle">营收 / 流水 / 开票 · 3-8 个月</text>
+
+          <rect x="630" y="52" width="180" height="54" rx="9" fill="rgba(15,45,77,0.62)" stroke="rgba(144,164,174,0.35)"/>
+          <text x="720" y="76" fill="#E8EEF5" font-size="15" font-weight="700" text-anchor="middle">③ 配置资产</text>
+          <text x="720" y="95" fill="#9FB3C2" font-size="11.5" text-anchor="middle">买入 / 尽调 / 定价</text>
+
+          <rect x="830" y="52" width="130" height="54" rx="9" fill="rgba(212,175,55,0.13)" stroke="#D4AF37" stroke-width="1.4"/>
+          <text x="895" y="76" fill="#D4AF37" font-size="15" font-weight="800" text-anchor="middle">④ 产生现金流</text>
+          <text x="895" y="95" fill="#C9B06A" font-size="11.5" text-anchor="middle">出租 / 运营 / 处置</text>
+
+          <line x1="340" y1="79" x2="356" y2="79" stroke="#90A4AE" stroke-width="1.8" marker-end="url(#arw8)"/>
+          <line x1="610" y1="79" x2="626" y2="79" stroke="#90A4AE" stroke-width="1.8" marker-end="url(#arw8)"/>
+          <line x1="810" y1="79" x2="826" y2="79" stroke="#90A4AE" stroke-width="1.8" marker-end="url(#arw8)"/>
+
+          <!-- 前置期总括 -->
+          <line x1="90" y1="140" x2="90" y2="164" stroke="#D4AF37" stroke-width="1.4"/>
+          <line x1="960" y1="140" x2="960" y2="164" stroke="#D4AF37" stroke-width="1.4"/>
+          <line x1="90" y1="164" x2="960" y2="164" stroke="#D4AF37" stroke-width="1.4"/>
+          <line x1="90" y1="140" x2="90" y2="164" stroke="#D4AF37" stroke-width="1.4"/>
+          <rect x="392" y="146" width="266" height="36" rx="18" fill="#06182A" stroke="#D4AF37" stroke-width="1.2"/>
+          <text x="525" y="170" fill="#D4AF37" font-size="14" font-weight="800" text-anchor="middle">前 置 期 7 - 19 个 月</text>
+
+          <!-- 现金流承担说明 -->
+          <rect x="90" y="206" width="420" height="60" rx="9" fill="rgba(122,42,42,0.18)" stroke="rgba(229,115,115,0.4)" stroke-dasharray="6 4"/>
+          <text x="300" y="231" fill="#EF9A9A" font-size="13.5" font-weight="700" text-anchor="middle">这段前置期的持有成本，由现金流扛</text>
+          <text x="300" y="251" fill="#C4A0A0" font-size="11.5" text-anchor="middle">算不满 12 个月，标的当场出局</text>
+
+          <rect x="540" y="206" width="420" height="60" rx="9" fill="rgba(212,175,55,0.09)" stroke="rgba(212,175,55,0.4)"/>
+          <text x="750" y="231" fill="#D4AF37" font-size="13.5" font-weight="700" text-anchor="middle">所以：自有资金先扛，再谈加钱</text>
+          <text x="750" y="251" fill="#C9B06A" font-size="11.5" text-anchor="middle">加钱只会把前置期放大，不会缩短它</text>
+
+          <text x="500" y="290" fill="#7E93A4" font-size="11.5" text-anchor="middle">顺序反了，就会滑向"先定资产、再想办法把它讲成好资产"</text>
+        </g>
+      </svg></div>
+      <div class="figure-cap">资质与数据没到位就装资产，等于<b>在不知道装什么、装多久、成本谁扛的情况下先付钱</b>；前置期长短不取决于杠杆，只取决于你自己的经营进度。</div>
     </div>
   </div>
 </section>
@@ -365,7 +583,7 @@
 
     <div class="figure">
       <div class="figure-title">业 务 协 同 结 构</div>
-      <svg viewBox="0 0 1000 480" role="img" aria-label="乾元资产处理五条业务线的协同结构图">
+      <div class="fig-scroll"><svg viewBox="0 0 1000 480" role="img" aria-label="乾元资产处理五条业务线的协同结构图">
         <defs>
           <marker id="arw2" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto">
             <path d="M0,0 L0,6 L8,3 z" fill="#90A4AE"/>
@@ -413,8 +631,73 @@
 
           <text x="500" y="464" fill="#7E93A4" font-size="12" text-anchor="middle">货源层提供资产与现金流，收益层负责把资产变成回款</text>
         </g>
-      </svg>
+      </svg></div>
       <div class="figure-cap">三条货源线（法拍房 / 不良债权 / 困境重组）汇入<b>乾元资产处理统一平台</b>，再落到两条收益线；本页承接的是最右边那条。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 品类与货源 ===== -->
+<section class="content" id="source" style="background: var(--navy-deep);">
+  <div class="container">
+    <div class="section-tag">货 源 与 品 类</div>
+    <h2 class="section-title">不良资产不是一个品类，是一堆定价错配</h2>
+    <p class="section-sub">我们不赌品类风口。<strong>我们赌的是——同一件东西，有人按 A 价出，有人按 B 价接。</strong></p>
+
+    <div class="src-grid">
+      <div class="src">
+        <div class="src-i">⚖️</div>
+        <div class="src-h">司法拍卖流拍标的</div>
+        <div class="src-v">房子、商铺、写字楼、公寓、酒店。<br>流拍 → 二拍 → 变卖，价格一路走低，是抄底的主战场。</div>
+      </div>
+      <div class="src">
+        <div class="src-i">🏦</div>
+        <div class="src-h">机构不良资产包</div>
+        <div class="src-v">债权、收益权、抵押物。<br>关键不是折扣，是债务人现金流与处置周期。</div>
+      </div>
+      <div class="src">
+        <div class="src-i">🏭</div>
+        <div class="src-h">困境企业资产处置</div>
+        <div class="src-v">厂区、设备、存货、应收。<br>价格之外，还要接得住它的经营问题。</div>
+      </div>
+      <div class="src">
+        <div class="src-i">📦</div>
+        <div class="src-h">拍卖平台错价库存</div>
+        <div class="src-v">设备、原材料、库存品。<br>挂牌价与真实值差 2-3 倍很常见——但前提是能拿到货、懂行、有买家。</div>
+      </div>
+    </div>
+
+    <div class="cat-row">
+      <span class="cat">房产</span>
+      <span class="cat">商铺</span>
+      <span class="cat">写字楼</span>
+      <span class="cat">公寓</span>
+      <span class="cat">酒店</span>
+      <span class="cat">股权</span>
+      <span class="cat">收益权</span>
+      <span class="cat">知识产权</span>
+      <span class="cat">专利</span>
+      <span class="cat">许可</span>
+      <span class="cat">矿权</span>
+      <span class="cat">林权</span>
+      <span class="cat">海权</span>
+      <span class="cat">车辆</span>
+      <span class="cat">船舶</span>
+      <span class="cat">飞机</span>
+      <span class="cat">设备</span>
+      <span class="cat">原材料</span>
+      <span class="cat">存货</span>
+      <span class="cat">不动产收益权</span>
+    </div>
+
+    <div class="note-box">
+      <h4>为什么品类铺得开，门槛反而要更严</h4>
+      <ul>
+        <li>品类越杂，<strong>越依赖"看得懂"而不是"买得便宜"</strong>——我们宁可少做一个品类，也不做看不懂的</li>
+        <li>工业品与库存品的利润来自<strong>仓储、物流与买家渠道</strong>，不是来自折价本身；这三项能力没建起来之前，不进</li>
+        <li>不动产类标的的利润来自<strong>修复能力与退出通道</strong>；这两项没建起来之前，溢价的部分我们赚不到</li>
+        <li>结论：<strong>品类是能力的映射</strong>。先补能力，再扩品类；反过来就会变成"接了但卖不掉"</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -455,7 +738,7 @@
 
     <div class="figure">
       <div class="figure-title">门 槛 漏 斗 · 从 候 选 到 可 买</div>
-      <svg viewBox="0 0 1000 560" role="img" aria-label="不良资产筛选漏斗：六道硬门槛逐层收敛">
+      <div class="fig-scroll"><svg viewBox="0 0 1000 560" role="img" aria-label="不良资产筛选漏斗：六道硬门槛逐层收敛">
         <g font-family="Microsoft YaHei, PingFang SC, sans-serif">
 
           <rect x="50" y="20" width="900" height="58" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.2)"/>
@@ -490,7 +773,7 @@
           <text x="500" y="508" fill="#D4AF37" font-size="16" font-weight="800" text-anchor="middle">✓ 可 买 清 单</text>
           <text x="500" y="529" fill="#C9B06A" font-size="12" text-anchor="middle">进入尽调、定价与交易流程</text>
         </g>
-      </svg>
+      </svg></div>
       <div class="figure-cap">六道门槛<b>逐层收敛</b>：任何一关不过，标的当场出局；全部通过才进入可买清单，进入交易流程。</div>
     </div>
   </div>
@@ -528,7 +811,7 @@
 
     <div class="figure">
       <div class="figure-title">同 一 个 问 题 · 两 种 做 法</div>
-      <svg viewBox="0 0 1000 590" role="img" aria-label="行业常见做法与乾元做法的逐条对照图">
+      <div class="fig-scroll"><svg viewBox="0 0 1000 590" role="img" aria-label="行业常见做法与乾元做法的逐条对照图">
         <defs>
           <marker id="arw3" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
             <path d="M0,0 L0,6 L9,3 z" fill="#D4AF37"/>
@@ -580,8 +863,380 @@
 
           <text x="500" y="576" fill="#7E93A4" font-size="12" text-anchor="middle">左边不是不能做，是代价与风险最终由我们自己承担</text>
         </g>
-      </svg>
+      </svg></div>
       <div class="figure-cap">同一条业务线上，两种路径：左边<b>短期收益更高、长期风险与合规代价更大</b>，右边慢一点但资产与主体始终说得清。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 案例拆解 ===== -->
+<section class="content" id="cases">
+  <div class="container">
+    <div class="section-tag">案 例 拆 解</div>
+    <h2 class="section-title">16 个案例，我们逐个算了一遍</h2>
+    <p class="section-sub">这一行里流传着大量"看起来很顺"的案例。<strong>我们把公开课程与行业流传口径里的每一个数字都拿来复算了一遍</strong>——不是为了证明别人错，是为了确认：<strong>哪些能抄，哪些抄了会出事。</strong></p>
+
+    <div class="case-summary">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th><th>案例</th><th>类型</th><th>课程 / 行业口径关键数字</th><th>复算结论</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="nm">1</td><td class="nm">住宅型 · 提升资质资产</td><td>提升资质</td><td class="num">2000 元/㎡ · 总价 20-22 万 · 授信 200-300 万</td><td><span class="verdict v-no">不成立</span></td></tr>
+          <tr><td class="nm">2</td><td class="nm">低价住宅 · 「4 点几折」</td><td>提升资质</td><td class="num">市场 4500-4700 → 成交 2500-2700 → 给我方 2000 元/㎡</td><td><span class="verdict v-no">不成立</span></td></tr>
+          <tr><td class="nm">3</td><td class="nm">别墅型 · 提升资质资产</td><td>提升资质</td><td class="num">120 多万/套 · 贷 150 万 · 讲师口径月供 4000</td><td><span class="verdict v-no">不成立</span></td></tr>
+          <tr><td class="nm">4</td><td class="nm">商业型 · 融资性资产</td><td>融资性</td><td class="num">买 872 万 · 评估 1.6 万/㎡ · 可贷 1285 万</td><td><span class="verdict v-mid">租金成立·杠杆不成立</span></td></tr>
+          <tr><td class="nm">5</td><td class="nm">杠杆放大模型</td><td>不良资产</td><td class="num">3000 买 / 12000 评 / 6000 贷 · 500 万撬 5000 万</td><td><span class="verdict v-no">不成立</span></td></tr>
+          <tr><td class="nm">6</td><td class="nm">六步完整操作链路</td><td>操作链路</td><td class="num">8 万自出 + 配资十几万 → 授信一两百万 → 配 7-10% 资产</td><td><span class="verdict v-no">全链路不成立</span></td></tr>
+          <tr><td class="nm">7</td><td class="nm">流拍别墅（未闭环）</td><td>未落地</td><td class="num">评估 180 万 / 流拍 130 万 · 声称空间 30 万</td><td><span class="verdict v-mid">口径缺失</span></td></tr>
+          <tr><td class="nm">8</td><td class="nm">错价库存标的</td><td>库存</td><td class="num">24 元/kg · 16,500 kg = 39.6 万 · 挂 100 多万</td><td><span class="verdict v-mid">挂牌≠成交</span></td></tr>
+          <tr><td class="nm">9</td><td class="nm">错价布料</td><td>库存</td><td class="num">169 匹 = 38 万</td><td><span class="verdict v-mid">挂牌≠成交</span></td></tr>
+          <tr><td class="nm">10</td><td class="nm">公寓型收益资产</td><td>收益</td><td class="num">声称 10% 投资回报 · 零测算</td><td><span class="verdict v-mid">不可采信</span></td></tr>
+          <tr><td class="nm">11</td><td class="nm">学员画像 · 顺序错误</td><td>学员</td><td class="num">营收 300 多万 · 抵押贷 300 万已拉满</td><td><span class="verdict v-ok">诊断对·解法不可用</span></td></tr>
+          <tr><td class="nm">12</td><td class="nm">学员画像 · 授信瓶颈</td><td>学员</td><td class="num">规模一两百万 · 授信拿不了多少</td><td><span class="verdict v-ok">诊断对·解法不可用</span></td></tr>
+          <tr><td class="nm">13</td><td class="nm">学员画像 · 负债恶化</td><td>学员</td><td class="num">负债两三百万 · 抵押物贬值致负债比升高</td><td><span class="verdict v-no">严重警示</span></td></tr>
+          <tr><td class="nm">14</td><td class="nm">交付与收费结构</td><td>商业</td><td class="num">大课 12800 → 闭门会 399 → 综合服务费 → 1-2 个点</td><td><span class="verdict v-no">不进入</span></td></tr>
+          <tr><td class="nm">15</td><td class="nm">运营成本细账</td><td>成本</td><td class="num">社保公积金 9 万/年 · 并购补贴 7-11 万/年</td><td><span class="verdict v-no">不成立</span></td></tr>
+          <tr><td class="nm">16</td><td class="nm">不靠杠杆也能开始</td><td>人力</td><td class="num">加不了杠杆，可做卖资产 / 找资产 / 找客户</td><td><span class="verdict v-ok">可直接迁移</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="figure">
+      <div class="figure-title">租 售 比 · 只 有 一 个 案 例 过 线</div>
+      <div class="fig-scroll"><svg viewBox="0 0 1000 430" role="img" aria-label="四个可算租售比案例的横向条形图与 6% 门槛线对比">
+        <g font-family="Microsoft YaHei, PingFang SC, sans-serif">
+
+          <text x="40" y="28" fill="#8FA6B8" font-size="11" letter-spacing="2">年 租 金 ÷ 买 入 总 价 · 四 个 可 算 案 例</text>
+
+          <!-- 网格 -->
+          <line x1="300" y1="46" x2="300" y2="330" stroke="rgba(255,255,255,0.10)"/>
+          <line x1="393" y1="46" x2="393" y2="330" stroke="rgba(255,255,255,0.10)"/>
+          <line x1="486" y1="46" x2="486" y2="330" stroke="rgba(255,255,255,0.10)"/>
+          <line x1="579" y1="46" x2="579" y2="330" stroke="rgba(255,255,255,0.10)"/>
+          <line x1="672" y1="46" x2="672" y2="330" stroke="rgba(255,255,255,0.10)"/>
+          <line x1="765" y1="46" x2="765" y2="330" stroke="rgba(255,255,255,0.10)"/>
+          <line x1="858" y1="46" x2="858" y2="330" stroke="rgba(255,255,255,0.10)"/>
+          <line x1="300" y1="330" x2="880" y2="330" stroke="rgba(255,255,255,0.22)"/>
+
+          <text x="300" y="352" fill="#7E93A4" font-size="11.5" text-anchor="middle">0%</text>
+          <text x="393" y="352" fill="#7E93A4" font-size="11.5" text-anchor="middle">1%</text>
+          <text x="486" y="352" fill="#7E93A4" font-size="11.5" text-anchor="middle">2%</text>
+          <text x="579" y="352" fill="#7E93A4" font-size="11.5" text-anchor="middle">3%</text>
+          <text x="672" y="352" fill="#7E93A4" font-size="11.5" text-anchor="middle">4%</text>
+          <text x="765" y="352" fill="#7E93A4" font-size="11.5" text-anchor="middle">5%</text>
+          <text x="858" y="352" fill="#7E93A4" font-size="11.5" text-anchor="middle">6%</text>
+
+          <!-- 案例 1 -->
+          <text x="285" y="78" fill="#E8EEF5" font-size="13" font-weight="700" text-anchor="end">商业型资产</text>
+          <rect x="300" y="60" width="588" height="28" rx="5" fill="rgba(30,110,84,0.42)" stroke="rgba(80,190,150,0.6)" stroke-width="1.3"/>
+          <text x="876" y="79" fill="#A8E6C8" font-size="13" font-weight="800" text-anchor="end">6.31%</text>
+
+          <!-- 案例 2 -->
+          <text x="285" y="138" fill="#E8EEF5" font-size="13" font-weight="700" text-anchor="end">住宅型资产</text>
+          <rect x="300" y="120" width="532" height="28" rx="5" fill="rgba(184,134,11,0.30)" stroke="rgba(224,185,74,0.55)" stroke-width="1.3"/>
+          <text x="820" y="139" fill="#F0D68A" font-size="13" font-weight="800" text-anchor="end">5.71%</text>
+
+          <!-- 案例 3 -->
+          <text x="285" y="198" fill="#E8EEF5" font-size="13" font-weight="700" text-anchor="end">别墅型资产</text>
+          <rect x="300" y="180" width="233" height="28" rx="5" fill="rgba(122,42,42,0.42)" stroke="rgba(229,115,115,0.6)" stroke-width="1.3"/>
+          <text x="521" y="199" fill="#F3B5B5" font-size="13" font-weight="800" text-anchor="end">2.50%</text>
+
+          <!-- 案例 4 -->
+          <text x="285" y="258" fill="#E8EEF5" font-size="13" font-weight="700" text-anchor="end">低价住宅</text>
+          <rect x="300" y="240" width="210" height="28" rx="5" fill="rgba(122,42,42,0.42)" stroke="rgba(229,115,115,0.6)" stroke-width="1.3"/>
+          <text x="498" y="259" fill="#F3B5B5" font-size="13" font-weight="800" text-anchor="end">1.8% - 2.4%</text>
+
+          <!-- 6% 门槛线 -->
+          <line x1="858" y1="46" x2="858" y2="330" stroke="#D4AF37" stroke-width="2" stroke-dasharray="7 4"/>
+          <rect x="796" y="14" width="124" height="26" rx="13" fill="#06182A" stroke="#D4AF37" stroke-width="1.3"/>
+          <text x="858" y="32" fill="#D4AF37" font-size="12.5" font-weight="800" text-anchor="middle">硬门槛 6%</text>
+
+          <text x="300" y="384" fill="#9FB3C2" font-size="12.5">四个案例里，<tspan fill="#D4AF37" font-weight="700">只有一个</tspan>过了 6% 这条线——而它恰恰是<tspan fill="#D4AF37" font-weight="700">不加杠杆</tspan>的那一个。</text>
+          <text x="300" y="406" fill="#7E93A4" font-size="12">"6% 回报完全覆盖融资成本"这句话，在四个案例里只有一次成立。</text>
+        </g>
+      </svg></div>
+      <div class="figure-cap">租售比是本行最诚实的一把尺：<b>它不需要假设，只需要真实租金和真实买入价</b>。过不了这条线的资产，再便宜也不进。</div>
+    </div>
+
+    <div class="case-list">
+
+      <!-- 案例 5 杠杆放大 -->
+      <div class="case no">
+        <div class="case-h">
+          <div class="case-t">杠杆放大模型</div>
+          <span class="verdict v-no">不成立</span>
+        </div>
+        <div class="case-src">外部课程口径 · 不良资产抄底</div>
+        <div class="case-k">
+          课程口径：<b>买入 3000 元/㎡ · 评估 12000 元/㎡ · 可贷 6000 元/㎡</b>，
+          最低首付做到 <b>10%</b>，500 万当 5000 万花，净赚约 4000 万。
+        </div>
+        <div class="calc">
+          <div class="calc-h">复 算</div>
+          <div class="calc-l">
+            按真实市价 <span class="num">4000 元/㎡</span> 评估：<br>
+            · 首付 30% → 等效真实首付 <span class="num">20%</span>（非 10%）<br>
+            · 首付 10% → 等效真实首付 <span class="num">20%</span>（非 10%）<br>
+            · 配资利息：借 4500 万 × 8% × 2.5 年 ≈ <span class="bad">900 万</span>，<br>
+            　<span class="num">5000 万</span> 的"净赚 4000 万"从未做敏感性分析
+          </div>
+        </div>
+        <div class="case-c">
+          <b>结论</b>：这套模型的杠杆<span class="bad">不来自低买高卖，来自评估虚高</span>。
+          一旦银行按真实市价评估，首付要求从 10% 直接跳到 60-80%，模型当场崩塌。<br>
+          <b>可迁移</b>：不加杠杆版本（500 万买 → 修复后卖出）的结构是清楚的，
+          但"两三年后修复"需要一个<b>可证伪的触发条件</b>，原案例没给。
+        </div>
+      </div>
+
+      <!-- 案例 6 六步链路 -->
+      <div class="case no">
+        <div class="case-h">
+          <div class="case-t">六步完整操作链路</div>
+          <span class="verdict v-no">全链路不成立</span>
+        </div>
+        <div class="case-src">外部课程口径 · 完整交付链路（反面教材）</div>
+        <div class="case-k">
+          自出 <b>8 万</b> + 配资<b>十几万</b> 买下全款房 → 注入真实经营产业 →
+          <b>1-2 个月后</b>做抵押贷 <b>20 多万</b> → 装修贷一二十万 + 工资社保公积金"做上" →
+          满一年授信<b>一两百万</b> → 配置 <b>7%-10%</b> 回报资产。
+        </div>
+        <div class="calc">
+          <div class="calc-h">复 算 · 三个致命点</div>
+          <div class="calc-l">
+            ① <b>现金流断裂</b>：需还 8 万 + 十几万 ≈ 20-22 万；
+            抵押贷"20 多万"需评估价 <span class="num">2600-3100 元/㎡</span>，
+            而买价只有 <span class="num">2000 元/㎡</span>——<span class="bad">评估价要比买价高 30-55%</span>。
+            按真实成交价评估，可贷 17.5-18.9 万，<span class="bad">缺口 3-4.5 万无来源</span>。<br>
+            ② <b>持有期净流出</b>：利息合计 <span class="num">5.6-9.8 万/年</span>，
+            减租金 0.36-0.48 万 → <span class="bad">净缺口 5-9 万/年</span>。
+            全款房本身只有 20-22 万，<span class="bad">不到 4 年利息就把它吃光</span>。<br>
+            ③ <b>最后一步是赌</b>：用借来的钱买"7%-10% 被动收入资产"，
+            而课程自己承认"经济下行期拿钱出去搞大概率搞没"。
+          </div>
+        </div>
+        <div class="case-c">
+          <b>结论</b>：每一步都有独立的致命问题——配资踩职业放贷，1-2 个月贷款踩监管重点审查区间，
+          伪造社保与工资是骗贷，最后一步是杠杆化的赌。<br>
+          <b>可迁移</b>：它唯一有价值的地方是<b>逼着我们把"持有成本"里最容易被漏掉的利息算进去</b>——
+          这条已经变成乾元的标的评审必填项。
+        </div>
+      </div>
+
+      <!-- 案例 4 商业型 -->
+      <div class="case mid">
+        <div class="case-h">
+          <div class="case-t">商业型融资性资产</div>
+          <span class="verdict v-mid">租金成立 · 杠杆不成立</span>
+        </div>
+        <div class="case-src">外部课程口径 · 商业地产</div>
+        <div class="case-k">
+          课程口径：买入 <b>872 万</b>，周边售价 1.1-1.2 万/㎡，评估可到 <b>1.6 万/㎡</b>，
+          可贷 <b>1285 万</b>，扣掉房款"手里多 400 多万"；租金回报 <b>6.3%</b>，年租约 55 万。
+        </div>
+        <div class="calc">
+          <div class="calc-h">复 算</div>
+          <div class="calc-l">
+            贷款额 / 购入价 = <span class="bad">147%</span>（凭 872 万资产拿到 1285 万贷款）<br>
+            按讲师自述 1.6 万/㎡ 评估：评估价 1163-1268 万，7 成可贷 <span class="num">814-888 万</span>。<br>
+            要贷到 1285 万，评估价须 <span class="num">1836 万</span> → 隐含单价 <span class="bad">2.3-2.5 万/㎡</span>，
+            与自述相差 <span class="bad">约 45%</span>。
+          </div>
+        </div>
+        <div class="case-c">
+          <b>结论</b>：杠杆那一半来自评估虚高，不成立；但<b>租金覆盖那一半成立</b>（6.31% ≥ 6%）——
+          这正是我们要的那个版本：<b>按真实价买、按真实租约算、租售比过线、不加杠杆</b>。<br>
+          <b>可迁移</b>：原案例附带的条件"开票须大于 1000 万才能装得进"说明，
+          <b>融资性资产的门槛其实是数据门槛，不是资产门槛</b>——这条我们反过来用。
+        </div>
+      </div>
+
+      <!-- 案例 8 库存 -->
+      <div class="case mid">
+        <div class="case-h">
+          <div class="case-t">错价库存标的</div>
+          <span class="verdict v-mid">挂牌 ≠ 成交</span>
+        </div>
+        <div class="case-src">外部课程口径 · 拍卖平台演示</div>
+        <div class="case-k">
+          课程口径：某标的 <b>24 元/千克</b>，825 袋 × 每袋 20 千克 = <b>16,500 千克</b>，
+          "才值 40 多万，但挂 100 多万"；另一批布料 <b>169 匹 = 38 万</b>。
+        </div>
+        <div class="calc">
+          <div class="calc-h">复 算</div>
+          <div class="calc-l">
+            16,500 kg × 24 元 = <span class="num">39.6 万</span> ✓ 与课程口径一致<br>
+            挂牌 100 多万 → 溢价 <span class="bad">2.5 - 3 倍</span><br>
+            但"24 元/千克"是<b>理论上限</b>，不是已成交价；拍卖平台无人举牌即流拍
+          </div>
+        </div>
+        <div class="case-c">
+          <b>结论</b>：这不是收益案例，是<b>折价处置平台的错价标的</b>教学。
+          真实含义是：<b>这里存在 2.5-3 倍的价差机会，但前提是能真买到、懂行、低成本持有、有买家</b>。<br>
+          <b>可迁移</b>：这正是我们不良资产抄底的真实货源形态。课程里那句
+          "别人越是不要的东西越挣钱"是整组课最诚实的一句——<b>从别人不要的东西里找定价错配</b>，
+          这就是这行的定位。
+        </div>
+      </div>
+
+      <!-- 案例 11-13 学员画像 -->
+      <div class="case ok">
+        <div class="case-h">
+          <div class="case-t">三条学员画像</div>
+          <span class="verdict v-ok">诊断全对 · 解法不可用</span>
+        </div>
+        <div class="case-src">外部课程答疑 · 真实经营者画像（已做匿名化处理）</div>
+        <div class="case-k">
+          ① <b>顺序错误型</b>：营收 300 多万，抵押贷 300 万已拉满 → 讲师指出"先上抵押"顺序错了<br>
+          ② <b>授信瓶颈型</b>：经营规模一两百万，赚钱但拿不到多少授信<br>
+          ③ <b>负债恶化型</b>：负债两三百万，抵押物贬值导致负债比升高，企业经营同时走弱
+        </div>
+        <div class="calc">
+          <div class="calc-h">复 算</div>
+          <div class="calc-l">
+            ① 抵押贷"拉满"说明额度<b>卡在抵押物价值</b>，不是卡在企业流水——靠抵押拉额度是死路<br>
+            ② 拿不到授信不是规模问题，是<b>财务结构能不能被银行验证</b>的问题<br>
+            ③ 完整传导链：<span class="bad">抵押物贬值 → 银行重估 → 补担保或降额 → 月供不变
+            → 授信续作条件不满足 → 现金流断裂</span>
+          </div>
+        </div>
+        <div class="case-c">
+          <b>结论</b>：三条的<b>诊断全部正确</b>，给出的解法（换产业、跨城装资产）我们不采用。<br>
+          <b>第三条是整组案例里对我们最有价值的一条</b>：它是在<b>没有新增任何杠杆</b>的前提下发生的，
+          说明资产贬值会自己把一个正常家庭推向断裂——这正是乾元把
+          "<b>现金流优先</b>"和"<b>价格再跌两成抵押物还够不够</b>"写进硬门槛的原因。
+        </div>
+      </div>
+
+      <!-- 案例 15/16 成本与迁移 -->
+      <div class="case ok">
+        <div class="case-h">
+          <div class="case-t">成本细账 · 与不靠杠杆的开始</div>
+          <span class="verdict v-ok">一条留存 · 一条直接采纳</span>
+        </div>
+        <div class="case-src">外部课程口径 · 运营成本 + 人力边界</div>
+        <div class="case-k">
+          <b>成本细账</b>：社保公积金 <b>9 万/年</b>、并购产业补贴 <b>7-11 万/年</b>、
+          代发工资个税 0.5-1 万/年 → 固定现金成本 <b>16.7-20.8 万/年</b>，
+          而对应的"一年几百万流水"是装进来的、归属他人的。<br>
+          <b>人力边界</b>：59 岁以上加不了金融杠杆，但可以跟着干活赚钱——<b>卖资产、找资产、找客户</b>。
+        </div>
+        <div class="calc">
+          <div class="calc-h">复 算</div>
+          <div class="calc-l">
+            成本侧（自己的）：社保+公积金 <span class="num">9.0 万</span> · 并购补贴 <span class="num">7.2-10.8 万</span> ·
+            个税 <span class="num">0.5-1.0 万</span> → 合计 <span class="bad">16.7-20.8 万/年</span><br>
+            收益侧（借来的）：产业流水 200-600 万，但主体不是自己的<br>
+            <span class="bad">收入是借来的，债务是自己的，成本是自己的，收益是赌的</span>
+          </div>
+        </div>
+        <div class="case-c">
+          <b>结论</b>：成本细账是整组课最值钱的一段——<b>它逼着我们把年固定现金成本全表列出来</b>，
+          这已经变成乾元标的评审的必填项。<br>
+          <b>人力边界那条直接采纳</b>：不靠杠杆也能开始，靠的就是"卖资产、找资产、找客户"这三件事——
+          和我们网站的"买入 → 修复 → 退出"是同一件事的两种说法。<b>这条对任何资金量的人都成立。</b>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="figure">
+      <div class="figure-title">一 条 链 路 的 真 实 成 本 结 构</div>
+      <div class="fig-scroll"><svg viewBox="0 0 1000 590" role="img" aria-label="完整操作链路的现金流结构：资产仅 22 万而年净流出 5 至 9 万">
+        <defs>
+          <marker id="arw9" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L9,3 z" fill="#90A4AE"/>
+          </marker>
+        </defs>
+        <g font-family="Microsoft YaHei, PingFang SC, sans-serif">
+
+          <text x="40" y="28" fill="#8FA6B8" font-size="11" letter-spacing="2">把 每 一 笔 钱 都 摆 出 来</text>
+
+          <!-- 资产 -->
+          <rect x="60" y="48" width="400" height="76" rx="11" fill="rgba(15,45,77,0.62)" stroke="rgba(144,164,174,0.35)"/>
+          <text x="260" y="80" fill="#E8EEF5" font-size="16" font-weight="700" text-anchor="middle">手上那套房</text>
+          <text x="260" y="104" fill="#C9B06A" font-size="15" font-weight="800" text-anchor="middle">20 - 22 万</text>
+
+          <rect x="540" y="48" width="400" height="76" rx="11" fill="rgba(122,42,42,0.24)" stroke="rgba(229,115,115,0.45)"/>
+          <text x="740" y="80" fill="#EF9A9A" font-size="16" font-weight="800" text-anchor="middle">但它每年净流出</text>
+          <text x="740" y="104" fill="#EF9A9A" font-size="15" font-weight="800" text-anchor="middle">5 - 9 万</text>
+
+          <text x="480" y="92" fill="#7E93A4" font-size="22" text-anchor="middle">≠</text>
+
+          <!-- 利息构成 -->
+          <text x="40" y="166" fill="#8FA6B8" font-size="11" letter-spacing="2">年 利 息 构 成</text>
+          <rect x="60" y="182" width="210" height="62" rx="9" fill="rgba(15,45,77,0.6)" stroke="rgba(144,164,174,0.3)"/>
+          <text x="165" y="208" fill="#E8EEF5" font-size="13" font-weight="700" text-anchor="middle">抵押贷利息</text>
+          <text x="165" y="230" fill="#C9B06A" font-size="13" font-weight="800" text-anchor="middle">0.7 - 0.9 万</text>
+
+          <rect x="290" y="182" width="210" height="62" rx="9" fill="rgba(15,45,77,0.6)" stroke="rgba(144,164,174,0.3)"/>
+          <text x="395" y="208" fill="#E8EEF5" font-size="13" font-weight="700" text-anchor="middle">配资利息</text>
+          <text x="395" y="230" fill="#C9B06A" font-size="13" font-weight="800" text-anchor="middle">1.0 - 1.2 万</text>
+
+          <rect x="520" y="182" width="210" height="62" rx="9" fill="rgba(15,45,77,0.6)" stroke="rgba(144,164,174,0.3)"/>
+          <text x="625" y="208" fill="#E8EEF5" font-size="13" font-weight="700" text-anchor="middle">装修贷利息</text>
+          <text x="625" y="230" fill="#C9B06A" font-size="13" font-weight="800" text-anchor="middle">0.4 - 0.7 万</text>
+
+          <rect x="750" y="182" width="190" height="62" rx="9" fill="rgba(15,45,77,0.6)" stroke="rgba(144,164,174,0.3)"/>
+          <text x="845" y="208" fill="#E8EEF5" font-size="13" font-weight="700" text-anchor="middle">授信利息</text>
+          <text x="845" y="230" fill="#C9B06A" font-size="13" font-weight="800" text-anchor="middle">3.5 - 7 万</text>
+
+          <!-- 汇聚线：四个利息项汇入合计 -->
+          <line x1="165" y1="244" x2="165" y2="260" stroke="#90A4AE" stroke-width="1.6"/>
+          <line x1="395" y1="244" x2="395" y2="260" stroke="#90A4AE" stroke-width="1.6"/>
+          <line x1="625" y1="244" x2="625" y2="260" stroke="#90A4AE" stroke-width="1.6"/>
+          <line x1="845" y1="244" x2="845" y2="260" stroke="#90A4AE" stroke-width="1.6"/>
+          <line x1="165" y1="260" x2="845" y2="260" stroke="#90A4AE" stroke-width="1.6"/>
+          <line x1="480" y1="260" x2="480" y2="272" stroke="#90A4AE" stroke-width="1.6" marker-end="url(#arw9)"/>
+
+          <rect x="300" y="272" width="360" height="56" rx="9" fill="rgba(122,42,42,0.26)" stroke="rgba(229,115,115,0.5)"/>
+          <text x="480" y="296" fill="#EF9A9A" font-size="15" font-weight="800" text-anchor="middle">利 息 合 计</text>
+          <text x="480" y="317" fill="#EF9A9A" font-size="13.5" font-weight="800" text-anchor="middle">5.6 - 9.8 万 / 年</text>
+
+          <line x1="480" y1="328" x2="480" y2="356" stroke="#90A4AE" stroke-width="1.6" marker-end="url(#arw9)"/>
+
+          <!-- 租金 -->
+          <rect x="300" y="356" width="360" height="52" rx="9" fill="rgba(30,110,84,0.28)" stroke="rgba(80,190,150,0.5)"/>
+          <text x="480" y="378" fill="#7FD1AE" font-size="14" font-weight="700" text-anchor="middle">减：租金收入</text>
+          <text x="480" y="398" fill="#7FD1AE" font-size="13" font-weight="800" text-anchor="middle">+ 0.36 - 0.48 万</text>
+
+          <line x1="480" y1="408" x2="480" y2="436" stroke="#90A4AE" stroke-width="1.6" marker-end="url(#arw9)"/>
+
+          <!-- 结论 -->
+          <rect x="240" y="436" width="480" height="62" rx="11" fill="rgba(122,42,42,0.32)" stroke="#E57373" stroke-width="1.6"/>
+          <text x="480" y="462" fill="#EF9A9A" font-size="16" font-weight="800" text-anchor="middle">年 净 流 出 5 - 9 万</text>
+          <text x="480" y="485" fill="#E8EEF5" font-size="13" text-anchor="middle">不到 4 年，利息就把整套资产吃光</text>
+
+          <!-- 右侧对照 -->
+          <rect x="740" y="272" width="200" height="226" rx="11" fill="rgba(212,175,55,0.08)" stroke="rgba(212,175,55,0.4)"/>
+          <text x="840" y="300" fill="#D4AF37" font-size="12" font-weight="800" text-anchor="middle">乾 元 的 判 断</text>
+          <text x="840" y="330" fill="#E8EEF5" font-size="12.5" text-anchor="middle" font-weight="700">任何标的，先算满</text>
+          <text x="840" y="350" fill="#E8EEF5" font-size="12.5" text-anchor="middle" font-weight="700">12 个月的持有现金流</text>
+          <text x="840" y="376" fill="#C9B06A" font-size="12" text-anchor="middle">利息 · 税费 · 物业</text>
+          <text x="840" y="396" fill="#C9B06A" font-size="12" text-anchor="middle">维护 · 空置 · 运营人工</text>
+          <text x="840" y="416" fill="#C9B06A" font-size="12" text-anchor="middle">退出成本</text>
+          <rect x="764" y="432" width="152" height="34" rx="17" fill="rgba(212,175,55,0.18)" stroke="#D4AF37" stroke-width="1.2"/>
+          <text x="840" y="454" fill="#D4AF37" font-size="12.5" font-weight="800" text-anchor="middle">算完仍为正才谈判</text>
+
+          <text x="500" y="548" fill="#7E93A4" font-size="12.5" text-anchor="middle">课程口径里"每月两三百到三四百即可覆盖持有成本"——那个"持有成本"，绝不可能包含利息</text>
+          <text x="500" y="570" fill="#7E93A4" font-size="12.5" text-anchor="middle">因为一旦把利息算进去，结论正好相反</text>
+        </g>
+      </svg></div>
+      <div class="figure-cap">同一个资产口径下，<b>房价与持有成本都按真实数算一遍</b>，模型的走向就完全变了——这正是我们把复算写进评审流程的原因。</div>
+    </div>
+
+    <div class="note-box">
+      <h4>我们从这 16 个案例里真正拿走了什么</h4>
+      <ul>
+        <li><strong>顺序不能乱</strong>：资质 → 数据 → 资产。三节课重复强调了三次，这是全组唯一硬的方法论</li>
+        <li><strong>收益必须来自修复，不能来自杠杆</strong>：每一个杠杆模型的杠杆，都来自评估虚高；把评估改回真实价，模型当场崩塌</li>
+        <li><strong>成本要摊开算</strong>：利息、税费、物业、维护、空置、运营人工、退出成本，逐项列出后仍为正才进谈判——原案例一个都没算</li>
+        <li><strong>现金流会自己断</strong>：抵押物贬值 → 银行重估 → 降额补担保 → 现金流断裂，这条链在完全没加杠杆的情况下也会发生</li>
+        <li><strong>不靠杠杆也能开始</strong>：卖资产、找资产、找客户——这一条不依赖资金量、不依赖年龄，是我们学习期的行动清单</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -613,7 +1268,7 @@
 
     <div class="figure">
       <div class="figure-title">价 值 修 复 闭 环</div>
-      <svg viewBox="0 0 1000 570" role="img" aria-label="买入、修复、退出、回款四环节构成的价值修复闭环">
+      <div class="fig-scroll"><svg viewBox="0 0 1000 570" role="img" aria-label="买入、修复、退出、回款四环节构成的价值修复闭环">
         <defs>
           <marker id="arw4" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
             <path d="M0,0 L0,6 L9,3 z" fill="#D4AF37"/>
@@ -662,7 +1317,7 @@
 
           <text x="500" y="548" fill="#7E93A4" font-size="12" text-anchor="middle">回款重新变成下一轮的买入资金，闭环才转得起来</text>
         </g>
-      </svg>
+      </svg></div>
       <div class="figure-cap">四个环节首尾相接：<b>买入 → 修复 → 退出 → 回款 → 再投入</b>；利润来自修复这一段，而不是来自杠杆。</div>
     </div>
   </div>
@@ -693,7 +1348,7 @@
 
     <div class="figure">
       <div class="figure-title">路 线 图</div>
-      <svg viewBox="0 0 1000 400" role="img" aria-label="不良资产抄底业务线五年到八年发展路线图">
+      <div class="fig-scroll"><svg viewBox="0 0 1000 400" role="img" aria-label="不良资产抄底业务线五年到八年发展路线图">
         <g font-family="Microsoft YaHei, PingFang SC, sans-serif">
           <line x1="70" y1="252" x2="980" y2="252" stroke="rgba(255,255,255,0.14)" stroke-width="1.5"/>
           <path d="M90,250 C130,246 150,240 180,232 C300,212 380,196 500,170 C630,142 720,122 820,110 C890,104 940,102 980,102"
@@ -733,7 +1388,7 @@
 
           <text x="500" y="390" fill="#7E93A4" font-size="12" text-anchor="middle">规模来自退出能力与渠道成熟度，而不是来自加杠杆</text>
         </g>
-      </svg>
+      </svg></div>
       <div class="figure-cap">三阶段不是时间到了自动切换，而是<b>能力到了才切换</b>：学习期补尽调能力，试水期验证单笔模型，规模化期才有资格放大。</div>
     </div>
   </div>
@@ -748,8 +1403,10 @@
     <div class="note-box">
       <h4>本页公开范围</h4>
       <ul>
-        <li>只讲<strong>方法论方向、筛选纪律与风险边界</strong>，不含具体项目、标的、金额与交易对手</li>
-        <li>内部资料（数据复算、法规核查、案例拆解、执行方案）<strong>不在此页公开</strong></li>
+        <li>公开<strong>方法论方向、筛选纪律、风险边界</strong>，以及<strong>我们对公开案例口径的复算过程与结论</strong></li>
+        <li>案例部分公开的是<strong>结构、链路、关键数字与复算推导</strong>；<strong>不含任何真实标的、交易对手与合作方信息</strong></li>
+        <li>案例中出现的真实经营者画像已<strong>做匿名化处理</strong>，不含城市、身份与个人财务细节</li>
+        <li><strong>内部资料</strong>（法规核查全文、标的清单、尽调底稿、执行方案）<strong>不在此页公开</strong></li>
         <li>本页所有内容为方向性表述，<strong>不构成投资建议、要约或商业承诺</strong></li>
         <li>实际业务以正式签署的文件为准；本页所述门槛为内部标准，<strong>可随市场与监管变化调整</strong></li>
       </ul>

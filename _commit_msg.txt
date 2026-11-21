@@ -1,4 +1,0 @@
-rename: 子页 title 也升级为"乾元投融资子公司"
-
-- invest-plan.html  · 业务方案 v1.0
-- invest-brochure.html · 品牌宣传册
