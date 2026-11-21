@@ -2,6 +2,11 @@
 preview-*.png
 preview-*.jpg
 screenshot.png
+_preview-*.png
+
+# 内部构建脚本与工作日志（不入库、不随 Pages 发布）
+_*.py
+_*.txt
 
 # 临时截图脚本
 _capture.py
