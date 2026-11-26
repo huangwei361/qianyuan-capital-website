@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>不良资产抄底 · 方法论、纪律与案例复算 · 乾元投融资子公司</title>
-  <meta name="description" content="乾元资本集团旗下 乾元资产处理 · 不良资产抄底业务线：资产功能分层、融资前置化、九道硬门槛、六条不做红线，以及 28 个公开案例的逐案复算结论">
+  <meta name="description" content="乾元资本集团旗下 乾元资产处理 · 不良资产抄底业务线：资产功能分层、融资三步与拿款顺序、好资产三问与折价区间、九道硬门槛、六条不做红线、解债的两条路，以及 28 个公开案例的逐案复算结论">
   <link rel="stylesheet" href="_sub.css">
   <style>
     :root {
@@ -228,10 +228,13 @@
     <ul class="nav-menu">
       <li><a href="#about">业务定位</a></li>
       <li><a href="#method">方法论</a></li>
+      <li><a href="#credit">拿款顺序</a></li>
       <li><a href="#prep">融资前置</a></li>
       <li><a href="#gate">硬门槛</a></li>
+      <li><a href="#good">好资产</a></li>
       <li><a href="#rules">不做什么</a></li>
       <li><a href="#cases">案例</a></li>
+      <li><a href="#leverage">放大负债</a></li>
       <li><a href="asset.html" class="back-link">← 资产处理</a></li>
     </ul>
   </div>
@@ -449,6 +452,122 @@
     <div class="formula-box">
       <div class="formula-line">融资不是目的，<span class="num">赚钱</span>才是目的</div>
       <div class="formula-result">每一笔资产在买入之前，就必须先回答三个问题：怎么出、多久出、卖给谁</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 拿款顺序 ===== -->
+<section class="content" id="credit">
+  <div class="container">
+    <div class="section-tag">拿 款 顺 序</div>
+    <h2 class="section-title">先信用贷，后抵押贷</h2>
+    <p class="section-sub">
+      同一个主体，贷款顺序不同，最终能拿到的钱差一个量级。<br>
+      <strong style="color:#B1BFC6;">顺序拿反，可能少拿三五百万，甚至三五千万。</strong>
+    </p>
+
+    <div class="prep-grid" style="grid-template-columns: repeat(3, 1fr);">
+      <div class="prep">
+        <div class="prep-n">0 1</div>
+        <div class="prep-h">信用是前提</div>
+        <div class="prep-v">连续三次或累计六次未还、逾期、展期、黑户，属于硬伤；<br>查询次数多、续贷、已还清的逾期，都不算问题。<br><strong style="color:#EF9A9A;">硬伤不处理，下面两步全是空谈。</strong></div>
+      </div>
+      <div class="prep">
+        <div class="prep-n">0 2</div>
+        <div class="prep-h">身份决定上限</div>
+        <div class="prep-v">身份是硬天花板，营收拉再高也突破不了它。<br>科技型主体在成数与额度上明显优于贸易型主体，<br>而资质不是想办就能当天办下来。</div>
+      </div>
+      <div class="prep">
+        <div class="prep-n">0 3</div>
+        <div class="prep-h">顺序不能反</div>
+        <div class="prep-v">先拿信用贷、再拿抵押贷：抵押贷会占用（扣减）信用额度，<br>反过来会连带把信用额度一起压低。<br>第二阶段把信用贷转成抵押贷，才算真正落袋为安。</div>
+      </div>
+    </div>
+
+    <div class="figure">
+      <div class="figure-title">两 种 顺 序 · 两 种 结 果</div>
+      <div class="fig-scroll"><svg viewBox="0 0 1000 452" role="img" aria-label="先信用贷后抵押贷与顺序颠倒两种路径的最终融资额度对比">
+        <defs>
+          <marker id="arwC1" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L9,3 z" fill="#D4AF37"/>
+          </marker>
+          <marker id="arwC2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L9,3 z" fill="#E57373"/>
+          </marker>
+        </defs>
+        <g font-family="Microsoft YaHei, PingFang SC, sans-serif">
+
+          <text x="40" y="30" fill="#8FA6B8" font-size="11" letter-spacing="2">同 一 个 主 体 · 两 种 贷 款 顺 序</text>
+
+          <!-- 正确顺序 -->
+          <rect x="40" y="50" width="440" height="46" rx="9" fill="rgba(30,110,84,0.26)" stroke="rgba(80,190,150,0.5)"/>
+          <text x="260" y="79" fill="#7FD1AE" font-size="15" font-weight="800" text-anchor="middle">顺 序 正 确</text>
+
+          <rect x="40" y="112" width="200" height="92" rx="10" fill="rgba(15,45,77,0.62)" stroke="rgba(144,164,174,0.32)"/>
+          <text x="140" y="142" fill="#E8EEF5" font-size="14.5" font-weight="700" text-anchor="middle">① 先拿信用贷</text>
+          <text x="140" y="166" fill="#9FB3C2" font-size="12" text-anchor="middle">占用营收，不动抵押</text>
+          <text x="140" y="186" fill="#C9B06A" font-size="12" text-anchor="middle">额度 S</text>
+
+          <line x1="248" y1="158" x2="272" y2="158" stroke="#D4AF37" stroke-width="2" marker-end="url(#arwC1)"/>
+
+          <rect x="280" y="112" width="200" height="92" rx="10" fill="rgba(15,45,77,0.62)" stroke="rgba(144,164,174,0.32)"/>
+          <text x="380" y="142" fill="#E8EEF5" font-size="14.5" font-weight="700" text-anchor="middle">② 再拿抵押贷</text>
+          <text x="380" y="166" fill="#9FB3C2" font-size="12" text-anchor="middle">信用额度不被扣减</text>
+          <text x="380" y="186" fill="#C9B06A" font-size="12" text-anchor="middle">额度 M</text>
+
+          <line x1="140" y1="212" x2="140" y2="238" stroke="#D4AF37" stroke-width="1.6"/>
+          <line x1="380" y1="212" x2="380" y2="238" stroke="#D4AF37" stroke-width="1.6"/>
+          <line x1="140" y1="238" x2="380" y2="238" stroke="#D4AF37" stroke-width="1.6"/>
+
+          <rect x="130" y="250" width="260" height="46" rx="10" fill="rgba(212,175,55,0.14)" stroke="#D4AF37" stroke-width="1.4"/>
+          <text x="260" y="279" fill="#D4AF37" font-size="15" font-weight="800" text-anchor="middle">合 计  S + M</text>
+
+          <!-- 错误顺序 -->
+          <rect x="520" y="50" width="440" height="46" rx="9" fill="rgba(122,42,42,0.26)" stroke="rgba(229,115,115,0.5)"/>
+          <text x="740" y="79" fill="#EF9A9A" font-size="15" font-weight="800" text-anchor="middle">顺 序 颠 倒</text>
+
+          <rect x="520" y="112" width="200" height="92" rx="10" fill="rgba(15,45,77,0.62)" stroke="rgba(144,164,174,0.32)"/>
+          <text x="620" y="142" fill="#E8EEF5" font-size="14.5" font-weight="700" text-anchor="middle">① 先拿抵押贷</text>
+          <text x="620" y="166" fill="#9FB3C2" font-size="12" text-anchor="middle">扣减信用额度</text>
+          <text x="620" y="186" fill="#C9B06A" font-size="12" text-anchor="middle">额度 M</text>
+
+          <line x1="728" y1="158" x2="752" y2="158" stroke="#E57373" stroke-width="2" marker-end="url(#arwC2)"/>
+
+          <rect x="760" y="112" width="200" height="92" rx="10" fill="rgba(15,45,77,0.62)" stroke="rgba(144,164,174,0.32)"/>
+          <text x="860" y="142" fill="#E8EEF5" font-size="14.5" font-weight="700" text-anchor="middle">② 再拿信用贷</text>
+          <text x="860" y="166" fill="#C4A0A0" font-size="12" text-anchor="middle">额度已被压到 S′</text>
+          <text x="860" y="186" fill="#C9B06A" font-size="12" text-anchor="middle">S′ &lt; S</text>
+
+          <line x1="620" y1="212" x2="620" y2="238" stroke="#E57373" stroke-width="1.6"/>
+          <line x1="860" y1="212" x2="860" y2="238" stroke="#E57373" stroke-width="1.6"/>
+          <line x1="620" y1="238" x2="860" y2="238" stroke="#E57373" stroke-width="1.6"/>
+
+          <rect x="610" y="250" width="260" height="46" rx="10" fill="rgba(122,42,42,0.30)" stroke="rgba(229,115,115,0.6)"/>
+          <text x="740" y="279" fill="#EF9A9A" font-size="15" font-weight="800" text-anchor="middle">合 计  M + S′ &lt; S + M</text>
+
+          <!-- 差额标注 -->
+          <line x1="420" y1="273" x2="600" y2="273" stroke="#D4AF37" stroke-width="1.4" stroke-dasharray="5 4"/>
+          <text x="510" y="262" fill="#D4AF37" font-size="12.5" font-weight="700" text-anchor="middle">差 额</text>
+
+          <!-- 结论 -->
+          <rect x="40" y="320" width="920" height="96" rx="12" fill="rgba(212,175,55,0.08)" stroke="rgba(212,175,55,0.4)"/>
+          <text x="500" y="350" fill="#D4AF37" font-size="14.5" font-weight="800" text-anchor="middle">同 一 个 主体 、同 一 套 资质，两 种 顺 序 的 差 额</text>
+          <text x="500" y="380" fill="#C9B06A" font-size="22" font-weight="800" text-anchor="middle">三 五 百 万 ，甚 至 三 五 千 万</text>
+          <text x="500" y="404" fill="#9FB3C2" font-size="12.5" text-anchor="middle">第一步顺序就错，后面的资产配置做得再细也补不回来</text>
+
+          <text x="500" y="442" fill="#7E93A4" font-size="11.5" text-anchor="middle">信用额度与抵押额度不是两份钱，是同一份钱的两种叫法</text>
+        </g>
+      </svg></div>
+      <div class="figure-cap">同一笔额度，先信用后抵押是<b>两份</b>，先抵押后信用只剩<b>一份</b>。这不是话术差异，是额度计算口径上的硬约束。</div>
+    </div>
+
+    <div class="note-box">
+      <h4>三条落地纪律</h4>
+      <ul>
+        <li><strong>先算额度，再谈金额</strong>：身份、营收、资产三项决定的是上限，不是愿望；目标超过上限时，先动身份与资产，而不是先去够营收</li>
+        <li><strong>不在单一身份上把额度拿满</strong>：拿满容易触发抽贷，留出余量比多拿一点更安全</li>
+        <li><strong>资质要提前一个自然年备</strong>：政策标签看的是上一年度的数据与材料；临时抱佛脚办不下来，而贷款到期不会等你</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -798,6 +917,113 @@
         </g>
       </svg></div>
       <div class="figure-cap">九道门槛<b>逐层收敛</b>：任何一关不过，标的当场出局；全部通过才进入可买清单，进入交易流程。<br>其中 ⑦⑧⑨ 三道是本轮复算后新增的——它们把"看起来很顺"的两个新案例，一次挡在了外面。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 好资产三问 ===== -->
+<section class="content" id="good" style="background: var(--navy-deep);">
+  <div class="container">
+    <div class="section-tag">好 资 产 三 问</div>
+    <h2 class="section-title">好资产的三条标准</h2>
+    <p class="section-sub">
+      后面那九道门槛是操作标准，用来把不合适的标的筛掉。<br>
+      但在筛之前，先要回答一个更前置的问题：<strong>它到底算不算好资产？</strong>
+    </p>
+
+    <div class="prep-grid" style="grid-template-columns: repeat(3, 1fr);">
+      <div class="prep">
+        <div class="prep-n">第 一 问</div>
+        <div class="prep-h">买入价低于市场价</div>
+        <div class="prep-v">不低于市场价就不是好资产，只是普通资产。<br>抄底赚的是<b style="color:#D4AF37;">价差</b>，没有价差，后面所有收益都无从谈起。</div>
+      </div>
+      <div class="prep">
+        <div class="prep-n">第 二 问</div>
+        <div class="prep-h">资产能稳定赚钱回来</div>
+        <div class="prep-v">要有可持续的租金或经营现金流。<br>买进来就空着的资产，等于用现金换了一堆折旧。</div>
+      </div>
+      <div class="prep">
+        <div class="prep-n">第 三 问</div>
+        <div class="prep-h">能靠它从银行拿回更多钱</div>
+        <div class="prep-v">100 万买入、评估 200 万、能抵押出 200 万——<br>资产的第二重功能是安全垫。<br>三问全过，才叫好资产。</div>
+      </div>
+    </div>
+
+    <div class="figure">
+      <div class="figure-title">折 价 区 间 · 什 么 价 格 才 是 折 价</div>
+      <div class="fig-scroll"><svg viewBox="0 0 1000 404" role="img" aria-label="不良资产折价区间刻度：低于三折为异常区，三折至五折为合理区间，六折以上折价空间不足">
+        <g font-family="Microsoft YaHei, PingFang SC, sans-serif">
+
+          <text x="40" y="30" fill="#8FA6B8" font-size="11" letter-spacing="2">买 入 价 ÷ 当 前 市 价</text>
+
+          <!-- 异常区 -->
+          <rect x="120" y="52" width="210" height="58" rx="9" fill="rgba(122,42,42,0.30)" stroke="rgba(229,115,115,0.55)"/>
+          <text x="225" y="78" fill="#EF9A9A" font-size="14" font-weight="800" text-anchor="middle">异 常 区</text>
+          <text x="225" y="98" fill="#C4A0A0" font-size="11.5" text-anchor="middle">一折 ~ 两折 · 必有问题</text>
+
+          <!-- 合理区 -->
+          <rect x="330" y="52" width="400" height="58" rx="9" fill="rgba(212,175,55,0.14)" stroke="#D4AF37" stroke-width="1.4"/>
+          <text x="530" y="78" fill="#D4AF37" font-size="14" font-weight="800" text-anchor="middle">合 理 区 间</text>
+          <text x="530" y="98" fill="#C9B06A" font-size="11.5" text-anchor="middle">三折 ~ 五折 · 真实折价通常落在这里</text>
+
+          <!-- 空间不足区 -->
+          <rect x="730" y="52" width="210" height="58" rx="9" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.2)"/>
+          <text x="835" y="78" fill="#9FB3C2" font-size="14" font-weight="800" text-anchor="middle">空 间 不 足</text>
+          <text x="835" y="98" fill="#7E93A4" font-size="11.5" text-anchor="middle">六折 ~ 市价 · 不值得占用额度</text>
+
+          <!-- 刻度 -->
+          <line x1="120" y1="140" x2="940" y2="140" stroke="rgba(255,255,255,0.18)" stroke-width="1.4"/>
+          <g font-size="11.5">
+            <line x1="120" y1="140" x2="120" y2="152" stroke="rgba(255,255,255,0.3)"/>
+            <text x="120" y="172" fill="#EF9A9A" text-anchor="middle">一 折</text>
+            <line x1="225" y1="140" x2="225" y2="152" stroke="rgba(255,255,255,0.3)"/>
+            <text x="225" y="172" fill="#C4A0A0" text-anchor="middle">两 折</text>
+            <line x1="330" y1="140" x2="330" y2="152" stroke="#D4AF37" stroke-width="1.6"/>
+            <text x="330" y="172" fill="#D4AF37" text-anchor="middle">三 折</text>
+            <line x1="530" y1="140" x2="530" y2="152" stroke="#D4AF37" stroke-width="1.6"/>
+            <text x="530" y="172" fill="#D4AF37" text-anchor="middle">四 折</text>
+            <line x1="730" y1="140" x2="730" y2="152" stroke="#D4AF37" stroke-width="1.6"/>
+            <text x="730" y="172" fill="#D4AF37" text-anchor="middle">五 折</text>
+            <line x1="835" y1="140" x2="835" y2="152" stroke="rgba(255,255,255,0.3)"/>
+            <text x="835" y="172" fill="#9FB3C2" text-anchor="middle">六 折</text>
+            <line x1="940" y1="140" x2="940" y2="152" stroke="rgba(255,255,255,0.3)"/>
+            <text x="940" y="172" fill="#7E93A4" text-anchor="middle">市 价</text>
+          </g>
+
+          <!-- 三条价格纪律 -->
+          <rect x="40" y="204" width="290" height="130" rx="11" fill="rgba(15,45,77,0.6)" stroke="rgba(144,164,174,0.3)"/>
+          <text x="62" y="234" fill="#D4AF37" font-size="12" letter-spacing="1">纪 律 一</text>
+          <text x="62" y="262" fill="#E8EEF5" font-size="15.5" font-weight="800">必须带租约</text>
+          <text x="62" y="290" fill="#9FB3C2" font-size="12">不带租约的资产不构成资产，</text>
+          <text x="62" y="308" fill="#9FB3C2" font-size="12">因为它没有第二重功能。</text>
+
+          <rect x="355" y="204" width="290" height="130" rx="11" fill="rgba(15,45,77,0.6)" stroke="rgba(144,164,174,0.3)"/>
+          <text x="377" y="234" fill="#D4AF37" font-size="12" letter-spacing="1">纪 律 二</text>
+          <text x="377" y="262" fill="#E8EEF5" font-size="15.5" font-weight="800">一折必有隐情</text>
+          <text x="377" y="290" fill="#9FB3C2" font-size="12">资产没问题，不会一折出；</text>
+          <text x="377" y="308" fill="#9FB3C2" font-size="12">便宜到这个程度，问题都在表外。</text>
+
+          <rect x="670" y="204" width="290" height="130" rx="11" fill="rgba(15,45,77,0.6)" stroke="rgba(144,164,174,0.3)"/>
+          <text x="692" y="234" fill="#D4AF37" font-size="12" letter-spacing="1">纪 律 三</text>
+          <text x="692" y="262" fill="#E8EEF5" font-size="15.5" font-weight="800">大额资产竞争更少</text>
+          <text x="692" y="290" fill="#9FB3C2" font-size="12">100 万的资产人人抢，1 亿的资产</text>
+          <text x="692" y="308" fill="#9FB3C2" font-size="12">能出得起钱的人少，折价空间更大。</text>
+
+          <text x="500" y="378" fill="#7E93A4" font-size="12" text-anchor="middle">折价是买入的理由，不是买入的证据——价差之外，标的本身还得经得起那九道门槛</text>
+          <text x="500" y="396" fill="#7E93A4" font-size="11.5" text-anchor="middle">区间为课程口径给出的经验值，实际以逐案尽调与银行评估为准</text>
+        </g>
+      </svg></div>
+      <div class="figure-cap">价格只是<b>入口</b>：区间定的是"值不值得进尽调"，真正决定能不能买的是后面那九道门槛。</div>
+    </div>
+
+    <div class="note-box">
+      <h4>资产在哪，和经营在哪，是两件事</h4>
+      <ul>
+        <li>资产的持有地与业务的经营地<strong>可以分离</strong>——在核心城市持有资产、在本地经营业务，通过股权架构把两者关联起来</li>
+        <li>银行是连锁的，数据可跨地域调取，因此<strong>资产所在地不必然等于经营所在地</strong></li>
+        <li>反过来也成立：<strong>低能级城市的资产，跌幅往往比核心城市更深</strong>——看相对值，不看绝对值；核心城市回调时，低线城市跌得更猛</li>
+        <li>结论：<strong>资产尽量向核心城市集中</strong>，业务可以留在本地</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -1635,6 +1861,110 @@
         </g>
       </svg></div>
       <div class="figure-cap">四个环节首尾相接：<b>买入 → 修复 → 退出 → 回款 → 再投入</b>；利润来自修复这一段，而不是来自杠杆。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 解债的两条路 ===== -->
+<section class="content" id="leverage">
+  <div class="container">
+    <div class="section-tag">解 债 · 两 条 路</div>
+    <h2 class="section-title">债务压不住的时候，先想清楚要解决的是哪一个"债"</h2>
+    <p class="section-sub">
+      课程口径给过一个很直接的说法：<strong>解决负债的方式，是放大负债</strong>。<br>
+      这条路径我们理解，也复算过——但它不是我们的做法。<strong>把两条路都摆出来，是为了让选择发生在这个页面上，而不是发生在一笔交易里。</strong>
+    </p>
+
+    <div class="case-summary" style="margin-top:26px;">
+      <table>
+        <thead>
+          <tr>
+            <th style="width:110px;">口径</th>
+            <th style="width:150px;">资产端动作</th>
+            <th style="width:190px;">负债端结果</th>
+            <th>银行视角下的变化</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="nm">医疗器械型</td>
+            <td>自有 1300 万买入市场价值 3000 万的大宗资产</td>
+            <td class="num">1400 → 3100 万</td>
+            <td>资产端从 0 变成 3000 万，账上多出 400 万现金；债务虽然更大，但<strong>每一分都有资产对应</strong></td>
+          </tr>
+          <tr>
+            <td class="nm">白酒生产型</td>
+            <td>3000 万买入市场价值 8000 万的商铺并自营</td>
+            <td class="num">1300 → 7300 万</td>
+            <td>资产端变成 8000 万，现金 3000 万；规模被撑起来，代价是现金流从零开始被重新排布</td>
+          </tr>
+          <tr>
+            <td class="nm">材料加工型</td>
+            <td>1000 万买入市场价值 2000 万的资产</td>
+            <td class="num">3400 万</td>
+            <td>股权纠纷后资产在手却无流动性，资产化之后重新变成 6000 万体量、400 万现金</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="figure">
+      <div class="figure-title">放 大 负 债 · 结 构 变 化</div>
+      <div class="fig-scroll"><svg viewBox="0 0 1000 350" role="img" aria-label="放大负债路径的资产负债结构变化：资产总额上升、现金上升、债务上升但债务有资产对应">
+        <defs>
+          <marker id="arwL" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L9,3 z" fill="#D4AF37"/>
+          </marker>
+        </defs>
+        <g font-family="Microsoft YaHei, PingFang SC, sans-serif">
+
+          <text x="40" y="28" fill="#8FA6B8" font-size="11" letter-spacing="2">三 个 变 量 · 同 时 变 大</text>
+
+          <!-- 起点 -->
+          <rect x="40" y="52" width="250" height="150" rx="12" fill="rgba(122,42,42,0.20)" stroke="rgba(229,115,115,0.45)"/>
+          <text x="165" y="86" fill="#EF9A9A" font-size="16" font-weight="800" text-anchor="middle">起 点</text>
+          <text x="165" y="120" fill="#C4A0A0" font-size="13" text-anchor="middle">资产 0 · 现金 0</text>
+          <text x="165" y="146" fill="#C4A0A0" font-size="13" text-anchor="middle">债务 1400 万</text>
+          <text x="165" y="180" fill="#EF9A9A" font-size="12" text-anchor="middle">银行看到的是：只有负债</text>
+
+          <line x1="300" y1="127" x2="360" y2="127" stroke="#D4AF37" stroke-width="2.4" marker-end="url(#arwL)"/>
+
+          <!-- 动作 -->
+          <rect x="370" y="70" width="250" height="114" rx="12" fill="rgba(212,175,55,0.10)" stroke="rgba(212,175,55,0.45)"/>
+          <text x="495" y="104" fill="#D4AF37" font-size="15" font-weight="800" text-anchor="middle">动作</text>
+          <text x="495" y="134" fill="#C9B06A" font-size="12.5" text-anchor="middle">低价买入带租约的资产</text>
+          <text x="495" y="158" fill="#C9B06A" font-size="12.5" text-anchor="middle">再以资产作抵押取得贷款</text>
+
+          <line x1="630" y1="127" x2="690" y2="127" stroke="#D4AF37" stroke-width="2.4" marker-end="url(#arwL)"/>
+
+          <!-- 终点 -->
+          <rect x="700" y="52" width="260" height="150" rx="12" fill="rgba(30,110,84,0.22)" stroke="rgba(80,190,150,0.45)"/>
+          <text x="830" y="86" fill="#7FD1AE" font-size="16" font-weight="800" text-anchor="middle">结 果</text>
+          <text x="830" y="120" fill="#BFE3D2" font-size="13" text-anchor="middle">资产 3000 万 · 现金 400 万</text>
+          <text x="830" y="146" fill="#BFE3D2" font-size="13" text-anchor="middle">债务 3100 万</text>
+          <text x="830" y="180" fill="#7FD1AE" font-size="12" text-anchor="middle">银行看到的是：有资产、有现金</text>
+
+          <!-- 结构式 -->
+          <rect x="40" y="228" width="920" height="66" rx="12" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.16)"/>
+          <text x="500" y="258" fill="#E8EEF5" font-size="15" font-weight="700" text-anchor="middle">
+            资产总额 ↑ <tspan fill="#D4AF37">+</tspan> 现金 ↑ <tspan fill="#D4AF37">+</tspan> 债务 ↑（但每一分都有资产对应）
+          </text>
+          <text x="500" y="282" fill="#9FB3C2" font-size="12" text-anchor="middle">这条路成立的前提，是买入价足够低、资产足够真、租约足够硬——三个前提缺一个，结构就塌</text>
+
+          <text x="500" y="332" fill="#7E93A4" font-size="12" text-anchor="middle">周期 3-6 个月；本页只做结构复算，不含任何真实标的与交易对手信息</text>
+        </g>
+      </svg></div>
+      <div class="figure-cap">这条路径把"还不上"的问题换成了"资产够不够真"的问题——<b>它并没有消灭债务，只是让债务重新变得可被银行接受</b>。</div>
+    </div>
+
+    <div class="note-box">
+      <h4>我们为什么不走这条路</h4>
+      <ul>
+        <li><strong>前提是"信用不能已经坏掉"</strong>——垫资与配资本质是把信用风险转移给别人；主体信用一旦出现硬伤，这条路的第一步就走不下去</li>
+        <li><strong>代价是自有资金被锁进长周期资产</strong>，而前置期的持有成本（利息、税费、物业、维护、腾退）要由现金流扛；算不满 12 个月，标的当场出局</li>
+        <li><strong>它要求把利润来源从"修复"换成"加杠杆"</strong>——一旦加了杠杆，退出时的容错空间会被同步压缩，而下行期的资产恰恰最需要容错空间</li>
+        <li><strong>所以乾元的顺序是反的</strong>：先用自有资金做小体量、单笔看得懂的修复，靠租金与现金流把资产跑起来；能跑通了，再谈放大。<strong>放大是结果，不是起点。</strong></li>
+      </ul>
     </div>
   </div>
 </section>

@@ -13,6 +13,11 @@ _capture.py
 _capture.ps1
 _cap.ps1
 
+# 验收输出目录（分区截图 / 裁切图，不入库）
+_verify_*/
+_verify-*/
+_crop*.png
+
 # Python 临时文件
 __pycache__/
 *.pyc
